@@ -12,7 +12,7 @@ const projects: Project[] = [
     metrics: ['로딩 99.47% 개선', 'Lighthouse 100점', 'FCM 실시간 반영'],
     tags: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
     github: 'https://github.com/JEmilyKoo/chain-g',
-    ai: false,
+    ai: true,
   },
   {
     title: '다와따',
@@ -40,6 +40,19 @@ const projects: Project[] = [
     github: 'https://github.com/JEmilyKoo/trip-manager-ai',
     ai: true,
   },
+  {
+    "title": "Vibe Editor",
+    "period": "2025.04 ~ 2025.05 (6주)",
+    "role": "Frontend Lead / UI·UX Designer",
+    "description": "VS Code에서 코드/디렉토리/로그 스냅샷을 찍고, AI 도움으로 기술 블로그 초안을 Notion에 게시하는 확장 프로그램",
+    "problem": "사용자 친화적인 VS Code 인터페이스 제공, 다양한 콘텐츠 유형(코드/디렉토리/로그) 처리, Notion 연동 자동화",
+    "solution": "React 기반 확장 프로그램 구현, 디자인 시스템 구축, Notion API 자동화, 코드 스냅샷/디렉토리 시각화/로그 타임스탬프 기능 구현, 프롬프트 기반 글 생성 기능 설계",
+    "result": "스냅샷 기반 블로그 작성 시간 절감, 실사용자 대상 높은 만족도 기록, Notion 자동 게시 기능으로 게시 속도 80% 개선",
+    "metrics": ["VS Code 스냅샷 기능 구현", "Notion 자동 게시", "템플릿 기반 AI 글 생성"],
+    "tags": ["VSCode Extension", "React", "TypeScript", "Emotion", "Redux Toolkit", "Notion API", "OpenAI API", "CI/CD", "Figma", "UX Writing"],
+    "github": "https://github.com/JEmilyKoo/vibe-editor",
+    "ai": true
+  }
 ];
 
 export default projects; 
