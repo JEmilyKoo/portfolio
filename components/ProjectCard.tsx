@@ -11,6 +11,8 @@ export interface Project {
   github?: string;
   demo?: string;
   ai?: boolean;
+  video?: string;
+  image?: string[];
 }
 
 export default function ProjectCard({

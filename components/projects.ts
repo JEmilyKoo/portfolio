@@ -13,6 +13,8 @@ const projects: Project[] = [
     tags: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
     github: 'https://github.com/JEmilyKoo/chain-g',
     ai: true,
+    video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    image:["/images/chaing1.png", "/images/chaing2.png", "/images/chaing3.png"]
   },
   {
     title: '다와따',
@@ -26,6 +28,7 @@ const projects: Project[] = [
     tags: ['React Native', 'Redux', 'WebSocket', 'S3', 'Gradle', 'Figma', 'Notion'],
     github: 'https://github.com/JEmilyKoo/dawatta',
     ai: false,
+    image:["/images/dawatta1.png"]
   },
   {
     title: '트매',
@@ -39,6 +42,7 @@ const projects: Project[] = [
     tags: ['Vue3', 'Spring Boot', 'OpenAI', 'WebSocket', 'TMap', 'AI', 'Figma'],
     github: 'https://github.com/JEmilyKoo/trip-manager-ai',
     ai: true,
+    image:["/images/tm.png"]
   },
   {
     "title": "Vibe Editor",
@@ -51,7 +55,8 @@ const projects: Project[] = [
     "metrics": ["VS Code 스냅샷 기능 구현", "Notion 자동 게시", "템플릿 기반 AI 글 생성"],
     "tags": ["VSCode Extension", "React", "TypeScript", "Emotion", "Redux Toolkit", "Notion API", "OpenAI API", "CI/CD", "Figma", "UX Writing"],
     "github": "https://github.com/JEmilyKoo/vibe-editor",
-    "ai": true
+    "ai": true,
+    image:["/images/vibe1.png", "/images/vibe2.png", "/images/vibe3.png"]
   }
 ];
 
