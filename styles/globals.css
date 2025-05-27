@@ -52,3 +52,13 @@ body {
     color: var(--color-subText);
   }
 }
+@theme {
+  --color-primary: #339CFF;
+  --color-accent: #00C2B2;
+  --color-error: #FF4D4F;
+  --color-success: #22C55E;
+  --color-warning: #FACC15;
+  --font-sans: 'Inter', 'Pretendard', 'Roboto', sans-serif;
+  --radius-lg: 10px;
+  --shadow-custom: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
