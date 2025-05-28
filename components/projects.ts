@@ -56,8 +56,7 @@ const projects: Project[] = [
     technologies: ['Vue3', 'Spring Boot', 'OpenAI', 'WebSocket', 'TMap', 'AI', 'Figma'],
     githubUrl: 'https://github.com/JEmilyKoo/trip-manager-ai',
     image: ['/images/tm.png']
-  },
-
+  }
 ];
 
 export default projects; 

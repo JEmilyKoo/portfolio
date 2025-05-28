@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import ProjectCard, { Project } from './ProjectCard';
-import projects from './projects';
 
-export default function ProjectList() {
+interface ProjectListProps {
+  projects: Project[];
+}
+
+export default function ProjectList({ projects }: ProjectListProps) {
   return (
     <section id="projects" className="max-w-[900px] mx-auto mb-24 pt-12 px-4">
       <motion.div
