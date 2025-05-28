@@ -1,14 +1,54 @@
 'use client';
 
 const skills = [
-  { name: 'React', level: 95, desc: 'SPA, 디자인 시스템, 상태관리, Chain G/다와따' },
-  { name: 'TypeScript', level: 90, desc: '타입 안전성, 제네릭, 상태관리, 대규모 프로젝트' },
-  { name: 'Next.js', level: 85, desc: 'SSR/SSG, SEO, PWA, Chain G' },
-  { name: 'Vue.js', level: 80, desc: 'Nuxt, SSR, 그룹웨어/의료 프로젝트' },
-  { name: 'React Native', level: 80, desc: 'iOS/Android/Web 통합, 다와따' },
-  { name: 'JavaScript', level: 90, desc: '비동기, 이벤트, 인터셉터, 전 프로젝트' },
-  { name: 'Java', level: 70, desc: 'Spring, Rest API, 알고리즘, SSAFY' },
-  { name: 'C#', level: 60, desc: 'WPF, Webview2, 그룹웨어' },
+  { name: 'React', level: 95, desc: [
+    '컴포넌트 설계: 재사용성과 유지보수 고려',
+    'Redux Toolkit + TypeScript: 타입 안전성 보장',
+    '미들웨어: 비동기 처리 구현',
+    '커스텀 훅: 관심사 분리'
+  ]},
+  { name: 'TypeScript', level: 90, desc: [
+    '제네릭: ApiResponse<T> 타입 시스템',
+    'Redux: 상태/액션 타입 정의',
+    '유틸리티 타입: Omit, Pick 등',
+    '컴포넌트 props 타입 관리'
+  ]},
+  { name: 'Next.js', level: 85, desc: [
+    'SSR/SSG: 성능 최적화, SEO',
+    '동적 라우팅: 인증 처리',
+    'Image/Link: 웹 성능 최적화',
+    'PWA: 앱과 유사한 UX'
+  ]},
+  { name: 'Vue.js', level: 80, desc: [
+    '사용자 정의 컴포넌트',
+    'Nuxt: SSR 환경 구축',
+    '이벤트: 버블링/캡쳐링 제어',
+    'Vuetify: CSS 스타일링'
+  ]},
+  { name: 'React Native', level: 80, desc: [
+    '크로스 플랫폼: iOS/Android/Web',
+    'Expo/NativeWind: UI 구현',
+    'Redux + TypeScript: 상태 관리',
+    'FCM: 알림, 위치 추적'
+  ]},
+  { name: 'JavaScript', level: 90, desc: [
+    '비동기: Promise, async/await',
+    'Axios: 인터셉터, 요청 처리',
+    'FCM: 실시간 알림',
+    '메모리: 클린업 함수'
+  ]},
+  { name: 'Java', level: 70, desc: [
+    'Spring: Restful API',
+    '알고리즘: 문제 해결',
+    'Stream API: 데이터 처리',
+    'Android: 코드 이해'
+  ]},
+  { name: 'C#', level: 60, desc: [
+    'WPF: 웹앱 개발',
+    'MVC: 백엔드 연동',
+    'Webview2: OS 에러 처리',
+    '그룹웨어: 실무 경험'
+  ]},
 ];
 
 const softSkills = [
@@ -44,7 +84,11 @@ export default function Skills() {
                 style={{ width: `${s.level}%` }}
               />
             </div>
-            <div className="text-subText text-[0.98rem] min-h-[2.5rem]">{s.desc}</div>
+            <ol className="text-subText text-[0.98rem] list-decimal list-inside space-y-1">
+              {s.desc.map((item, index) => (
+                <li key={index} className="pl-1">{item}</li>
+              ))}
+            </ol>
           </div>
         ))}
       </div>
