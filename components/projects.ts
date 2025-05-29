@@ -31,6 +31,10 @@ const projects: Project[] = [
         title: 'vscode extension의 쿠키 미지원 이슈로 인한 Oauth2 오류',
         content: `- 로그인할 때마다 vscode extension 내부에서 localhost 서버를 오픈
         - 클라이언트를 서버화하는 방식으로 accessToken을 redirect 처리, 외부 노출 위험 최소화`
+         },{
+          title : '프롬프트 분기처리로 AI 채팅 퀄리티 상승',
+content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일 내용을 바탕으로 답하라고 지시했을 경우 파일이 없다는 것에 치중해 답을 하는 오류 상황 발생
+- 프롬프트 자체 분기처리`
          }
     ]
   },
