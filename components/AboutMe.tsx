@@ -51,7 +51,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="max-w-[900px] mx-auto mb-24 pt-12 px-4 flex flex-col items-center"
+      className="max-w-[900px] mx-auto mb-24 pt-8 px-4 flex flex-col items-center"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -105,45 +105,6 @@ export default function AboutMe() {
           ))}
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="flex gap-4 mt-12"
-      >
-        <a
-          href="https://github.com/JEmilyKoo"
-          target="_blank"
-          aria-label="GitHub"
-          className="text-primary  text-[1.7rem] transition-colors duration-200 hover:text-accent  focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="mailto:jemilykoo@gmail.com"
-          aria-label="Email"
-          className="text-primary  text-[1.7rem] transition-colors duration-200 hover:text-accent  focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110"
-        >
-          <FaEnvelope />
-        </a>
-        <a
-          href="https://velog.io/@jemilykoo/posts"
-          target="_blank"
-          aria-label="Blog"
-          className="text-primary  text-[1.7rem] transition-colors duration-200 hover:text-accent  focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110"
-        >
-          <FaBlogger />
-        </a>
-        <a
-          href="tel:01025815680"
-          aria-label="Phone"
-          className="text-primary  text-[1.7rem] transition-colors duration-200 hover:text-accent  focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110"
-        >
-          <FaPhone />
-        </a>
-      </motion.div>
     </section>
   );
 } 

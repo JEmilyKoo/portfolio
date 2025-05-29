@@ -36,8 +36,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <span className="font-semibold text-primary ">React/TypeScript 기반 SPA, 디자인 시스템, 성능 최적화, UI/UX 개선</span>에 강점이 있습니다.<br className="hidden md:inline" />
-          글로벌 협업과 최신 트렌드(AI, PWA, SSR, DevOps)까지 경험한 <span className="font-semibold text-accent ">실전형 개발자</span>입니다.
+          <span className="font-semibold text-primary ">React/TypeScript, 성능 최적화, 디자인 시스템, UI/UX 개선</span>에 강하고<br className="hidden md:inline" />
+          글로벌 협업과 최신 트렌드(AI, PWA, SSR, DevOps)까지 경험한 <br/><span className="font-semibold text-accent ">레디메이드 개발자</span>입니다.
         </motion.p>
 
         <motion.div
