@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithub, FaEnvelope, FaBlogger, FaPhone, FaCode, FaRocket, FaDatabase, FaGraduationCap, FaUniversity } from 'react-icons/fa';
+import { FaCode, FaRocket, FaDatabase, FaGraduationCap, FaUniversity } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
