@@ -27,7 +27,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          사용자 경험에 진심인 프론트엔드 개발자
+          사용자 경험에 진심인 실전형 프론트엔드 개발자
         </motion.p>
 
         <motion.p
