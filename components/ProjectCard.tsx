@@ -98,10 +98,10 @@ export default function ProjectCard({
           <div className="space-y-4">
             <div>
               <h3 className="text-2xl font-bold text-text  mb-2">{title}</h3>
-              <div className="flex items-center gap-4 text-subText ">
+              <div className="flex items-center gap-4 text-subText flex-col ">
                 <span>{period}</span>
-                <span>•</span>
                 <span>{role}</span>
+                <span></span>
               </div>
             </div>
 
@@ -123,16 +123,7 @@ export default function ProjectCard({
               </div>
             )}
 
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 text-sm font-medium bg-primary/10  text-primary  rounded-full border border-primary/20 "
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+           
 
             <div className="flex gap-4">
               {githubUrl && (
@@ -233,6 +224,18 @@ export default function ProjectCard({
           </div>
           
         </div>
+         <div className="flex flex-wrap gap-2 justify-center items-center">
+          <div className="w-3/4 flex flex-wrap gap-2 justify-center items-center">
+              {technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-sm font-medium bg-primary/10  text-primary  rounded-full border border-primary/20 "
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
          {troubleshooting && troubleshooting.length > 0 && (
               <div className="p-6 mt-6 space-y-4">
                 <h4 className="text-lg font-semibold text-text">트러블 슈팅</h4>

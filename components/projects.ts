@@ -9,7 +9,7 @@ const projects: Project[] = [
     metrics: [
       { label: 'VS Code', value: '스냅샷 기능' },
       { label: 'Notion', value: '자동 게시' },
-      { label: 'AI Agent Design', value: '템플릿 기반 글 생성' }
+      { label: '템플릿 기반 프롬프트', value: 'AI 포스트 생성' }
     ],
     technologies: ['VSCode Extension','AI : Prompt Engineering', 'AI : Agent Design','React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Notion API', 'Jenkins', 'Figma', 'UX Writing'],
     githubUrl: 'https://github.com/JEmilyKoo/vibe-editor',
@@ -33,7 +33,8 @@ const projects: Project[] = [
         - 클라이언트를 서버화하는 방식으로 accessToken을 redirect 처리, 외부 노출 위험 최소화`
          },{
           title : '프롬프트 분기처리로 AI 채팅 퀄리티 상승',
-content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일 내용을 바탕으로 답하라고 지시했을 경우 파일이 없다는 것에 치중해 답을 하는 오류 상황 발생
+content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일 내용을 바탕으로 답하라고 지시했을 경우 에러 발생
+    -  파일이 없다는 것에 치중해 답을 하여 퀄리티 저하
 - 프롬프트 자체 분기처리`
          }
     ]
