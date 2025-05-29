@@ -37,7 +37,7 @@ const skills = [
     'FCM: 실시간 알림',
     '메모리: 클린업 함수'
   ]},
-  { name: 'Java', level: 70, desc: [
+  { name: 'Java', level: 80, desc: [
     'Spring: Restful API',
     '알고리즘: 문제 해결',
     'Stream API: 데이터 처리',
@@ -154,7 +154,7 @@ export default function Skills() {
                       style={{ width: `${s.level}%` }}
                     />
                   </div>
-                  <ol className="text-subText text-[0.98rem] list-decimal list-inside space-y-1">
+                   <ol className="pl-3 text-subText text-[0.98rem] list-decimal list-inside space-y-1 text-left">
                     {s.desc.map((item, index) => (
                       <li key={index} className="pl-1">{item}</li>
                     ))}
@@ -175,7 +175,7 @@ export default function Skills() {
                   <h4 className="font-semibold text-primary mb-3">{skill.category}</h4>
                   <ul className="space-y-2">
                     {skill.details.map((detail, index) => (
-                      <li key={index} className="text-sm text-subText">
+                      <li key={index} className="pl-3 text-sm text-subText  text-left">
                         • {detail}
                       </li>
                     ))}
