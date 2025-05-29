@@ -76,8 +76,7 @@ export default function AboutMe() {
       <div className="w-full max-w-3xl">
         <div className="relative">
           {/* 타임라인 라인 */}
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border " />
-
+          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border"/>
           {/* 타임라인 아이템 */}
           {timelineItems.map((item, index) => (
             <motion.div

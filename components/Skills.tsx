@@ -170,9 +170,9 @@ export default function Skills() {
               {softSkills.map((skill) => (
                 <div
                   key={skill.category}
-                  className="bg-background rounded-xl p-4 border border-border"
+                  className="bg-background rounded-xl p-4 border border-bording transition hover:scale-[1.02] hover:shadow-lg"
                 >
-                  <h4 className="font-semibold text-primary mb-3">{skill.category}</h4>
+                  <h4 className="font-semibold text-primary pt-1 mb-3">{skill.category}</h4>
                   <ul className="space-y-2">
                     {skill.details.map((detail, index) => (
                       <li key={index} className="pl-3 text-sm text-subText  text-left">

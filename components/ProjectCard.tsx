@@ -23,6 +23,7 @@ export interface Project {
     title: string;
     content: string;
   }[];
+  team:string;
 }
 
 export default function ProjectCard({
@@ -36,6 +37,7 @@ export default function ProjectCard({
   demoUrl,
   image,
   video,
+  team,
   troubleshooting,
 }: Project) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -99,7 +101,11 @@ export default function ProjectCard({
             <div>
               <h3 className="text-2xl font-bold text-text  mb-2">{title}</h3>
               <div className="flex items-center gap-4 text-subText flex-col ">
-                <span>{period}</span>
+                <div className="flex items-center gap-4 text-subText">
+                  <span>{period}</span>
+                  <span>|</span>
+                  <span>{team}</span>
+                </div>
                 <span>{role}</span>
                 <span></span>
               </div>

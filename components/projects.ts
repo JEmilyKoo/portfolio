@@ -37,7 +37,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
     -  파일이 없다는 것에 치중해 답을 하여 퀄리티 저하
 - 프롬프트 자체 분기처리`
          }
-    ]
+    ],
+    team: '6명(기여도 20%)'
   },
   {
     title: 'Chain G',
@@ -49,26 +50,32 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
       { label: 'Lighthouse', value: '100점' },
       { label: '실시간 반영', value: 'FCM 연동' }
     ],
-    technologies: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
+    technologies: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'Service Worker','FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
     githubUrl: 'https://github.com/JEmilyKoo/chain-g',
     video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     image: ['/images/chaing1.png', '/images/chaing2.png', '/images/chaing3.png'],
     troubleshooting: [
       {
-        title: '메인 페이지 로딩 속도 99.47% 개선 (7초 → 0.37초)',
+        title:"로딩 페이지의 속도 개선",
         content: `- 로딩 페이지의 가벼운 구성
-    - 로딩 페이지에서만 Emotion 제거
+         - 로딩 페이지에서만 Emotion 제거
     - HTML/CSS 기반 SVG 애니메이션으로 구성 → 초기 화면 빠르게 노출
-- 리소스 용량 최소화
+    - 배경 이미지 대신 CSS 그라데이션 적용 → 사용자 이탈 방지`
+      },
+      {
+        title:"PWA, Service Worker 적용해 웹앱 최적화",
+        content: `- 푸시 알림 기능 추가
+    - Service Worker로 SVG·폰트 캐싱 적용
+    - 홈화면 추가 시 즉시 실행 가능 (PWA)`
+      },
+      {
+        title: '메인 페이지 로딩 속도 99.47% 개선 (7초 → 0.37초)',
+        content: `- 리소스 용량 최소화
     - PNG → SVG 변환으로 이미지 용량 대폭 절감
     - 디자인 시스템 기반으로 폰트 굵기 3종 제한 → 웹폰트 로딩 최소화
-- 시각적 로딩 피드백 강화
-    - 배경 이미지 대신 CSS 그라데이션 적용 → 사용자 이탈 방지
-- 캐시 최적화 및 PWA 대응
-    - Service Worker로 SVG·폰트 캐싱 적용
-    - 홈화면 추가 시 즉시 실행 가능 (PWA)
 - 불필요한 렌더링 최소화
-    - 공지 컴포넌트 분리로 초기 렌더 부담 감소`
+    - 공지 컴포넌트 분리로 초기 렌더 부담 감소
+- 캐시 최적화 및 PWA 대응`
       },
       {
         title: 'API 구조 일원화로 인증·에러 처리 자동화 및 타입 안전성 확보',
@@ -78,7 +85,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
 - 공통 응답 스키마 설계: 백엔드와 협의하여 success/fail 구조 통일, ApiResponse<T>로 응답 구조 정형화
 - 결과: 인증 흐름 단순화, 에러 처리 중복 제거, 유지보수성과 개발 효율 향상`
       }
-    ]
+    ],
+    team: '6명(기여도 12.5%)'
   },
   {
     title: '다와따',
@@ -110,7 +118,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
         content: `- Android Native Module, FCM, Kakao SDK 추가 후 빌드 시간이 급격히 증가(38분 소요)
 - Gradle 빌드 최적화 적용 →APK 빌드 시간 94.7% 단축 (38분 → 2분)`
       }
-    ]
+    ],
+    team: '6명(기여도 12.5%)'
   },
   {
     title: '트매',
@@ -141,7 +150,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
         content: `- 프롬프트 엔지니어링을 이용한 토큰 최적화
 - 실제로 다루는 메시지의 가공을 통한 토큰 수 최적화`
       }
-    ]
+    ] ,
+    team: '6명(기여도 50%)'
   }
 ];
 
