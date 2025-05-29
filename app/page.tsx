@@ -4,7 +4,7 @@ import projects from '../components/projects';
 import AboutMe from '../components/AboutMe';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
-import ThemeToggle from '../components/ThemeToggle';
+// import ThemeToggle from '../components/ThemeToggle';
 import { Project } from '../components/ProjectCard';
 
 function getSafeProjects(p: unknown): Project[] {
@@ -26,7 +26,7 @@ export default function Home() {
       <Skills />
       <ProjectList projects={safeProjects} />
       <Contact />
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
     </>
   );
 }

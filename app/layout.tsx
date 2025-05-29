@@ -57,9 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`min-h-screen bg-background text-text font-sans ${notoSansKR.variable} transition-colors duration-300 selection:bg-primary/20 selection:text-primary`}
+        className={`min-h-screen bg-white text-text font-sans ${notoSansKR.variable} transition-colors duration-300 selection:bg-primary/20 selection:text-primary`}
       >
-        <main className="flex flex-col items-center w-full min-h-screen bg-background text-text">
+        <main className="flex flex-col items-center w-full min-h-screen bg-white text-text">
           {children}
         </main>
       </body>

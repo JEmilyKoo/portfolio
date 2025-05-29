@@ -18,7 +18,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">프로젝트</h2>
-        <p className="text-lg text-subText dark:text-gray-300">
+        <p className="text-lg text-subText ">
           사용자 경험을 개선하고 성능을 최적화한 프로젝트들입니다.
         </p>
       </motion.div>
