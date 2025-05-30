@@ -15,26 +15,26 @@ export default function Contact() {
           <ContactItem
             icon={<FaEnvelope />}
             label="Email"
-            value="jemilykoo@gmail.com"
-            href="mailto:jemilykoo@gmail.com"
+            value="ssafy.lee@gmail.com"
+            href="mailto:ssafy.lee@gmail.com"
           />
           <ContactItem
             icon={<FaGithub />}
             label="GitHub"
-            value="JEmilyKoo"
-            href="https://github.com/JEmilyKoo"
+            value="SsafyLee"
+            href="https://github.com/SsafyLee"
           />
           <ContactItem
             icon={<FaBlogger />}
             label="Blog"
-            value="velog.io/@jemilykoo"
-            href="https://velog.io/@jemilykoo/posts"
+            value="velog.io/@ssafy.lee"
+            href="https://velog.io/@ssafy.lee/posts"
           />
           <ContactItem
             icon={<FaPhone />}
             label="Phone"
-            value="010-2581-5680"
-            href="tel:01025815680"
+            value="010-2025-0530"
+            href="tel:01020250530"
           />
         </div>
       </div>
