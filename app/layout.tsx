@@ -10,25 +10,25 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "이싸피 Ssafy Lee | 프론트엔드 포트폴리오",
-  description: "실무형 프론트엔드 개발자 이싸피(Ssafy Lee) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
+  title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
+  description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
   keywords: ["프론트엔드 개발자", "React", "TypeScript", "Next.js", "디자인 시스템", "AI", "PWA", "포트폴리오"],
-  authors: [{ name: "이싸피", url: "https://github.com/SsafyLee" }],
-  creator: "이싸피",
-  publisher: "이싸피",
+  authors: [{ name: "구정은", url: "https://github.com/JEmilyKoo" }],
+  creator: "구정은",
+  publisher: "구정은",
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://ssafylee.github.io",
-    title: "이싸피 Ssafy Lee | 프론트엔드 포트폴리오",
-    description: "실무형 프론트엔드 개발자 이싸피(Ssafy Lee) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
-    siteName: "이싸피 포트폴리오",
+    url: "https://jemilykoo.github.io",
+    title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
+    description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
+    siteName: "구정은 포트폴리오",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/picture.jpg",
         width: 1200,
         height: 630,
-        alt: "이싸피 포트폴리오",
+        alt: "구정은 포트폴리오",
       },
     ],
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
     description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/picture.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
