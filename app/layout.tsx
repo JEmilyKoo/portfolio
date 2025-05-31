@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "이싸피 Ssafy Lee | 프론트엔드 포트폴리오",
-    description: "실무형 프론트엔드 개발자 이싸피(Ssafy Lee) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
-    images: ["/images/picture.jpg"],
+    title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
+    description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
+    images: ["/images/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",

@@ -24,7 +24,7 @@ const timelineItems = [
   {
     year: '2021.08 ~ 2024.01',
     title: '프론트엔드 개발자',
-    company: '전회사',
+    company: '㈜가온아이',
     description: 'Vue.js 기반 그룹웨어 솔루션 개발, 다국어 지원 구현, 조직도/그룹/쪽지/메신저 기능 개발, CI/CD 및 유지보수 담당',
     important: true,
     icon: <FaCode className="text-primary " />,
@@ -32,7 +32,7 @@ const timelineItems = [
   {
     year: '2021.02 ~ 2021.08',
     title: 'Java 개발자 양성 과정 수료',
-    company: '외부 교육기관',
+    company: '한국소프트웨어인재개발원',
     description: '특모범상 수상, Spring 기반 웹 개발 역량 확보, Java 개발자 양성 과정 이수',
     important: false,
     icon: <FaGraduationCap className="text-accent " />,
@@ -40,8 +40,8 @@ const timelineItems = [
   {
     year: '2016.03 ~ 2021.08',
     title: '경영학 학사',
-    company: '한국대학교',
-    description: '경영학 전공, IT 서비스 기획 및 개발 역량 융합, 서울시 소재',
+    company: '홍익대학교',
+    description: '경영학 전공, IT 서비스 기획 및 개발 역량 융합, 서울시 마포구 본교 소재',
     important: true,
     icon: <FaUniversity className="text-primary " />,
   },
@@ -62,13 +62,13 @@ export default function AboutMe() {
       >
         <Image
           src="/images/picture.jpg"
-          alt="이싸피 프로필"
+          alt="구정은 프로필"
           width={128}
           height={128}
           className="w-[128px] h-[128px] rounded-full object-cover mb-6 shadow-lg border-4 border-surface  mx-auto"
         />
         <h2 className="text-3xl md:text-4xl font-extrabold mb-1">
-          이싸피 <span className="text-primary ">Ssafy Lee</span>
+          구정은 <span className="text-primary ">Emily Koo</span>
         </h2>
         <div className="text-lg text-subText  font-semibold">실무형 프론트엔드 개발자</div>
       </motion.div>

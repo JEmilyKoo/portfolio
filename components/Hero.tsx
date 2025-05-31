@@ -17,8 +17,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="block text-text ">이싸피</span>
-          <span className="block text-primary  mt-2">Ssafy Lee</span>
+          <span className="block text-text ">구정은</span>
+          <span className="block text-primary  mt-2">Emily Koo</span>
         </motion.h1>
 
         <motion.p
