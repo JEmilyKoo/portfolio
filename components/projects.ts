@@ -52,8 +52,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
     ],
     technologies: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'Service Worker','FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
     githubUrl: 'https://github.com/JEmilyKoo/Cha-nG',
-    video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    image: ['/images/chaing1.png', '/images/chaing2.png', '/images/chaing3.png'],
+    // video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    image: ['/images/chaing.png', '/images/chaing1.png', '/images/chaing2.png', '/images/chaing3.png'],
     troubleshooting: [
       {
         title:"로딩 페이지의 속도 개선",
