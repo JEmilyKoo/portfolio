@@ -13,7 +13,7 @@ const projects: Project[] = [
     ],
     technologies: ['VSCode Extension','AI : Prompt Engineering', 'AI : Agent Design','React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Notion API', 'Jenkins', 'Figma', 'UX Writing'],
     githubUrl: 'https://github.com/JEmilyKoo/Vibe_Editor',
-    image: ['/images/vibe1.gif', '/images/vibe2.png', '/images/vibe3.png'],
+    image: ['/images/vibe.png','/images/vibe1.gif', '/images/vibe2.png', '/images/vibe3.png'],
     troubleshooting: [
       {
         title: 'vscode extension과 Tailwind 연결 시 충돌 해결',

@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt,FaSearchPlus, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -36,7 +36,6 @@ export default function ProjectCard({
   githubUrl,
   demoUrl,
   image,
-  video,
   team,
   troubleshooting,
 }: Project) {
@@ -160,16 +159,18 @@ export default function ProjectCard({
           </div>
 
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background cursor-pointer" onClick={handleImageClick}>
-            {video && (
-              <video
-                src={video}
-                controls
-                className="w-full h-full object-cover"
-                poster={image?.[0]}
-              />
-            )}
+          
             {image && image.length > 0 ? (
-              <>
+              <>  {image && (
+                <div>
+                  <Image
+                    src={image[0]}
+                    fill
+                    className="object-cover opacity-10"
+                    alt={`${title} - 이미지 배경 ${currentImageIndex + 1}`}
+                  /> 
+                </div>
+              )}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
                     src={image[currentImageIndex]}
