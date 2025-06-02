@@ -1,6 +1,8 @@
 # 소통하며 도전하는 개발자 구정은입니다.
-
-![e 구정은 반명.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/9cc29d47-e8b0-4e2a-b25e-a84322e1d611/68f5c321-c398-4dd7-9754-842267374bd4.png)
+<p align="center">
+<img src='https://github.com/user-attachments/assets/21ec69fc-1bf7-4690-a492-9dc6c6c8764e' align='left' width='200px' height='200px'/>
+    <p>
+        
 
 3년 차 프론트엔드 개발자로서, React와 TypeScript를 기반으로 한 SPA 및 크로스 플랫폼 앱을 개발했습니다.
 
@@ -9,7 +11,10 @@
 Vue 기반의 풀스택 경험과 그룹웨어, 의료 메시지, 마케팅 도메인에서의 실무 경험을 통해 복잡한 비즈니스 로직을 효과적으로 제품화하는 능력을 키웠습니다.
 
 서비스 운영과 유지보수를 직접 담당하며 성능 최적화와 사용자 피드백을 반영한 개선 작업도 주도해왔습니다. 명확한 커뮤니케이션과 협업 중심의 개발 문화에 익숙하며, 함께 더 나은 사용자 경험을 만들어가는 일에 큰 가치를 두고 있습니다.
-
+    </p>
+</p>
+        
+  
 GitHub https://github.com/JEmilyKoo
 
 Blog  [https://velog.io/@jemilykoo](https://velog.io/@jemilykoo/posts)
@@ -26,7 +31,7 @@ MI개발부 사원
 
 2021.08 ~ 2024.01
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/9a4899c3-ad31-44f6-adab-ca81f28d7e81/image.png)
+![bizmekatalk (1)](https://github.com/user-attachments/assets/9eb306a6-ef78-49fe-92d0-9ff8d1720a50)
 
 # bizmekaTalk 3.0
 
@@ -81,8 +86,7 @@ GitHub, GitLab, Google SpreadSheet, Dooray!
     
 
 ---
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/42622186-dc13-467e-a708-09a9387bb814/image.png)
+![pratama](https://github.com/user-attachments/assets/598adf4e-deb4-4267-b40c-8f0569c0021e)
 
 # Pratama
 
@@ -136,8 +140,9 @@ GitHub, GitLab, Google SpreadSheet, Dooray!
     
 
 ---
+![kumtalk](https://github.com/user-attachments/assets/359cc0f7-b97f-4254-ad7f-e6383b824d5c)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/3c76a656-80d9-4447-9a22-fed160ea2576/image.png)
+![kumtalk2](https://github.com/user-attachments/assets/02f9ede1-4a88-47ea-8f73-98ffc140a3f8)
 
 # KumTalk
 
@@ -194,12 +199,8 @@ GitLab, Dooray!
 # **Team Project**
 
 https://youtu.be/cO77Ae0-i6o
+![chaing](https://github.com/user-attachments/assets/dd299f86-8ea6-4792-81d0-7f27f31b8d0a)
 
-![image.png](attachment:eff74af8-ae73-492d-ba24-4df19262df43:image.png)
-
-![image.png](attachment:7bcb23e6-c51b-4a27-b45e-e9666d89f93d:image.png)
-
-![image.png](attachment:67b8eeac-fd87-47b6-97e2-6e03a171a5f2:image.png)
 
 # Chain G
 
@@ -240,7 +241,10 @@ Frontend Lead Developer / Frontend UX Engineer
 
 ## 트러블 슈팅
 
-[최종2.mp4](attachment:6b946a3a-8eae-467b-a9a7-9690fc14ebbb:최종2.mp4)
+
+
+https://github.com/user-attachments/assets/94d8a3d7-ec43-4321-94d6-5b737190e573
+
 
 ### 🔹 메인 페이지 로딩 속도 **99.47% 개선 (7초 → 0.37초)**
 
@@ -267,8 +271,7 @@ Frontend Lead Developer / Frontend UX Engineer
 - **제네릭 API 함수 구성**: `getRequest<T>`, `postRequest<T>` 등으로 모든 API 응답을 타입 안전하게 처리
 - **공통 응답 스키마 설계**: 백엔드와 협의하여 success/fail 구조 통일, `ApiResponse<T>`로 응답 구조 정형화
 - **결과**: 인증 흐름 단순화, 에러 처리 중복 제거, 유지보수성과 개발 효율 향상
-
-![포폴용.jpg](attachment:c3944b99-ff19-406e-9b4a-24c5dd41d2a2:포폴용.jpg)
+![dawata](https://github.com/user-attachments/assets/7133fd05-7f8b-4790-a05a-0bf449370a26)
 
 # 다와따
 
@@ -330,7 +333,7 @@ Frontend Lead Developer / UI/UX Designer
 
 ---
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/58bb86bc-310a-43ac-a465-68de72b3507e/image.png)
+![tm](https://github.com/user-attachments/assets/6f362c83-ebff-4bbc-ba00-841b798a585b)
 
 # 트매
 
@@ -391,7 +394,7 @@ GitHub, Mattermost, Notion
 
 ---
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/91b07577-dbc0-44cc-8824-9d1b140203a6/74cd493a-99ee-455f-bdbd-dc0842d08551/image.png)
+![image](https://github.com/user-attachments/assets/8e08b842-2083-4ffd-b1ce-cb31ad8ad95f)
 
 찍Go
 
