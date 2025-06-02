@@ -12,7 +12,7 @@ const projects: Project[] = [
       { label: '템플릿 기반 프롬프트', value: 'AI 포스트 생성' }
     ],
     technologies: ['VSCode Extension','AI : Prompt Engineering', 'AI : Agent Design','React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Notion API', 'Jenkins', 'Figma', 'UX Writing'],
-    githubUrl: 'https://github.com/JEmilyKoo/vibe-editor',
+    githubUrl: 'https://github.com/JEmilyKoo/Vibe_Editor',
     image: ['/images/vibe1.gif', '/images/vibe2.png', '/images/vibe3.png'],
     troubleshooting: [
       {
@@ -51,7 +51,7 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
       { label: '실시간 반영', value: 'FCM 연동' }
     ],
     technologies: ['React', 'Next.js', 'Redux Toolkit', 'D3.js', 'PWA', 'Service Worker','FCM', 'Design System', 'CI/CD', 'Figma', 'Notion'],
-    githubUrl: 'https://github.com/JEmilyKoo/chain-g',
+    githubUrl: 'https://github.com/JEmilyKoo/Cha-nG',
     video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     image: ['/images/chaing1.png', '/images/chaing2.png', '/images/chaing3.png'],
     troubleshooting: [

@@ -75,9 +75,7 @@ export default function AboutMe() {
 
       <div className="w-full max-w-3xl">
         <div className="relative">
-          {/* 타임라인 라인 */}
           <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border"/>
-          {/* 타임라인 아이템 */}
           {timelineItems.map((item, index) => (
             <motion.div
               key={item.year}
@@ -87,7 +85,6 @@ export default function AboutMe() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative pl-12 pb-4 last:pb-0"
             >
-              {/* 타임라인 도트 */}
               <div className="absolute left-0 w-8 h-8 rounded-full bg-surface  border-2 border-primary  flex items-center justify-center">
                 {item.icon}
               </div>
