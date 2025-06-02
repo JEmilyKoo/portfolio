@@ -98,7 +98,7 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
       { label: '빌드 시간', value: '94.7% 단축' }
     ],
     technologies: ['React Native', 'Redux', 'WebSocket', 'S3', 'Gradle', 'Figma', 'Notion'],
-    githubUrl: 'https://github.com/JEmilyKoo/dawatta',
+    githubUrl: 'https://github.com/JEmilyKoo/dawata',
     image: ['/images/dawata.png','/images/dawata (1).png', '/images/dawata (2).png', '/images/dawata (3).png', '/images/dawata (4).png', '/images/dawata (5).png','/images/dawata (6).png','/images/dawata (7).png' ,'/images/dawata (8).png','/images/dawata (9).png', '/images/dawata (10).png', '/images/dawata (11).png'],
     troubleshooting: [
       {
