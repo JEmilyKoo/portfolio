@@ -99,7 +99,7 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
     ],
     technologies: ['React Native', 'Redux', 'WebSocket', 'S3', 'Gradle', 'Figma', 'Notion'],
     githubUrl: 'https://github.com/JEmilyKoo/dawatta',
-    image: ['/images/dawata.jpg'],
+    image: ['/images/dawata.png','/images/dawata (1).png', '/images/dawata (2).png', '/images/dawata (3).png', '/images/dawata (4).png', '/images/dawata (5).png','/images/dawata (6).png','/images/dawata (7).png' ,'/images/dawata (8).png','/images/dawata (9).png', '/images/dawata (10).png', '/images/dawata (11).png'],
     troubleshooting: [
       {
         title: 'Redux 기반 비동기 UI 적용으로 장소 추천 API 응답 속도 99.8% 개선 (240초 → 0.5초)',
@@ -132,8 +132,8 @@ content : `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일
       { label: 'OpenAI', value: '토큰 최적화' }
     ],
     technologies: ['Vue3', 'Spring Boot', 'OpenAI', 'WebSocket', 'TMap', 'AI', 'Figma'],
-    githubUrl: 'https://github.com/JEmilyKoo/trip-manager-ai',
-    image: ['/images/tm.png'],
+    githubUrl: 'https://github.com/SSAFY-12th-18c-TripManager/FE',
+    image: ['/images/tm.png','/images/tm2.png','/images/tm3.png','/images/tm4.png'],
     troubleshooting: [
       {
         title: 'STT 기능을 AI를 사용하고 RestAPI를 사용할 경우 딜레이 과다 발생',
