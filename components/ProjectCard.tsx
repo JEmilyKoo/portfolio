@@ -220,8 +220,12 @@ export default function ProjectCard({
                         />
                       ))}
                     </div>
+           
                   </>
-                )}
+                )} 
+                <div className='p-2 absolute top-2 bg-white rounded-full opacity-80 right-2 flex items-center gap-2'>
+                  <FaSearchPlus className='text-primary text-xl' />
+                </div>
               </>
             ) : (
               <div className="w-full h-full flex items-center justify-center text-subText ">
