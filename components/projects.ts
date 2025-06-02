@@ -159,6 +159,7 @@ const projects: Project[] = [
       '/images/dawata (9).png',
       '/images/dawata (10).png',
       '/images/dawata (11).png',
+      '/images/dawata (12).png',
     ],
     troubleshooting: [
       {
@@ -257,7 +258,15 @@ const projects: Project[] = [
       'Inno Setup',
       'MariaDB',
     ],
-    image: ['/images/ezTalk.png'],
+    image: [
+      '/images/bizmekatalk (1).jpg',
+      '/images/bizmekatalk (2).jpg',
+      '/images/bizmekatalk (3).jpg',
+      '/images/bizmekatalk (4).jpg',
+      '/images/bizmekatalk (5).jpg',
+      '/images/bizmekatalk (6).jpg',
+      '/images/bizmekatalk (7).jpg',
+    ],
     troubleshooting: [
       {
         title: '일부 환경에서 절전모드 미인식',
@@ -298,7 +307,7 @@ const projects: Project[] = [
       'Inno Setup',
       'MariaDB',
     ],
-    image: ['/images/pratama.png'],
+    image: ['/images/pratama.jpg'],
     troubleshooting: [
       {
         title: '날짜 표기 방식 불일치',
@@ -336,7 +345,7 @@ const projects: Project[] = [
       'Pascal',
       'Inno Setup',
     ],
-    image: ['/images/kaoni.png'],
+    image: ['/images/kumtalk.jpg', '/images/kumtalk2.jpg'],
     troubleshooting: [
       {
         title: '메시지 내 링크 검색 시 UI 깨짐 현상',
