@@ -151,9 +151,9 @@ export default function ProjectCard({
 
             {metrics && metrics.length > 0 && (
               <div className="grid grid-cols-2 gap-4">
-                {metrics.map((metric, index) => (
+                {metrics.map((metric) => (
                   <div
-                    key={index}
+                    key={metric.label}
                     className="rounded-xl p-4 text-center">
                     <div className="text-lg font-bold text-primary ">
                       {metric.value}
@@ -233,9 +233,9 @@ export default function ProjectCard({
                       <FaChevronRight />
                     </button>
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                      {image.map((_, index) => (
+                      {image.map((imgSrc, index) => (
                         <button
-                          key={index}
+                          key={imgSrc + '-' + index}
                           onClick={(e) => {
                             e.stopPropagation()
                             setCurrentImageIndex(index)
@@ -265,9 +265,9 @@ export default function ProjectCard({
         </div>
         <div className="flex flex-wrap gap-2 justify-center items-center">
           <div className="w-3/4 flex flex-wrap gap-2 justify-center items-center">
-            {technologies.map((tech, index) => (
+            {technologies.map((tech) => (
               <span
-                key={index}
+                key={tech}
                 className="px-3 py-1 text-sm font-medium bg-primary/10  text-primary  rounded-full border border-primary/20 ">
                 {tech}
               </span>
@@ -277,25 +277,23 @@ export default function ProjectCard({
         {troubleshooting && troubleshooting.length > 0 && (
           <div className="p-6 mt-6 space-y-4">
             <h4 className="text-lg font-semibold text-text">트러블 슈팅</h4>
-            {troubleshooting.map((item, index) => (
+            {troubleshooting.map((item) => (
               <div
-                key={index}
+                key={item.title}
                 className="bg-background rounded-xl p-3">
                 <h5 className="text-success mb-2 font-bold leading-snug">
                   {item.title}
                 </h5>
                 <div className="p-1 text-sm font-normal leading-relaxed tracking-tight text-subText whitespace-pre-wrap inline-block">
                   {item.content.map((content, index) => (
-                    <>
+                    <span key={content.text ?? `${content.icon}-${index}`}>
                       {content.icon && renderIcon(content.icon)}
                       {content.text && (
-                        <span
-                          key={`${index}`}
-                          className={content?.className ?? ''}>
+                        <span className={content?.className ?? ''}>
                           {content?.text}
                         </span>
                       )}
-                    </>
+                    </span>
                   ))}
                 </div>
               </div>
@@ -343,9 +341,9 @@ export default function ProjectCard({
                     <FaChevronRight size={24} />
                   </button>
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                    {image.map((_, index) => (
+                    {image.map((imgSrc, index) => (
                       <button
-                        key={index}
+                        key={imgSrc + '-' + index}
                         onClick={(e) => {
                           e.stopPropagation()
                           setCurrentImageIndex(index)

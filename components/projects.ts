@@ -130,7 +130,7 @@ const projects: Project[] = [
           },
           {
             text: `에 안전하게 저장  
-               - 로그인 성공 메시지를 띄운 뒤, WebView에 postMessage로 로그인 상태 전달 및 initFetchData 트리거 실행\n`,
+               - 로그인 성공 메시지를 띄운 뒤, 로컬 서버를 통해 VSCode Extension 내부로 상태 전달 및 initFetchData 트리거 실행\n`,
           },
           {
             icon: 'result',
@@ -198,37 +198,34 @@ const projects: Project[] = [
         ],
       },
       {
-        title: '프롬프트 전환 시 WebView 상태 초기화 실패',
+        title: '프롬프트 전환 시 입력 상태 초기화 실패',
         content: [
           {
             icon: 'issue',
           },
           {
-            text: '기존 프롬프트를 선택한 후 새로운 프롬프트로 전환하면 form과 preview 화면의 입력값이 초기화되지 않음\n',
+            text: '프롬프트 전환 후에도 form 값이 이전 상태에 머무름\n',
           },
           {
             icon: 'cause',
           },
           {
-            text: 'React Hook Form의 reset 타이밍이 form 초기값(defaultPrompt)의 변화를 감지하지 못함. 값은 바뀌었지만 사용자 입력 필드에 반영되지 않음\n',
+            text: 'React Hook Form의 reset 타이밍이 form 초기값(defaultPrompt)의 변화를 감지하지 못함.\n',
           },
           {
             icon: 'solution',
           },
           {
-            text: 'form 초기값을 useMemo로 캐싱하고, useRef + JSON.stringify로 이전 상태와 비교해 변경 감지\n',
+            text: '- defaultPrompt 변경 시 useMemo + useRef로 변경 감지 → reset() 호출로 폼 초기화\n',
           },
           {
-            text: 'useEffect로 reset을 트리거해 form 필드 상태를 명확하게 초기화\n',
-          },
-          {
-            text: 'prompt 전환 시 postMessage를 통해 preview WebView에도 선택된 prompt를 동기화\n',
+            text: `               - preview에는 postMessage로 전환된 prompt 정보 전달하여 UI 동기화\n`,
           },
           {
             icon: 'result',
           },
           {
-            text: '프롬프트 전환 시 form과 preview가 일관되게 갱신되어, 사용자 혼란 없이 작업 가능\n',
+            text: '프롬프트 전환 시 UI 전체가 정확하게 초기화되어 사용자 혼란 제거\n',
           },
           {
             icon: 'learned',
@@ -239,7 +236,7 @@ const projects: Project[] = [
         ],
       },
       {
-        title: 'snapshot 변경 후 preview 및 form 상태 미반영 이슈',
+        title: '스냅샷 변경 사항 실시간 반영 누락',
         content: [
           {
             icon: 'issue',
@@ -257,10 +254,7 @@ const projects: Project[] = [
             icon: 'solution',
           },
           {
-            text: '커스텀 훅에서 snapshotList를 object map 형태로 재구성하고, attachId:snapshotId 기준으로 병합 처리\n',
-          },
-          {
-            text: 'snapshot 변경이 발생하면 postMessage를 통해 모든 WebView에 동기화 트리거 실행\n',
+            text: `- attachId 기준으로 snapshotList와 병합 후 form 갱신 후 동기화 유도\n`,
           },
           {
             icon: 'result',
