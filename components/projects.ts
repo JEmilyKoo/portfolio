@@ -254,7 +254,7 @@ const projects: Project[] = [
             icon: 'solution',
           },
           {
-            text: `- attachId 기준으로 snapshotList와 병합 후 form 갱신 후 동기화 유도\n`,
+            text: `attachId 기준으로 snapshotList와 병합 후 form 갱신 후 동기화 유도\n`,
           },
           {
             icon: 'result',
