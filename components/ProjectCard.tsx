@@ -11,27 +11,14 @@ import {
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-
-export interface Project {
-  title: string
-  period: string
-  role: string
-  description: string
-  metrics?: {
-    label: string
-    value: string
-  }[]
-  technologies: string[]
-  githubUrl?: string
-  demoUrl?: string
-  image?: string[]
-  video?: string
-  troubleshooting?: {
-    title: string
-    content: string
-  }[]
-  team: string
-}
+import { Project } from '@/types/project'
+import {
+  FaBolt,
+  FaBookOpen,
+  FaScrewdriverWrench,
+  FaMagnifyingGlass,
+  FaTriangleExclamation,
+} from 'react-icons/fa6'
 
 export default function ProjectCard({
   title,
@@ -93,6 +80,48 @@ export default function ProjectCard({
     setCurrentImageIndex((prev) => (prev + 1) % image.length)
   }
 
+  function renderIcon(icon?: string) {
+    switch (icon) {
+      case 'result':
+        return (
+          <>
+            <FaBolt className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <span className="trouble-label">성과</span>
+          </>
+        )
+      case 'learned':
+        return (
+          <>
+            <FaBookOpen className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <span className="trouble-label">회고</span>
+          </>
+        )
+      case 'solution':
+        return (
+          <>
+            <FaScrewdriverWrench className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <span className="trouble-label">해결</span>
+          </>
+        )
+      case 'cause':
+        return (
+          <>
+            <FaMagnifyingGlass className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <span className="trouble-label">원인</span>
+          </>
+        )
+      case 'issue':
+        return (
+          <>
+            <FaTriangleExclamation className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <span className="trouble-label">현상</span>
+          </>
+        )
+      default:
+        return null
+    }
+  }
+
   return (
     <>
       <motion.article
@@ -100,7 +129,7 @@ export default function ProjectCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-surface  rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+        className="bg-surface  rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           <div className="space-y-4">
             <div>
@@ -125,7 +154,7 @@ export default function ProjectCard({
                 {metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className="bg-background  rounded-xl p-4 text-center">
+                    className="rounded-xl p-4 text-center">
                     <div className="text-lg font-bold text-primary ">
                       {metric.value}
                     </div>
@@ -164,7 +193,6 @@ export default function ProjectCard({
             onClick={handleImageClick}>
             {image && image.length > 0 ? (
               <>
-                {' '}
                 {image && (
                   <div>
                     <Image
@@ -252,10 +280,23 @@ export default function ProjectCard({
             {troubleshooting.map((item, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-4">
-                <h5 className="font-medium text-primary mb-2">{item.title}</h5>
-                <div className="text-sm text-subText whitespace-pre-line">
-                  {item.content}
+                className="bg-background rounded-xl p-3">
+                <h5 className="text-success mb-2 font-bold leading-snug">
+                  {item.title}
+                </h5>
+                <div className="p-1 text-sm font-normal leading-relaxed tracking-tight text-subText whitespace-pre-wrap inline-block">
+                  {item.content.map((content, index) => (
+                    <>
+                      {content.icon && renderIcon(content.icon)}
+                      {content.text && (
+                        <span
+                          key={`${index}`}
+                          className={content?.className ?? ''}>
+                          {content?.text}
+                        </span>
+                      )}
+                    </>
+                  ))}
                 </div>
               </div>
             ))}

@@ -1,4 +1,4 @@
-import { Project } from './ProjectCard'
+import { Project } from '@/types/project'
 
 const projects: Project[] = [
   {
@@ -19,10 +19,11 @@ const projects: Project[] = [
       'React',
       'Next.js',
       'TypeScript',
-      'Tailwind CSS',
+      'Tailwind',
       'Notion API',
       'Jenkins',
       'Figma',
+      'React Hook Form',
       'UX Writing',
     ],
     githubUrl: 'https://github.com/JEmilyKoo/Vibe_Editor',
@@ -34,31 +35,249 @@ const projects: Project[] = [
     ],
     troubleshooting: [
       {
-        title: 'vscode extension과 Tailwind 연결 시 충돌 해결',
-        content: `- tailwind를 사용하면 vscode theme의 변경을 인식할 수 없음
-        - 색상을 제외한 영역에만 tailwind 사용
-        - vscode theme을 실시간으로 수집하는 global css를 추가하여 해결`,
+        title:
+          'Redux의 WebView 전용 구조로 인해 VSCode Extension 전역 상태 공유에 실패',
+        content: [
+          {
+            icon: 'issue',
+          },
+          {
+            text: `Webview에서 Redux로 관리하던 전역 상태 데이터가 TreeView 등의 다른 영역에서 동기화되지 않음\n`,
+          },
+          {
+            icon: 'cause',
+          },
+          {
+            text: `Redux는 React 기반 WebView 내부에서만 동작`,
+            className: 'trouble-important',
+          },
+          {
+            text: `하며, WebView 간 또는 TreeView 등 외부 UI 컴포넌트에서는 Redux state 접근이 불가\n`,
+          },
+          {
+            icon: 'solution',
+          },
+          {
+            text: `- ExtensionContext.globalState(VSCode Extension의 전역 저장소)를 사용해 공통 상태 데이터를 저장
+               - getLocalTemplates(), getLocalTemplate() 등 유틸 함수를 생성해 상태 읽기/갱신 로직 구현
+               - `,
+          },
+          {
+            text: `postMessage`,
+            className: 'trouble-important',
+          },
+          {
+            text: `로 상태 변경을 통지해, 다른 WebView도 동기화
+               - 사용자 설정은 VSCode 설정 API를 래핑한 클래스로 전역 관리하며, settings.json에 저장\n`,
+          },
+          {
+            icon: 'result',
+          },
+          {
+            text: `- Webview, TreeView 등 Extension 전역에서 `,
+          },
+          {
+            text: `상태 일관성 확보\n`,
+            className: 'trouble-important',
+          },
+          {
+            text: `               - 모든 워크스페이스에서 캐시 데이터 공유
+               - 데이터 동기화코드를 별도 함수로 분리, 반복 코드 최소화
+               - 로그아웃 시 캐시·secret 일괄 초기화로 데이터 잔존 문제 방지\n`,
+          },
+          {
+            icon: 'learned',
+          },
+          {
+            text: `캐시 데이터의 호출 실패 시 경고 메시지에 재시도 또는 설정 확인 등의 해결책까지 명시하면 사용자 혼란을 줄이고 UX 완성도가 높아졌을 것`,
+          },
+        ],
       },
       {
         title:
-          'vscode extension에서 전역으로 사용할 경우 react의 저장소를 사용할 수 없음',
-        content: `- globalState에 저장, 모든 워크스페이스에서 캐시 데이터 공유
-        - configuration을 별도 구현해 설정 파일 백업 구현
-        - vscode secret storage에 accessToken 저장, 외부 유출 위험 감소`,
+          'VSCode Extension의 쿠키 미지원으로 Oauth2 리디렉션 토큰 처리 실패',
+        content: [
+          {
+            icon: 'issue',
+          },
+          {
+            text: `Oauth2 인증 후 AccessToken을 쿠키에 담아 전달하더라도, VSCode Extension 내부에서는 해당 쿠키에 접근할 수 없어 인증 불가\n`,
+          },
+          {
+            icon: 'cause',
+          },
+          {
+            text: ` VSCode Extension은 WebView가 iframe + sandbox 환경에서 동작하며, 쿠키/세션이 차단됨\n`,
+          },
+          {
+            icon: 'solution',
+          },
+          {
+            text: `- 클라이언트인 VSCode Extension 내에서 `,
+          },
+          {
+            text: `로컬 서버를 실행`,
+            className: 'trouble-important',
+          },
+          {
+            text: `(localhost:5013)함
+               - 외부 브라우저에서 로컬 서버를 열고 AccessToken을 URL 파라미터로 전달받아 직접 수신하도록 처리  
+               - 서버는 /callback 엔드포인트로 AccessToken을 전달받아, Extension 내부의 `,
+          },
+          {
+            text: `secret storage`,
+            className: 'trouble-important',
+          },
+          {
+            text: `에 안전하게 저장  
+               - 로그인 성공 메시지를 띄운 뒤, WebView에 postMessage로 로그인 상태 전달 및 initFetchData 트리거 실행\n`,
+          },
+          {
+            icon: 'result',
+          },
+          {
+            text: `- 외부 토큰 유출 없이 Extension 내부에 AccessToken 저장 가능  
+               - 인증 상태를 모든 WebView에 일관되게 전파하여 사용자 흐름 유지\n`,
+          },
+          {
+            icon: 'learned',
+          },
+          {
+            text: `정적 포트(5013) 대신 동적 포트를 사용했다면 포트 충돌 가능성 없이 더 안전하게 서버를 열 수 있었을 것`,
+          },
+        ],
       },
       {
-        title: 'vscode extension의 쿠키 미지원 이슈로 인한 Oauth2 오류',
-        content: `- 로그인할 때마다 vscode extension 내부에서 localhost 서버를 오픈
-        - 클라이언트를 서버화하는 방식으로 accessToken을 redirect 처리, 외부 노출 위험 최소화`,
+        title:
+          'Tailwind의 빌드 타임 색상 정의가 VSCode 테마의 실시간 반영을 막는 이슈',
+        content: [
+          {
+            icon: 'issue',
+          },
+          {
+            text: `VSCode의 테마를 바꿔도, Extension 내의 색상이 즉시 반영되지 않고 프로그램 재시작 후에야 적용됨\n`,
+          },
+          {
+            icon: 'cause',
+          },
+          {
+            text: `테마 색상은 CSS 변수(var)로 제공되는데, Tailwind config의 theme 속성에 정의된 색상은 `,
+          },
+          {
+            text: `빌드 타임에만 적용`,
+            className: 'trouble-important',
+          },
+          {
+            text: `되어 `,
+          },
+          {
+            text: `런타임의 변수 변경`,
+            className: 'trouble-important',
+          },
+          {
+            text: `을 감지하지 못함\n`,
+          },
+          {
+            icon: 'solution',
+          },
+          {
+            text: `색상 관련 CSS는 별도의 global.css에서 정의하고, 테마 변수(var(--vscode-foreground) 등)를 직접 참조하도록 구성. Tailwind는 레이아웃·여백·타이포 등 비색상 영역에서만 사용\n`,
+          },
+          {
+            icon: 'result',
+          },
+          {
+            text: `테마 변경이 즉시 반영되어, 재시작 없이 UX 흐름 유지 가능 (변경 반영 시간 0.1초 이내)\n`,
+          },
+          {
+            icon: 'learned',
+          },
+          {
+            text: `색상 클래스 정의 시 Tailwind의 명명 규칙(bg-, text-)을 활용했다면 CSS 유지보수성과 일관성을 더 확보할 수 있었을 것\n`,
+          },
+        ],
       },
       {
-        title: '프롬프트 분기처리로 AI 채팅 퀄리티 상승',
-        content: `- 프롬프트 내에서, 파일을 넣지 않았을 때에도 파일 내용을 바탕으로 답하라고 지시했을 경우 에러 발생
-    -  파일이 없다는 것에 치중해 답을 하여 퀄리티 저하
-- 프롬프트 자체 분기처리`,
+        title: '프롬프트 전환 시 WebView 상태 초기화 실패',
+        content: [
+          {
+            icon: 'issue',
+          },
+          {
+            text: '기존 프롬프트를 선택한 후 새로운 프롬프트로 전환하면 form과 preview 화면의 입력값이 초기화되지 않음\n',
+          },
+          {
+            icon: 'cause',
+          },
+          {
+            text: 'React Hook Form의 reset 타이밍이 form 초기값(defaultPrompt)의 변화를 감지하지 못함. 값은 바뀌었지만 사용자 입력 필드에 반영되지 않음\n',
+          },
+          {
+            icon: 'solution',
+          },
+          {
+            text: 'form 초기값을 useMemo로 캐싱하고, useRef + JSON.stringify로 이전 상태와 비교해 변경 감지\n',
+          },
+          {
+            text: 'useEffect로 reset을 트리거해 form 필드 상태를 명확하게 초기화\n',
+          },
+          {
+            text: 'prompt 전환 시 postMessage를 통해 preview WebView에도 선택된 prompt를 동기화\n',
+          },
+          {
+            icon: 'result',
+          },
+          {
+            text: '프롬프트 전환 시 form과 preview가 일관되게 갱신되어, 사용자 혼란 없이 작업 가능\n',
+          },
+          {
+            icon: 'learned',
+          },
+          {
+            text: '폼 상태 관리를 위해 FormProvider를 적용했다면 중복된 훅 구조나 reset 타이밍 제어를 더 쉽게 처리할 수 있었을 것\n',
+          },
+        ],
+      },
+      {
+        title: 'snapshot 변경 후 preview 및 form 상태 미반영 이슈',
+        content: [
+          {
+            icon: 'issue',
+          },
+          {
+            text: 'TreeView에서 snapshot을 추가하거나 수정해도, form과 preview에 즉시 반영되지 않음\n',
+          },
+          {
+            icon: 'cause',
+          },
+          {
+            text: '폼에 사용되는 snapshot 데이터는 defaultPrompt 내 snapshotAttachList와 별도로 관리되어 동기화가 누락됨\n',
+          },
+          {
+            icon: 'solution',
+          },
+          {
+            text: '커스텀 훅에서 snapshotList를 object map 형태로 재구성하고, attachId:snapshotId 기준으로 병합 처리\n',
+          },
+          {
+            text: 'snapshot 변경이 발생하면 postMessage를 통해 모든 WebView에 동기화 트리거 실행\n',
+          },
+          {
+            icon: 'result',
+          },
+          {
+            text: 'form과 preview가 snapshot 추가/삭제 직후에도 정확히 반영되어, 실시간 UX 유지\n',
+          },
+          {
+            icon: 'learned',
+          },
+          {
+            text: 'snapshot 변경 이후 서버 반영까지 자동 처리되도록 debounce 흐름과 자동 저장 로직이 병행되었으면 더욱 완성도 높은 UX를 제공할 수 있었을 것\n',
+          },
+        ],
       },
     ],
-    team: '6명(기여도 25%)',
+    team: '6명(기여도 25%) †',
   },
   {
     title: 'Chain G',
@@ -77,6 +296,8 @@ const projects: Project[] = [
       'Redux Toolkit',
       'D3.js',
       'PWA',
+      'Emotion',
+      'React Hook Form',
       'Service Worker',
       'FCM',
       'Design System',
@@ -95,33 +316,53 @@ const projects: Project[] = [
     troubleshooting: [
       {
         title: '로딩 페이지의 속도 개선',
-        content: `- 로딩 페이지의 가벼운 구성
+        content: [
+          {
+            text: `- 로딩 페이지의 가벼운 구성
          - 로딩 페이지에서만 Emotion 제거
     - HTML/CSS 기반 SVG 애니메이션으로 구성 → 초기 화면 빠르게 노출
     - 배경 이미지 대신 CSS 그라데이션 적용 → 사용자 이탈 방지`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'PWA, Service Worker 적용해 웹앱 최적화',
-        content: `- 푸시 알림 기능 추가
+        content: [
+          {
+            text: `- 푸시 알림 기능 추가
     - Service Worker로 SVG·폰트 캐싱 적용
     - 홈화면 추가 시 즉시 실행 가능 (PWA)`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: '메인 페이지 로딩 속도 99.47% 개선 (7초 → 0.37초)',
-        content: `- 리소스 용량 최소화
+        content: [
+          {
+            text: `- 리소스 용량 최소화
     - PNG → SVG 변환으로 이미지 용량 대폭 절감
     - 디자인 시스템 기반으로 폰트 굵기 3종 제한 → 웹폰트 로딩 최소화
 - 불필요한 렌더링 최소화
     - 공지 컴포넌트 분리로 초기 렌더 부담 감소
 - 캐시 최적화 및 PWA 대응`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'API 구조 일원화로 인증·에러 처리 자동화 및 타입 안전성 확보',
-        content: `- 단일 axios 인스턴스 구성: 모든 API 요청을 api.ts에 정의된 axios 인스턴스로 처리
+        content: [
+          {
+            text: `- 단일 axios 인스턴스 구성: 모든 API 요청을 api.ts에 정의된 axios 인스턴스로 처리
 - 인터셉터 기반 인증·에러 처리: Redux에서 accessToken을 자동 주입, handleDefaultError()로 상태 코드별 에러 모달 일관 처리
 - 제네릭 API 함수 구성: getRequest<T>, postRequest<T> 등으로 모든 API 응답을 타입 안전하게 처리
 - 공통 응답 스키마 설계: 백엔드와 협의하여 success/fail 구조 통일, ApiResponse<T>로 응답 구조 정형화
 - 결과: 인증 흐름 단순화, 에러 처리 중복 제거, 유지보수성과 개발 효율 향상`,
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '6명(기여도 20%)',
@@ -140,6 +381,8 @@ const projects: Project[] = [
       'React Native',
       'Redux',
       'WebSocket',
+      'NativeWind',
+      'React Hook Form',
       'S3',
       'Gradle',
       'Figma',
@@ -165,20 +408,35 @@ const projects: Project[] = [
       {
         title:
           'Redux 기반 비동기 UI 적용으로 장소 추천 API 응답 속도 99.8% 개선 (240초 → 0.5초)',
-        content: `- 장소 추천 API 응답이 4분 걸려 UX 저하 문제 발생
+        content: [
+          {
+            text: `- 장소 추천 API 응답이 4분 걸려 UX 저하 문제 발생
 - 사용자가 기다리지 않도록 먼저 약속 기본 정보를 입력하도록 개선
 - Redux 캐싱을 활용해 기존 추천 장소를 즉시 노출, 이후 백그라운드에서 최신 데이터 갱신
 - Redux Persist Storage를 적용하여 재접속 시에도 추천 내역 유지, 중복 API 요청 방지`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'Amazon S3 Presigned URL을 활용한 이미지 업로드 개선',
-        content: `- Presigned URL을 사용한 프로필 이미지 업로드 과정에서 바이너리 데이터 인증 오류 발생
+        content: [
+          {
+            text: `- Presigned URL을 사용한 프로필 이미지 업로드 과정에서 바이너리 데이터 인증 오류 발생
 - 업로드 전 이미지 리사이징 및 PNG 변환 적용 → 서버가 요구하는 확장자 규격을 준수하도록 수정`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'CI/CD 자동화 및 APK 빌드 속도 개선',
-        content: `- Android Native Module, FCM, Kakao SDK 추가 후 빌드 시간이 급격히 증가(38분 소요)
+        content: [
+          {
+            text: `- Android Native Module, FCM, Kakao SDK 추가 후 빌드 시간이 급격히 증가(38분 소요)
 - Gradle 빌드 최적화 적용 →APK 빌드 시간 94.7% 단축 (38분 → 2분)`,
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '6명(기여도 20%)',
@@ -213,19 +471,34 @@ const projects: Project[] = [
       {
         title:
           'STT 기능을 AI를 사용하고 RestAPI를 사용할 경우 딜레이 과다 발생',
-        content: `- STT를 브라우저 내장 기능으로 사용하되, 무음 인식 교정 컴포넌트 추가 구현
+        content: [
+          {
+            text: `- STT를 브라우저 내장 기능으로 사용하되, 무음 인식 교정 컴포넌트 추가 구현
 - RestAPI 대신 WebSocket을 이용해 속도 최적화`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title:
           'WebSocket으로 소리와 JSON을 동시에 보낼 경우 Spring 핸들러 미인식 오류',
-        content: `- STT : FE단에서 처리하고 TextMessage만 BE로 전송
+        content: [
+          {
+            text: `- STT : FE단에서 처리하고 TextMessage만 BE로 전송
 - TTS :  BianaryMessage를 AudioBlob 형식으로 전송함과 동시에 해당 Json을 TextMessage로 전송한 뒤 싱크 맞추기 작업 추가`,
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: '프롬프트가 길 경우 Open AI 타임 아웃 이슈 발생',
-        content: `- 프롬프트 엔지니어링을 이용한 토큰 최적화
+        content: [
+          {
+            text: `- 프롬프트 엔지니어링을 이용한 토큰 최적화
 - 실제로 다루는 메시지의 가공을 통한 토큰 수 최적화`,
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '2명(기여도 55%)',
@@ -270,13 +543,21 @@ const projects: Project[] = [
     troubleshooting: [
       {
         title: '일부 환경에서 절전모드 미인식',
-        content:
-          'Windows OS별 절전모드 구현 차이를 고려해 와이파이 변경 감지 기능을 수정함',
+        content: [
+          {
+            text: 'Windows OS별 절전모드 구현 차이를 고려해 와이파이 변경 감지 기능을 수정함',
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'Webview의 새 창끼리의 데이터 동기화 문제',
-        content:
-          'Session Storage를 활용하여 Webview 간 데이터 동기화 기능 구현',
+        content: [
+          {
+            text: 'Session Storage를 활용하여 Webview 간 데이터 동기화 기능 구현',
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '㈜가온아이 MI개발부',
@@ -311,12 +592,21 @@ const projects: Project[] = [
     troubleshooting: [
       {
         title: '날짜 표기 방식 불일치',
-        content: '인도네시아 언어의 특성을 고려하여 날짜 형식을 재조정함',
+        content: [
+          {
+            text: '인도네시아 언어의 특성을 고려하여 날짜 형식을 재조정함',
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'UI 대비 과도한 번역 문자열',
-        content:
-          'UI를 반응형으로 수정하고, 번역문 조정 작업을 외부 번역 인력과 조율하여 해결함',
+        content: [
+          {
+            text: 'UI를 반응형으로 수정하고, 번역문 조정 작업을 외부 번역 인력과 조율하여 해결함',
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '㈜가온아이',
@@ -349,11 +639,21 @@ const projects: Project[] = [
     troubleshooting: [
       {
         title: '메시지 내 링크 검색 시 UI 깨짐 현상',
-        content: 'DOM 구조 분석 후 CSS 리팩토링을 통해 해결',
+        content: [
+          {
+            text: 'DOM 구조 분석 후 CSS 리팩토링을 통해 해결',
+            className: 'text-sm',
+          },
+        ],
       },
       {
         title: 'Props 남용으로 인한 중복 코드',
-        content: '이벤트 버스를 활용한 코드 리팩토링으로 중복 제거',
+        content: [
+          {
+            text: '이벤트 버스를 활용한 코드 리팩토링으로 중복 제거',
+            className: 'text-sm',
+          },
+        ],
       },
     ],
     team: '㈜가온아이 MI개발부',
