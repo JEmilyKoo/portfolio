@@ -419,7 +419,7 @@ const projects: Project[] = [
   },
   {
     title: '다와따',
-    period: '2025.01 ~ 2024.02 (7주)',
+    period: '2025.01 ~ 2025.02 (7주)',
     role: 'Frontend Lead / UI·UX Designer',
     description:
       '실시간 위치 공유 및 최적 장소 추천을 통해 약속 시간을 효율적으로 조율하는 서비스',
