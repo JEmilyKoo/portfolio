@@ -558,13 +558,10 @@ const projects: Project[] = [
     period: '2021.11 ~ 2024.01',
     role: `    개발: 조직도/그룹/쪽지/메신저 기능 FE 전담 개발
     유지 보수: 오류 수정, QA, 배포(Paskal로 설치 파일 제작)
-    R&D : UI/UX의 편의성 증가, 접기  기능 개발`,
+    R&D : UI/UX의 편의성 증가, 접기 기능 개발`,
     description:
       '그룹웨어 신규 솔루션의 PC 클라이언트 프론트엔드 개발과 운영을 담당. 쪽지 기능을 전담 개발하고, 설계 및 기술 스택 선정 단계부터 참여함. 고객사 요구에 따른 옵션 기능 구현과 SaaS 대응을 위해 SSR SPA 구조로 개발함.',
-    metrics: [
-      { label: '팀 규모', value: '3~6명' },
-      { label: '기여도', value: '30%' },
-    ],
+    metrics: [],
     technologies: [
       'JavaScript',
       'Vue.js',
@@ -610,7 +607,7 @@ const projects: Project[] = [
         ],
       },
     ],
-    team: '㈜가온아이 MI개발부',
+    team: '㈜가온아이 MI개발부 중 3~6명 (기여도 30%)',
   },
   {
     title: 'Pratama',
@@ -618,10 +615,7 @@ const projects: Project[] = [
     role: '다국어 처리, 리소스 파일 설계 및 적용, UI/UX 커스터마이징, QA 및 유지보수',
     description:
       '그룹웨어 솔루션의 글로벌 출시를 위한 다국어 지원 및 커스터마이징 프로젝트. PC와 모바일 리소스를 통합하고, 반응형 UI로 개편. 사용자 기본 언어 기반 설치 파일 제작 등 전반적인 다국어 대응 체계를 구축함.',
-    metrics: [
-      { label: '팀 규모', value: '4명 + 외부 번역 인력' },
-      { label: '기여도', value: '60%' },
-    ],
+    metrics: [],
     technologies: [
       'JavaScript',
       'Vue.js',
@@ -659,7 +653,7 @@ const projects: Project[] = [
         ],
       },
     ],
-    team: '㈜가온아이',
+    team: '㈜가온아이 MI개발부 중 4명 + 외부 번역 인력 (기여도 60%)',
   },
   {
     title: 'KumTalk',
