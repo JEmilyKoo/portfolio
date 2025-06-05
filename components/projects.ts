@@ -309,52 +309,108 @@ const projects: Project[] = [
     ],
     troubleshooting: [
       {
+        title: '메인 페이지 로딩 성능 개선 (6.3분 → 398ms)',
+        content: [
+          { icon: 'issue' },
+          {
+            text: '메인 페이지 첫 진입 시 Finish 시간 기준 6.3분 이상 소요되며, 새로고침에도 캐시가 반영되지 않음\n',
+          },
+          { icon: 'cause' },
+          {
+            text: '초기 리소스가 PNG, 커스텀 폰트, 공지 렌더 등으로 과도하게 무거움 (164 requests, 3.7MB transferred)\n',
+          },
+          { icon: 'solution' },
+          {
+            text: '\n- 이미지 리소스를 PNG → SVG로 전환하여 용량 절감\n- 웹폰트는 굵기 3종만 포함해 로딩량 축소\n- 공지사항 컴포넌트는 비동기 로딩으로 전환\n- Service Worker 캐시 전략을 통해 재접속 시 리소스 재사용\n',
+          },
+          { icon: 'result' },
+          {
+            text: 'Finish 기준 6.3분 → 398ms로 개선 (약 99.9% 향상)\n',
+            className: 'trouble-important',
+          },
+          {
+            text: 'DOM 콘텐츠 로딩 시간도 148ms → 19ms로 감소해 반응성 크게 향상\n',
+          },
+          { icon: 'learned' },
+          {
+            text: '최초 진입과 새로고침 시 네트워크 로그를 분리해 관리하고, 캐시 대상 우선순위를 정하는 전략이 필요\n',
+          },
+        ],
+      },
+      {
         title: '로딩 페이지의 속도 개선',
         content: [
+          { icon: 'issue' },
           {
-            text: `- 로딩 페이지의 가벼운 구성
-         - 로딩 페이지에서만 Emotion 제거
-    - HTML/CSS 기반 SVG 애니메이션으로 구성 → 초기 화면 빠르게 노출
-    - 배경 이미지 대신 CSS 그라데이션 적용 → 사용자 이탈 방지`,
-            className: 'text-sm',
+            text: '초기 진입 시 홈 화면 렌더링에 398ms 이상 소요되며 사용자 이탈 발생\n',
+          },
+          { icon: 'cause' },
+          {
+            text: 'Emotion 스타일 컴포넌트, 외부 폰트, SVG 애니메이션이 초기 렌더링 블로킹 요소로 작동함\n',
+            className: 'trouble-important',
+          },
+          { icon: 'solution' },
+          {
+            text: '\n- 로딩 페이지는 별도 구성, Emotion 제거 후 순수 HTML/CSS로 전환\n- 배경 이미지 → CSS 그라데이션, 애니메이션은 inline SVG로 구성\n- 최초 진입 시 43 requests / 36.1kB / 4.3MB 리소스를 229ms 내 로딩\n',
+          },
+          { icon: 'result' },
+          {
+            text: '최초 진입 Finish 시간 기준, 398ms → 229ms로 단축\n',
+            className: 'trouble-important',
+          },
+          { icon: 'learned' },
+          {
+            text: '최초 페이지에는 스타일/이미지를 줄이고, HTML 기반 뼈대만 먼저 그리는 설계가 필수\n',
           },
         ],
       },
       {
         title: 'PWA, Service Worker 적용해 웹앱 최적화',
         content: [
+          { icon: 'issue' },
           {
-            text: `- 푸시 알림 기능 추가
-    - Service Worker로 SVG·폰트 캐싱 적용
-    - 홈화면 추가 시 즉시 실행 가능 (PWA)`,
-            className: 'text-sm',
+            text: '앱이 매번 리소스를 새로 불러오고, 알림 기능이 제공되지 않음\n',
           },
-        ],
-      },
-      {
-        title: '메인 페이지 로딩 속도 99.47% 개선 (7초 → 0.37초)',
-        content: [
+          { icon: 'cause' },
           {
-            text: `- 리소스 용량 최소화
-    - PNG → SVG 변환으로 이미지 용량 대폭 절감
-    - 디자인 시스템 기반으로 폰트 굵기 3종 제한 → 웹폰트 로딩 최소화
-- 불필요한 렌더링 최소화
-    - 공지 컴포넌트 분리로 초기 렌더 부담 감소
-- 캐시 최적화 및 PWA 대응`,
-            className: 'text-sm',
+            text: '캐싱 전략과 푸시 메시지 시스템이 부재\n',
+          },
+          { icon: 'solution' },
+          {
+            text: '\n- Service Worker 도입으로 SVG·폰트 등 정적 리소스 캐싱\n- FCM(Firebase Cloud Messaging) 연동으로 실시간 푸시 알림 구성\n- manifest.webmanifest 구성으로 홈 화면 추가(PWA)\n',
+          },
+          { icon: 'result' },
+          {
+            text: '웹앱 사용성을 모바일 네이티브에 근접하게 향상\n푸시 알림, 오프라인 대응, 빠른 실행이 가능해짐\n',
+          },
+          { icon: 'learned' },
+          {
+            text: 'PWA의 핵심은 UX 최적화가 아니라 캐시 전략과 네트워크 제어임\n',
           },
         ],
       },
       {
         title: 'API 구조 일원화로 인증·에러 처리 자동화 및 타입 안전성 확보',
         content: [
+          { icon: 'issue' },
           {
-            text: `- 단일 axios 인스턴스 구성: 모든 API 요청을 api.ts에 정의된 axios 인스턴스로 처리
-- 인터셉터 기반 인증·에러 처리: Redux에서 accessToken을 자동 주입, handleDefaultError()로 상태 코드별 에러 모달 일관 처리
-- 제네릭 API 함수 구성: getRequest<T>, postRequest<T> 등으로 모든 API 응답을 타입 안전하게 처리
-- 공통 응답 스키마 설계: 백엔드와 협의하여 success/fail 구조 통일, ApiResponse<T>로 응답 구조 정형화
-- 결과: 인증 흐름 단순화, 에러 처리 중복 제거, 유지보수성과 개발 효율 향상`,
-            className: 'text-sm',
+            text: 'API 호출 시마다 인증 토큰 주입과 에러 처리를 반복해야 함\n',
+          },
+          { icon: 'cause' },
+          {
+            text: 'axios 인스턴스 없이 각 API 파일마다 요청 설정을 따로 관리하고 있었음\n',
+          },
+          { icon: 'solution' },
+          {
+            text: '- api.ts에 단일 axios 인스턴스를 생성해 모든 API 요청을 통합\n- 인터셉터를 통해 accessToken 자동 주입, 에러 발생 시 공통 모듈 handleDefaultError() 호출\n- getRequest<T>, postRequest<T> 등 제네릭 기반의 API 함수로 타입 안정성 확보\n- 백엔드와 공통 응답 스키마(success/fail + data 구조) 협의해 ApiResponse<T>로 정형화\n',
+          },
+          { icon: 'result' },
+          {
+            text: 'API 인증 흐름이 단순화되고, 에러 처리 중복 제거로 유지보수성과 개발 속도 모두 향상됨\n',
+          },
+          { icon: 'learned' },
+          {
+            text: '초기 API 설계 단계에서 프론트-백 협업을 통한 구조 통일이 이후 전체 생산성을 좌우함\n',
           },
         ],
       },
