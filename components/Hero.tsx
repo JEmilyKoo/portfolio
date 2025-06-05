@@ -1,5 +1,5 @@
 'use client'
-
+import { FaExternalLinkAlt } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
@@ -18,7 +18,6 @@ export default function Hero() {
           <span className="block text-text ">구정은</span>
           <span className="block text-primary  mt-2">Emily Koo</span>
         </motion.h1>
-
         <motion.p
           className="text-xl md:text-2xl text-subText  mb-8 font-medium"
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +25,6 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}>
           사용자 경험에 진심인 실전형 프론트엔드 개발자
         </motion.p>
-
         <motion.p
           className="text-lg md:text-xl text-subText  mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +39,23 @@ export default function Hero() {
           <span className="font-semibold text-accent ">레디메이드 개발자</span>
           입니다.
         </motion.p>
-
+        <motion.p
+          className="text-lg md:text-xl text-subText  mb-12 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}>
+          <span className="font-semibold text-accent">
+            해당 PDF는 웹페이지에서 더 편하게 감상하실 수 있습니다.
+            <a
+              href="https://portfolio-beta-seven-87.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center ml-2 underline text-blue-600 hover:text-blue-800">
+              바로가기
+              <FaExternalLinkAlt className="ml-1" />
+            </a>
+          </span>
+        </motion.p>
         <motion.div
           className="flex flex-col flex-wrap gap-2 mb-12 justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
@@ -87,6 +101,11 @@ export default function Hero() {
               Figma
             </span>
             <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
+              Design System
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
               DB
             </span>
             <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
@@ -97,7 +116,6 @@ export default function Hero() {
             </span>
           </div>
         </motion.div>
-
         <motion.div
           className="flex flex-wrap gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
@@ -122,7 +140,18 @@ export default function Hero() {
             className="px-8 py-3 rounded-lg border border-accent text-accent   font-semibold text-base bg-surface  shadow-custom transition-all duration-200 hover:bg-accent hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent hover:scale-105">
             프로젝트 바로가기
           </a>
+          <a
+            href="https://portfolio-beta-seven-87.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center px-8 py-3 rounded-lg bg-primary text-white  font-semibold text-base ">
+            웹페이지에서 보기
+            <FaExternalLinkAlt className="ml-1" />
+          </a>
         </motion.div>
+        <div className="font-semibold text-2xl text-accent mt-4">
+          해당 PDF는 웹페이지에서 더 편하게 감상하실 수 있습니다.
+        </div>
       </motion.div>
     </section>
   )

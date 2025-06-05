@@ -61,13 +61,13 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="max-w-[900px] mx-auto mb-24 pt-8 px-4 flex flex-col items-center">
+      className="max-w-[900px] mx-auto mb-24 pt-8 px-4 mt-24 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-12">
+        className="text-center mb-12 pt-4">
         <Image
           src="/images/picture.jpg"
           alt="구정은 프로필"

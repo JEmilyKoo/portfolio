@@ -13,6 +13,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
     <section
       id="projects"
       className="max-w-[900px] mx-auto mb-24 pt-12 px-4">
+      <div className="h-[300px]"></div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
