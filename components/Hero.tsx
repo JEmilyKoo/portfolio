@@ -104,7 +104,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}>
           <a
-            href="https://github.com/JEmilyKoo/portfolio/blob/main/20250602%20%EA%B5%AC%EC%A0%95%EC%9D%80%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf"
+            href="https://github.com/JEmilyKoo/portfolio/blob/3096e7d37ef9f1cdf5b30a8ab35f2f0769a8aa7f/20250605%20%EA%B5%AC%EC%A0%95%EC%9D%80%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-lg bg-primary text-white  font-semibold text-base shadow-custom transition-all duration-200 hover:bg-accent hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary hover:scale-105">
