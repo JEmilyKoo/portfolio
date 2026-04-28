@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[80vh] pt-24 px-4 pb-16 bg-background text-text transition-colors  ">
+    <section className="flex flex-col items-center justify-center min-h-[80vh] pt-24 px-4 pb-16 bg-background text-text transition-colors w-full">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,28 +47,32 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}>
-          <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-              React
-            </span>
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-              Next.js
-            </span>
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-              TypeScript
-            </span>
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-              JavaScript
-            </span>
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-              Vue.js
-            </span>
-            <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
-              AI : Prompt Engineering
-            </span>
-            <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
-              AI : Agent Design
-            </span>
+          <div className="flex flex-wrap justify-center gap-2">
+            <div className="mb-3">
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                React
+              </span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                Next.js
+              </span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                TypeScript
+              </span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                JavaScript
+              </span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                Vue.js
+              </span>
+            </div>
+            <div className="mb-1">
+              <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
+                AI : Prompt Engineering
+              </span>
+              <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
+                AI : Agent Design
+              </span>
+            </div>
           </div>
           <div className="flex flex-wrap gap-2">
             <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
@@ -104,7 +108,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}>
           <a
-            href="https://github.com/JEmilyKoo/portfolio/blob/3096e7d37ef9f1cdf5b30a8ab35f2f0769a8aa7f/20250605%20%EA%B5%AC%EC%A0%95%EC%9D%80%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf"
+            href="https://github.com/JEmilyKoo/portfolio/blob/f91cb868af35910a1438933985615134ff4975d2/20260428%20%EA%B5%AC%EC%A0%95%EC%9D%80%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-lg bg-primary text-white  font-semibold text-base shadow-custom transition-all duration-200 hover:bg-accent hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary hover:scale-105">

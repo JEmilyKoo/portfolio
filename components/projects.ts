@@ -271,7 +271,7 @@ const projects: Project[] = [
         ],
       },
     ],
-    team: '6명(기여도 25%) †',
+    team: '6명(기여도 25%)',
   },
   {
     title: 'Chain G',

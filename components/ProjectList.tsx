@@ -24,7 +24,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
           사용자 경험을 개선하고 성능을 최적화한 프로젝트들입니다.
         </p>
         <p className="text-xs italic text-secondary mt-2">
-          † 기여도는 기획·개발·디버깅 등 주요 기여 영역 기준으로 산정했습니다.
+          기여도는 기획·개발·디버깅 등 주요 기여 영역 기준으로 산정했습니다.
         </p>
       </motion.div>
 

@@ -2,7 +2,6 @@
 
 import {
   FaGithub,
-  FaExternalLinkAlt,
   FaSearchPlus,
   FaChevronLeft,
   FaChevronRight,
@@ -28,7 +27,6 @@ export default function ProjectCard({
   metrics,
   technologies,
   githubUrl,
-  demoUrl,
   image,
   team,
   troubleshooting,
@@ -129,11 +127,26 @@ export default function ProjectCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-surface  rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300">
+        className="bg-surface rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300 break-before-page">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold text-text  mb-2">{title}</h3>
+              <div className="flex justify-between mb-2">
+                <h3 className="text-2xl font-bold text-text">{title}</h3>
+                <div>
+                  {githubUrl && (
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-background  text-primary  rounded-lg hover:bg-primary/10  transition-colors duration-200">
+                      <FaGithub />
+                      <span>GitHub</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+
               <div className="flex items-center gap-4 text-subText flex-col ">
                 <div className="flex items-center gap-4 text-subText">
                   <span>{period}</span>
@@ -163,29 +176,6 @@ export default function ProjectCard({
                 ))}
               </div>
             )}
-
-            <div className="flex gap-4">
-              {githubUrl && (
-                <a
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-background  text-primary  rounded-lg hover:bg-primary/10  transition-colors duration-200">
-                  <FaGithub />
-                  <span>GitHub</span>
-                </a>
-              )}
-              {demoUrl && (
-                <a
-                  href={demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90  transition-colors duration-200">
-                  <FaExternalLinkAlt />
-                  <span>Demo</span>
-                </a>
-              )}
-            </div>
           </div>
 
           <div

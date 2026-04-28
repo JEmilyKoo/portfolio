@@ -84,8 +84,8 @@ export default function AboutMe() {
       </motion.div>
 
       <div className="w-full max-w-3xl">
-        <div className="relative">
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
+        <div className="relative m-4">
+          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border m-4" />
           {timelineItems.map((item, index) => (
             <motion.div
               key={item.year}
