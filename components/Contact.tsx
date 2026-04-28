@@ -1,12 +1,17 @@
-"use client";
-import { FaGithub, FaEnvelope, FaBlogger, FaPhone } from "react-icons/fa";
+'use client'
+import {
+  FaGithub,
+  FaEnvelope,
+  FaBlogger,
+  FaPhone,
+  FaPortrait,
+} from 'react-icons/fa'
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="max-w-[600px] mx-auto mb-24 pt-12 px-4 flex flex-col items-center"
-    >
+      className="max-w-[600px] mx-auto mb-24 pt-12 px-4 flex flex-col items-center break-before-page">
       <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">
         <span className="text-primary">Contact</span>
       </h2>
@@ -25,6 +30,12 @@ export default function Contact() {
             href="https://github.com/JEmilyKoo"
           />
           <ContactItem
+            icon={<FaPortrait />}
+            label="Portfolio"
+            value="https://portfolio-beta-seven-87.vercel.app/"
+            href="https://portfolio-beta-seven-87.vercel.app/"
+          />
+          <ContactItem
             icon={<FaBlogger />}
             label="Blog"
             value="velog.io/@jemilykoo"
@@ -39,7 +50,7 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function ContactItem({
@@ -48,21 +59,22 @@ function ContactItem({
   value,
   href,
 }: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  href: string;
+  icon: React.ReactNode
+  label: string
+  value: string
+  href: string
 }) {
   return (
     <a
       href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
+      target={href.startsWith('http') ? '_blank' : undefined}
       rel="noopener noreferrer"
-      className="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-primary/10 transition-colors group"
-    >
+      className="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-primary/10 transition-colors group">
       <span className="text-primary text-2xl">{icon}</span>
       <span className="font-semibold text-text">{label}:</span>
-      <span className="text-subText group-hover:text-primary transition-colors">{value}</span>
+      <span className="text-subText group-hover:text-primary transition-colors">
+        {value}
+      </span>
     </a>
-  );
-} 
+  )
+}
