@@ -122,7 +122,7 @@ const REACT_TRACK: TrackConfig = {
     highlight: 'MAU 1,400만 보배드림 리뉴얼',
     after: '에 론칭까지 참여했습니다.',
   },
-  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/main/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
+  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
   primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex)'],
   competencies: [
     {
@@ -190,7 +190,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: 'MAU 1,400만 서비스 보배드림 리뉴얼',
       after: '에 론칭까지 참여했습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/main/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
     primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -233,7 +233,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
       after: '까지 다룹니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/main/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
     primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -304,7 +304,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: '보배드림 리뉴얼의 반응형·다크 모드와 한글 URL',
       after: ', 그룹웨어 6개 국어 대응을 경험했습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/main/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI Agent(Codex)'],
     competencies: [
       {
