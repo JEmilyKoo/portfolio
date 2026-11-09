@@ -102,6 +102,17 @@ const projects: Project[] = [
           },
         ],
       },
+      {
+        title: '마이페이지 신규 개발과 API V1 → V2 전환',
+        content: [
+          {
+            text: `- 디자인 시안 확정 전에 기본 디자인으로 기능부터 개발하고, 시안이 나오면 디자인을 입힘
+- 백엔드 API가 V1에서 V2로 바뀔 때 화면 코드는 고치지 않고 API 연결만 교체(전환 커밋 7건)
+- 론칭 직전 하루 최대 7건 들어오는 QA 리포트의 처리 순서를 팀장에게 위임받아 "접수순 → 시안 확정 화면 → V2 전환" 기준으로 대응`,
+            className: 'text-sm',
+          },
+        ],
+      },
     ],
     team: '6명(개발자 4, 디자이너 1, 팀장 1)',
   },
@@ -576,6 +587,17 @@ const projects: Project[] = [
         ],
       },
       {
+        title: '지도·캘린더를 WebView 공용 화면으로 전환',
+        content: [
+          {
+            text: `- Android·iOS 네이티브 컴포넌트로 따로 구현하니 플랫폼마다 화면이 달라지고 분기 코드가 늘어 유지보수가 어려움
+- 지도·캘린더 페이지를 WebView 기반 공용 컴포넌트로 옮기고 반응형으로 만들어 PC·태블릿까지 대응
+- 플랫폼별 분기를 줄이고 Android·iOS에서 같은 화면 제공`,
+            className: 'text-sm',
+          },
+        ],
+      },
+      {
         title: 'Amazon S3 Presigned URL을 활용한 이미지 업로드 개선',
         content: [
           {
@@ -621,6 +643,17 @@ const projects: Project[] = [
     ],
     troubleshooting: [
       {
+        title: 'AI 리포트를 마크다운 렌더링으로 전환해 필요한 컴포넌트 약 100개 → 15개 안팎',
+        content: [
+          {
+            text: `- 생성형 AI가 HTML 리포트를 직접 만들게 하니 리포트마다 스타일이 달라, 모양을 맞추려면 컴포넌트가 백여 개 필요함
+- AI 응답을 마크다운으로 받아 HTML로 다시 렌더링하고, 마크다운의 한정된 요소에 맞춘 디자인 시스템 컴포넌트를 만듦
+- 리포트 모양이 균일해지고 필요한 컴포넌트가 15개 안팎으로 줄어듦`,
+            className: 'text-sm',
+          },
+        ],
+      },
+      {
         title:
           'STT 기능을 AI를 사용하고 RestAPI를 사용할 경우 딜레이 과다 발생',
         content: [
@@ -660,7 +693,7 @@ const projects: Project[] = [
     period: '2021.11 ~ 2024.01',
     role: `    개발: 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담 개발
     유지 보수: 오류 수정, QA, 배포(Pascal로 설치 파일 제작)
-    R&D : UI/UX의 편의성 증가, 접기 기능 개발`,
+    협업: 영어만 쓰는 동료 합류 후 한·영 개발 용어집과 네이밍 규칙을 제안하고 업무별 의사결정자를 정해 리뷰·조율 혼선을 줄임`,
     description:
       '사용자 30만 명 규모 그룹웨어(비즈메카)의 신규 PC 메신저 클라이언트 프론트엔드 개발과 운영을 담당. 쪽지 기능을 전담 개발하고, 설계 및 기술 스택 선정 단계부터 참여함. 고객사 요구에 따른 옵션 기능 구현과 SaaS 대응을 위해 SSR SPA 구조로 개발함.',
     metrics: [],
@@ -683,6 +716,16 @@ const projects: Project[] = [
       '/images/bizmekatalk (7).jpg',
     ],
     troubleshooting: [
+      {
+        title: '창 접기·펼치기 시 UI 상태 복원 적용',
+        content: [
+          {
+            text: `- KumTalk에서 만든 UI 상태 복원 방식(스토어 전체를 Session Storage에 저장)을 bizmekaTalk 3.0에 적용
+- 창을 반으로 접고 펼쳐도 열린 대화방, 스크롤 위치, 선택값, 입력 중 내용, 레이아웃이 그대로 유지됨`,
+            className: 'text-sm',
+          },
+        ],
+      },
       {
         title: '일부 환경에서 절전모드 미인식',
         content: [
@@ -764,6 +807,18 @@ const projects: Project[] = [
     image: ['/images/kumtalk.jpg', '/images/kumtalk2.jpg'],
     troubleshooting: [
       {
+        title: '창 접기·펼치기 시 UI 상태 전체 복원',
+        content: [
+          {
+            text: `- 메신저 창을 반으로 접고 펼 때마다 WPF 창 크기가 바뀌며 Webview가 다시 그려져, 화면 상태가 모두 초기화됨
+- 화면 상태(열린 대화방, 스크롤 위치, 선택값, 입력 중 내용, 레이아웃)를 스토어에 모으고, 스토어 전체를 Session Storage에 저장해 접기 전 상태 그대로 복원
+- 간호사 여러 명이 한 PC에서 번갈아 로그아웃·로그인하는 환경이라 Local Storage를 쓸 수 없어, 계정마다 상태가 섞이지 않도록 Session Storage 사용
+- 이후 같은 방식을 bizmekaTalk 3.0에 적용`,
+            className: 'text-sm',
+          },
+        ],
+      },
+      {
         title: '메시지 내 링크 검색 시 UI 깨짐 현상',
         content: [
           {
@@ -776,7 +831,7 @@ const projects: Project[] = [
         title: 'Props 남용으로 인한 중복 코드',
         content: [
           {
-            text: '이벤트 버스를 활용한 코드 리팩토링으로 중복 제거',
+            text: 'Props를 여러 단계로 넘기던 구조를 이벤트 버스(Vue 2 당시 방식)로 정리해 중복 제거',
             className: 'text-sm',
           },
         ],

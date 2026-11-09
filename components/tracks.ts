@@ -118,11 +118,11 @@ const REACT_TRACK: TrackConfig = {
     'React·Vue로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 리뉴얼 참여.',
   tagline: '웹 서비스를 만들어 온 프론트엔드 개발자 (React · Vue)',
   intro: {
-    before: '프론트엔드 실무 약 2년 8개월, 최근 ',
-    highlight: 'MAU 1,400만 보배드림 리뉴얼',
-    after: '에 론칭까지 참여했습니다.',
+    before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 ',
+    highlight: '가상 스크롤 피드와 뒤로가기 위치 복원',
+    after: '을 맡아 구현했습니다.',
   },
-  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
+  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
   primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex)'],
   competencies: [
     {
@@ -186,16 +186,16 @@ export const tracks: Record<Track, TrackConfig> = {
       'Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.',
     tagline: 'Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자',
     intro: {
-      before: '실무 경력 약 2년 8개월. 최근에는 ',
-      highlight: 'MAU 1,400만 서비스 보배드림 리뉴얼',
-      after: '에 론칭까지 참여했습니다.',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 30만 명 규모 그룹웨어에서 ',
+      highlight: 'Vue·Nuxt 화면의 렌더링 성능과 UI 상태 복원',
+      after: '을 다뤄 왔습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
     primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex)'],
     competencies: [
       {
-        title: '대규모 목록 UX',
-        evidence: '보배드림 커뮤니티 피드에 가상 스크롤을 적용해 1,000번째 글에서 뒤로가기해도 같은 위치(오차 0px)로 복원',
+        title: 'UI 상태 복원',
+        evidence: '피드 뒤로가기 위치 복원(오차 0px), 메신저 창을 접고 펼 때 대화방·스크롤·입력 상태 복원을 실무 두 곳에서 구현',
       },
       {
         title: '복잡한 상호작용 디버깅',
@@ -229,11 +229,11 @@ export const tracks: Record<Track, TrackConfig> = {
       '프론트엔드 실무를 중심으로, 팀 프로젝트에서 Spring Boot API와 DB 설계, Jenkins CI/CD 수정 경험이 있는 개발자 구정은(Emily Koo)의 포트폴리오.',
     tagline: '프론트엔드부터 Java·Spring 백엔드까지 다루는 개발자',
     intro: {
-      before: '실무 경력 약 2년 8개월, 최근 보배드림 리뉴얼 참여. ',
+      before: '실무 경력 약 2년 8개월. 백엔드와 API 구조를 맞춰 온 프론트엔드 실무에 ',
       highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
-      after: '까지 다룹니다.',
+      after: ' 경험을 더했습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
     primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -297,27 +297,27 @@ export const tracks: Record<Track, TrackConfig> = {
     aboutSubtitle: '웹 개발자',
     metaTitle: '구정은 Emily Koo | 웹 개발 포트폴리오',
     metaDescription:
-      '웹 서비스 화면 개발, 반응형·다크 모드 퍼블리싱, 다국어·SEO 대응 경험이 있는 웹 개발자 구정은(Emily Koo)의 포트폴리오.',
-    tagline: '화면 개발부터 반응형·다국어까지 다뤄 온 웹 개발자',
+      '가상 스크롤 렌더링 최적화, URL·라우팅 설계, 6개 국어 다국어 대응 경험이 있는 웹 개발자 구정은(Emily Koo)의 포트폴리오.',
+    tagline: '렌더링 성능·URL 구조·다국어를 다뤄 온 웹 개발자',
     intro: {
-      before: '실무 경력 약 2년 8개월. ',
-      highlight: '보배드림 리뉴얼의 반응형·다크 모드와 한글 URL',
-      after: ', 그룹웨어 6개 국어 대응을 경험했습니다.',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 ',
+      highlight: '가상 스크롤 피드와 한글 URL 라우팅을 설계·구현',
+      after: '했고, 그룹웨어 6개 국어 대응을 맡았습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/265575313444125c87915927d8fc9d570ac9ec98/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI Agent(Codex)'],
     competencies: [
       {
-        title: '반응형·QA',
-        evidence: '보배드림 모바일·태블릿·PC 반응형과 다크 모드 QA를 진행, 기능 수정은 AI 에이전트에 맡기고 화면 검증은 직접 담당',
+        title: '렌더링 성능',
+        evidence: '보배드림 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
       },
       {
         title: 'SEO·URL 설계',
-        evidence: '보배드림 차량 목록을 한글 주소로 열 수 있게 라우팅 수정(카테고리 6종), 검색어를 주소에 담아 새로고침·공유해도 결과 유지',
+        evidence: '보배드림 차량 목록의 한글 카테고리 URL 구조(6종)를 설계하고 기존 영문 주소와 호환, 검색어를 URL에 담아 새로고침·공유해도 결과 유지',
       },
       {
         title: '다국어',
-        evidence: '해외 고객사 그룹웨어의 PC·모바일 6개 국어 리소스 통합, 번역 길이에 맞춘 UI 수정',
+        evidence: '해외 고객사 그룹웨어의 PC·모바일 6개 국어 리소스 통합, 번역 길이에 따라 깨지는 UI를 반응형으로 재구성',
       },
     ],
     skills: [
@@ -333,7 +333,8 @@ export const tracks: Record<Track, TrackConfig> = {
         name: 'SEO·웹 성능',
         level: '실무·프로젝트',
         desc: [
-          '보배드림: 차량 목록 한글 카테고리 URL 6종, 검색어 URL 반영',
+          '보배드림: 차량 목록 한글 카테고리 URL 구조 설계(6종), 검색어 URL 반영',
+          '보배드림: 1,000건 피드 가상 스크롤(렌더링 카드 3~5개)',
           'Chain G: Lighthouse 접근성·SEO·권장사항·PWA 100점, 메인 로딩 7초 → 0.37초',
         ],
       },
