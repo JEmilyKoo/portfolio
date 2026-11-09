@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaEnvelope,
   FaBlogger,
-  FaPhone,
   FaPortrait,
 } from 'react-icons/fa'
 
@@ -40,13 +39,7 @@ export default function Contact() {
             label="Blog"
             value="velog.io/@jemilykoo"
             href="https://velog.io/@jemilykoo/posts"
-          />
-          <ContactItem
-            icon={<FaPhone />}
-            label="Phone"
-            value="010-2581-5680"
-            href="tel:01025815680"
-          />
+          />
         </div>
       </div>
     </section>

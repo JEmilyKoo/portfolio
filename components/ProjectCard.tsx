@@ -30,7 +30,9 @@ export default function ProjectCard({
   image,
   team,
   troubleshooting,
-}: Project) {
+  pageBreak = true,
+  pdf = false,
+}: Project & { pageBreak?: boolean; pdf?: boolean }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -123,14 +125,16 @@ export default function ProjectCard({
   return (
     <>
       <motion.article
-        initial={{ opacity: 0, y: 20 }}
+        initial={pdf ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-surface rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300 break-before-page">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-          <div className="space-y-4">
-            <div>
+        className={`bg-surface rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300 ${pageBreak ? 'break-before-page' : ''}`}>
+        {/* PDF 모드: 이미지는 아래로 빼고(1열), 글만 좌우 2칸 */}
+        <div className={`grid ${pdf ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-6 p-6`}>
+          {/* PDF 모드: 왼쪽 제목·기간·역할(3) | 오른쪽 설명(2), 수치는 아래 전체 폭 */}
+          <div className={pdf ? 'grid grid-cols-5 gap-6 items-start' : 'space-y-4'}>
+            <div className={pdf ? 'col-span-3' : ''}>
               <div className="flex justify-between mb-2">
                 <h3 className="text-2xl font-bold text-text">{title}</h3>
                 <div>
@@ -147,7 +151,7 @@ export default function ProjectCard({
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-subText flex-col ">
+              <div className="flex items-center gap-2 text-subText flex-col ">
                 <div className="flex items-center gap-4 text-subText">
                   <span>{period}</span>
                   <span>|</span>
@@ -160,26 +164,27 @@ export default function ProjectCard({
               </div>
             </div>
 
-            <p className="text-text ">{description}</p>
+            <p className={`text-text ${pdf ? 'col-span-2' : ''}`}>{description}</p>
 
             {metrics && metrics.length > 0 && (
-              <div className="grid grid-cols-2 gap-4">
+              <div className={`grid ${pdf ? 'grid-cols-3 col-span-5 gap-2' : 'grid-cols-2 gap-4'}`}>
                 {metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="rounded-xl p-4 text-center">
-                    <div className="text-lg font-bold text-primary ">
+                    className={`rounded-xl ${pdf ? 'py-1 px-2' : 'p-4'} text-center`}>
+                    <div className={`${pdf ? 'text-base' : 'text-lg'} font-bold text-primary `}>
                       {metric.value}
                     </div>
-                    <div className="text-sm text-subText ">{metric.label}</div>
+                    <div className={`${pdf ? 'text-xs' : 'text-sm'} text-subText `}>{metric.label}</div>
                   </div>
                 ))}
               </div>
             )}
           </div>
 
+          {/* PDF 모드: 글 아래에 두고, 카드 전체 폭으로 커지지 않게 최대 폭 제한 */}
           <div
-            className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background cursor-pointer"
+            className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-background cursor-pointer ${pdf ? 'w-full max-w-[340px] mx-auto' : ''}`}
             onClick={handleImageClick}>
             {image && image.length > 0 ? (
               <>
@@ -265,12 +270,12 @@ export default function ProjectCard({
           </div>
         </div>
         {troubleshooting && troubleshooting.length > 0 && (
-          <div className="p-6 mt-6 space-y-4">
+          <div className="p-6 mt-4 space-y-4">
             <h4 className="text-lg font-semibold text-text">트러블 슈팅</h4>
             {troubleshooting.map((item) => (
               <div
                 key={item.title}
-                className="bg-background rounded-xl p-3">
+                className="bg-background rounded-xl p-2">
                 <h5 className="text-success mb-2 font-bold leading-snug">
                   {item.title}
                 </h5>

@@ -1,36 +1,10 @@
-import Hero from '../components/Hero'
-import ProjectList from '../components/ProjectList'
-import projects from '../components/projects'
-import AboutMe from '../components/AboutMe'
-import Skills from '../components/Skills'
-import Contact from '../components/Contact'
-// import ThemeToggle from '../components/ThemeToggle';
-import { Project } from '@/types/project'
+import PortfolioPage from '../components/PortfolioPage'
 
-function getSafeProjects(p: unknown): Project[] {
-  if (Array.isArray(p)) return p
-  // ESM/CJS 변환 문제로 객체에 default가 배열로 들어오는 경우
-  if (
-    p &&
-    typeof p === 'object' &&
-    Array.isArray((p as { default?: unknown }).default)
-  ) {
-    return (p as { default: Project[] }).default
-  }
-  return []
-}
+// / → 프론트엔드 엔지니어(React 공고용, /v1과 같은 내용)
+// ?mode=pdf 를 붙이면 PDF 저장용 여백을 쓴다.
+type Props = { searchParams: Promise<{ mode?: string }> }
 
-const safeProjects = getSafeProjects(projects)
-
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <AboutMe />
-      <Skills />
-      <ProjectList projects={safeProjects} />
-      <Contact />
-      {/* <ThemeToggle /> */}
-    </>
-  )
+export default async function Page({ searchParams }: Props) {
+  const { mode } = await searchParams
+  return <PortfolioPage track="frontend" pdf={mode === 'pdf'} path="" />
 }

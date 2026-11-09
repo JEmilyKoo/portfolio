@@ -12,6 +12,15 @@ import { motion } from 'framer-motion'
 
 const timelineItems = [
   {
+    year: '2026.09 ~ 재직 중',
+    title: '프론트엔드 개발자(계약직)',
+    company: '㈜보배네트워크',
+    description:
+      '보배드림 전면 리뉴얼에 론칭 직전 합류해 론칭까지 참여. 커뮤니티 피드 무한 스크롤, 통합 검색, 마이페이지 화면 개발과 QA 수정',
+    important: true,
+    icon: <FaCode className="text-primary " />,
+  },
+  {
     year: '2024.07~2025.06',
     title: 'SSAFY 전공자 Java 트랙 수료',
     company: '삼성 청년 SW·AI 아카데미',
@@ -33,7 +42,7 @@ const timelineItems = [
     title: '프론트엔드 개발자',
     company: '㈜가온아이',
     description:
-      'Vue.js 기반 그룹웨어 솔루션 개발, 다국어 지원 구현, 조직도/그룹/쪽지/메신저 기능 개발, CI/CD 및 유지보수 담당',
+      'Vue.js 기반 그룹웨어 PC 메신저 개발. 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담, 다국어 리소스 통합, 배포와 유지보수',
     important: true,
     icon: <FaCode className="text-primary " />,
   },
@@ -51,23 +60,24 @@ const timelineItems = [
     title: '경영학 학사',
     company: '홍익대학교',
     description:
-      '경영학 전공, IT 서비스 기획 및 개발 역량 융합, 서울시 마포구 본교 소재',
+      '경영학 전공',
     important: true,
     icon: <FaUniversity className="text-primary " />,
   },
 ]
 
-export default function AboutMe() {
+// pdf: ?mode=pdf일 때 PDF 브랜치(origin/pdf, f61d2c1)의 여백 값 사용
+export default function AboutMe({ pdf = false }: { pdf?: boolean }) {
   return (
     <section
       id="about"
       className="max-w-[900px] mx-auto mb-24 pt-8 px-4 flex flex-col items-center">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={pdf ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-12">
+        className={`text-center mb-12 ${pdf ? 'pt-4' : ''}`}>
         <Image
           src="/images/picture.jpg"
           alt="구정은 프로필"
@@ -89,7 +99,7 @@ export default function AboutMe() {
           {timelineItems.map((item, index) => (
             <motion.div
               key={item.year}
-              initial={{ opacity: 0, x: -20 }}
+              initial={pdf ? false : { opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -107,13 +117,13 @@ export default function AboutMe() {
                 <div className="flex items-center gap-4 mb-2">
                   <span
                     className={`${
-                      item.important ? 'text-2xl' : 'text-lg'
+                      pdf ? (item.important ? 'text-lg' : 'text-base') : item.important ? 'text-2xl' : 'text-lg'
                     } font-bold text-primary `}>
                     {item.year}
                   </span>
                   <h3
                     className={`${
-                      item.important ? 'text-xl' : 'text-base'
+                      pdf ? (item.important ? 'text-base' : 'text-sm') : item.important ? 'text-xl' : 'text-base'
                     } font-bold text-text `}>
                     {item.title}
                   </h3>
@@ -123,13 +133,13 @@ export default function AboutMe() {
                     item.important
                       ? 'text-subText  font-semibold'
                       : 'text-subText/80  font-medium'
-                  }  mb-2`}>
+                  } ${pdf ? 'text-sm' : ''} mb-2`}>
                   {item.company}
                 </div>
                 <p
                   className={`${
                     item.important ? 'text-text ' : 'text-text/80 '
-                  } ${item.important ? '' : 'text-sm'}`}>
+                  } ${pdf ? 'text-sm' : item.important ? '' : 'text-sm'}`}>
                   {item.description}
                 </p>
               </div>

@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
 const notoSansKR = Noto_Sans_KR({ 
@@ -9,10 +9,17 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jemilykoo.github.io"),
   title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-  description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
-  keywords: ["프론트엔드 개발자", "React", "TypeScript", "Next.js", "디자인 시스템", "AI", "PWA", "포트폴리오"],
+  description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
+  keywords: ["프론트엔드 개발자", "Vue.js", "Nuxt", "TypeScript", "React", "포트폴리오"],
   authors: [{ name: "구정은", url: "https://github.com/JEmilyKoo" }],
   creator: "구정은",
   publisher: "구정은",
@@ -21,7 +28,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://jemilykoo.github.io",
     title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-    description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
+    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
     siteName: "구정은 포트폴리오",
     images: [
       {
@@ -35,17 +42,12 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-    description: "실무형 프론트엔드 개발자 구정은(Emily Koo) 포트폴리오. React, TypeScript, Next.js, 디자인 시스템, AI, PWA, 글로벌 협업, 최신 트렌드 경험.",
+    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
     images: ["/images/picture.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   robots: {
     index: true,

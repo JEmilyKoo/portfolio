@@ -2,9 +2,113 @@ import { Project } from '@/types/project'
 
 const projects: Project[] = [
   {
+    title: '보배드림 전면 리뉴얼',
+    period: '2026.09 ~ 재직 중',
+    role: `㈜보배네트워크 사원(계약직). 론칭 직전 합류해 론칭까지 참여
+    담당: 커뮤니티 피드 무한 스크롤, 커뮤니티 마이페이지, 맞춤 피드 편집, 통합 검색(/search), 마이페이지·회원 정보, 중고차 목록 필터·차량 상세·딜러 페이지, QA 수정`,
+    description:
+      'MAU 1,400만 자동차 커뮤니티·중고차 서비스의 전면 리뉴얼. 초기 구조와 기본 기능은 기존 팀원이 개발했고, 합류 후 신규 화면 개발과 QA 수정을 맡음.',
+    metrics: [
+      { label: '1,000번째 글 복원', value: '오차 0px' },
+      { label: '통합 검색 API 호출', value: '91회 → 2회' },
+      { label: '한글 카테고리 URL', value: '6종' },
+    ],
+    technologies: [
+      'Nuxt 4',
+      'Vue 3',
+      'TypeScript',
+      'TanStack Virtual',
+      'es-hangul',
+      'Playwright',
+      'Codex',
+    ],
+    image: [
+      '/images/bobaedream 1.png',
+      '/images/bobaedream 2.png',
+      '/images/bobaedream 3.png',
+      '/images/bobaedream 4.png',
+      '/images/bobaedream 5.png',
+      '/images/bobaedream 6.png',
+    ],
+    troubleshooting: [
+      {
+        title: '커뮤니티 피드 무한 스크롤과 뒤로가기 위치 복원 (단독 구현)',
+        content: [
+          { icon: 'issue' },
+          {
+            text: `카드 높이(본문, 투표, 이미지, 영상)가 제각각이라 글 상세에서 뒤로가기를 하면 보던 위치를 정확히 복원하기 어려움\n`,
+          },
+          { icon: 'solution' },
+          {
+            text: `- TanStack Virtual로 가상 스크롤 적용, 카드 실측 평균을 근사한 추정 높이(273.2px)로 위치 계산
+- 최대 1,200건 보관, 캐시가 있으면 뒤로가기 시 목록을 다시 요청하지 않음
+- 커뮤니티를 복제한 테스트 페이지와 성능 로깅 페이지(긴 작업, 입력 지연, 메모리, 프레임 간격)로 성능 저하 여부 확인
+- 테스트 코드 작성(상태 로직 테스트 90개 통과)\n`,
+          },
+          { icon: 'result' },
+          {
+            text: `1,000번째 글에서 뒤로가기 시 같은 위치(오차 0px)로 복원, 목록 재요청 0회`,
+            className: 'trouble-important',
+          },
+          {
+            text: `\n- 1,002건을 불러온 상태에서도 렌더링 카드 3~5개, 스크롤 프레임 중앙값 16.7ms
+- 측정: 2026-11-09 Playwright, 로컬 개발 서버, PC 1440×900`,
+          },
+        ],
+      },
+      {
+        title: '통합 검색 API 호출 91회 → 2회',
+        content: [
+          { icon: 'issue' },
+          {
+            text: `중고차·커뮤니티 결과를 함께 보여주는 신규 검색 페이지에서, 검색 1회에 API가 91회 호출됨\n`,
+          },
+          { icon: 'cause' },
+          {
+            text: `설계를 다 파악하지 않은 채 기본 차량 필터 API를 비효율적으로 조합함\n`,
+          },
+          { icon: 'solution' },
+          {
+            text: `- 백엔드 담당자에게 맞는 API와 사용법을 확인해 검색 API 2개(중고차 1, 커뮤니티 1)만 쓰도록 수정
+- 모호했던 설계 문서를 "더보기 클릭으로만 추가 로드, 뒤로가기 위치 복원은 유지"처럼 행동 단위로 다시 작성\n`,
+          },
+          { icon: 'result' },
+          {
+            text: `검색 1회당 API 91회 → 2회, 스크롤 시 추가 호출 0회`,
+            className: 'trouble-important',
+          },
+        ],
+      },
+      {
+        title: '차량 목록 한글 카테고리 URL',
+        content: [
+          {
+            text: `- 기존 코드는 영문 카테고리만 인식해 /car/list/슈퍼카 를 제조사 이름으로 잘못 처리함
+- 국산차·수입차·올드카·슈퍼카·숏폼카·전기차 6개 카테고리를 한글 주소로 열 수 있게 라우팅 수정, 기존 영문·제조사 주소도 유지
+- 수정 전후 측정 결과 한글 주소도 영문 주소와 같은 API 4회로 동작`,
+            className: 'text-sm',
+          },
+        ],
+      },
+      {
+        title: '맞춤 피드 메뉴 드래그 버그 (원인 3가지)',
+        content: [
+          {
+            text: `- 고정 항목 정렬 로직(본인 작성)이 사용자가 바꾼 순서를 되돌림 → 사용자 편집 순서를 우선 적용
+- PC에서 브라우저 기본 드래그가 포인터 이벤트를 가로챔 → 기본 드래그를 막고 이벤트를 window에서 추적
+- 드래그와 무관한 포인터 입력이 드래그를 종료시킴 → 같은 pointerId일 때만 종료
+- PC·모바일 모두 정상 동작, QA 리포트 해결`,
+            className: 'text-sm',
+          },
+        ],
+      },
+    ],
+    team: '6명(개발자 4, 디자이너 1, 팀장 1)',
+  },
+  {
     title: 'Vibe Editor',
     period: '2025.04 ~ 2025.05 (6주)',
-    role: 'Frontend Lead / VSCode Extension Developer',
+    role: '프론트엔드 개발 / VS Code 확장 프로그램 개발',
     description:
       'VS Code에서 코드/디렉토리/로그 스냅샷을 찍고, AI 도움으로 기술 블로그 초안을 Notion에 게시하는 확장 프로그램',
     metrics: [
@@ -13,18 +117,15 @@ const projects: Project[] = [
       { label: '템플릿 기반 프롬프트', value: 'AI 포스트 생성' },
     ],
     technologies: [
-      'VSCode Extension',
-      'AI : Prompt Engineering',
-      'AI : Agent Design',
       'React',
       'Next.js',
       'TypeScript',
-      'Tailwind',
+      'VSCode Extension',
       'Notion API',
+      'AI : Prompt Engineering',
       'Jenkins',
-      'Figma',
-      'React Hook Form',
       'UX Writing',
+      'Figma',
     ],
     githubUrl: 'https://github.com/JEmilyKoo/Vibe_Editor',
     image: [
@@ -198,6 +299,26 @@ const projects: Project[] = [
         ],
       },
       {
+        title: 'Jenkins 프론트엔드 파이프라인: 캐시 잔존과 빌드 실패 코드 머지',
+        content: [
+          { icon: 'issue' },
+          {
+            text: `- 이전 빌드의 캐시 파일이 남아 빌드해도 결과물이 올바르지 않음
+               - 빌드에 실패하는 코드가 머지된 뒤에야 자동 배포 단계에서 실패가 드러남\n`,
+          },
+          { icon: 'solution' },
+          {
+            text: `- 빌드 명령을 "캐시 정리 후 빌드"와 "빌드만" 두 가지로 나눔
+               - 머지 시점에 빌드가 되지 않으면 배포하지 않도록 파이프라인 수정\n`,
+          },
+          { icon: 'result' },
+          {
+            text: `빌드되지 않는 코드가 프로덕션에 머지되는 일을 막음\n`,
+            className: 'trouble-important',
+          },
+        ],
+      },
+      {
         title: '프롬프트 전환 시 입력 상태 초기화 실패',
         content: [
           {
@@ -275,12 +396,12 @@ const projects: Project[] = [
   },
   {
     title: 'Chain G',
-    period: '2025.02 – 2025.04 (7주)',
-    role: 'Frontend Lead / UX Engineer',
+    period: '2025.02 ~ 2025.04 (7주)',
+    role: '프론트엔드 개발 / 디자인 시스템·공통 컴포넌트 개발',
     description:
       '친한 사람들과 돈 문제로 어색하지 않도록, 가볍지만 신뢰할 수 있게 정리해주는 코리빙 서비스',
     metrics: [
-      { label: '로딩 속도', value: '99.47% 개선' },
+      { label: '메인 로딩', value: '7초 → 0.37초' },
       { label: 'Lighthouse', value: '100점' },
       { label: '실시간 반영', value: 'FCM 연동' },
     ],
@@ -288,16 +409,12 @@ const projects: Project[] = [
       'React',
       'Next.js',
       'Redux Toolkit',
-      'D3.js',
-      'PWA',
       'Emotion',
-      'React Hook Form',
-      'Service Worker',
-      'FCM',
       'Design System',
-      'CI/CD',
-      'Figma',
-      'Notion',
+      'PWA',
+      'Service Worker',
+      'D3.js',
+      'FCM',
     ],
     githubUrl: 'https://github.com/JEmilyKoo/Cha-nG',
     // video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
@@ -309,11 +426,11 @@ const projects: Project[] = [
     ],
     troubleshooting: [
       {
-        title: '메인 페이지 로딩 성능 개선 (6.3분 → 398ms)',
+        title: '메인 페이지 로딩 성능 개선 (DOMContentLoaded 7초 → 0.37초)',
         content: [
           { icon: 'issue' },
           {
-            text: '메인 페이지 첫 진입 시 Finish 시간 기준 6.3분 이상 소요되며, 새로고침에도 캐시가 반영되지 않음\n',
+            text: '메인 페이지 첫 진입 시 DOMContentLoaded까지 7초가 걸리고, 새로고침에도 캐시가 반영되지 않음\n',
           },
           { icon: 'cause' },
           {
@@ -325,7 +442,7 @@ const projects: Project[] = [
           },
           { icon: 'result' },
           {
-            text: 'Finish 기준 6.3분 → 398ms로 개선 (약 99.9% 향상)\n',
+            text: 'DOMContentLoaded 기준 7초 → 0.37초로 개선 (Chrome DevTools)\n',
             className: 'trouble-important',
           },
           {
@@ -342,7 +459,7 @@ const projects: Project[] = [
         content: [
           { icon: 'issue' },
           {
-            text: '초기 진입 시 홈 화면 렌더링에 398ms 이상 소요되며 사용자 이탈 발생\n',
+            text: '로딩 화면 자체가 무거워 첫 화면이 늦게 나타남\n',
           },
           { icon: 'cause' },
           {
@@ -351,11 +468,11 @@ const projects: Project[] = [
           },
           { icon: 'solution' },
           {
-            text: '\n- 로딩 페이지는 별도 구성, Emotion 제거 후 순수 HTML/CSS로 전환\n- 배경 이미지 → CSS 그라데이션, 애니메이션은 inline SVG로 구성\n- 최초 진입 시 43 requests / 36.1kB / 4.3MB 리소스를 229ms 내 로딩\n',
+            text: '\n- 로딩 페이지는 별도 구성, Emotion 제거 후 순수 HTML/CSS로 전환\n- 배경 이미지 → CSS 그라데이션, 애니메이션은 inline SVG로 구성\n',
           },
           { icon: 'result' },
           {
-            text: '최초 진입 Finish 시간 기준, 398ms → 229ms로 단축\n',
+            text: '로딩 화면이 바로 나타나도록 개선 (메인 로딩 전체는 DOMContentLoaded 7초 → 0.37초)\n',
             className: 'trouble-important',
           },
           { icon: 'learned' },
@@ -420,23 +537,19 @@ const projects: Project[] = [
   {
     title: '다와따',
     period: '2025.01 ~ 2025.02 (7주)',
-    role: 'Frontend Lead / UI·UX Designer',
+    role: '프론트엔드 주요 화면 개발 / UI 디자인',
     description:
       '실시간 위치 공유 및 최적 장소 추천을 통해 약속 시간을 효율적으로 조율하는 서비스',
     metrics: [
-      { label: 'API 응답', value: '99.8% 개선' },
-      { label: '빌드 시간', value: '94.7% 단축' },
+      { label: '추천 결과 첫 표시', value: '240초 → 0.5초' },
+      { label: 'APK 빌드', value: '38분 → 2분' },
     ],
     technologies: [
       'React Native',
       'Redux',
       'WebSocket',
-      'NativeWind',
-      'React Hook Form',
       'S3',
       'Gradle',
-      'Figma',
-      'Notion',
     ],
     githubUrl: 'https://github.com/JEmilyKoo/dawata',
     image: [
@@ -457,7 +570,7 @@ const projects: Project[] = [
     troubleshooting: [
       {
         title:
-          'Redux 기반 비동기 UI 적용으로 장소 추천 API 응답 속도 99.8% 개선 (240초 → 0.5초)',
+          '캐시된 추천 결과를 먼저 보여 줘 첫 표시까지 240초 → 0.5초 (API 자체 응답 시간은 그대로)',
         content: [
           {
             text: `- 장소 추천 API 응답이 4분 걸려 UX 저하 문제 발생
@@ -483,7 +596,7 @@ const projects: Project[] = [
         content: [
           {
             text: `- Android Native Module, FCM, Kakao SDK 추가 후 빌드 시간이 급격히 증가(38분 소요)
-- Gradle 빌드 최적화 적용 →APK 빌드 시간 94.7% 단축 (38분 → 2분)`,
+- Gradle 빌드 설정 조정 → APK 빌드 시간 38분 → 2분`,
             className: 'text-sm',
           },
         ],
@@ -494,7 +607,7 @@ const projects: Project[] = [
   {
     title: '트매',
     period: '2024.10 ~ 2024.11 (2주)',
-    role: '팀장 / 기획·총괄 / UI 개발',
+    role: '기획 / UI 개발 / 음성 대화 기능 개발',
     description: 'AI LLM을 활용한 음성 대화 트립 매니징 서비스',
     metrics: [
       { label: 'STT', value: '실시간화' },
@@ -504,11 +617,10 @@ const projects: Project[] = [
     technologies: [
       'Vue3',
       'Spring Boot',
-      'OpenAI',
+      'OpenAI API',
+      'Prompt Engineering',
       'WebSocket',
       'TMap',
-      'AI',
-      'Figma',
     ],
     githubUrl: 'https://github.com/SSAFY-12th-18c-TripManager/FE',
     image: [
@@ -556,27 +668,20 @@ const projects: Project[] = [
   {
     title: 'bizmekaTalk 3.0',
     period: '2021.11 ~ 2024.01',
-    role: `    개발: 조직도/그룹/쪽지/메신저 기능 FE 전담 개발
+    role: `    개발: 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담 개발
     유지 보수: 오류 수정, QA, 배포(Paskal로 설치 파일 제작)
     R&D : UI/UX의 편의성 증가, 접기 기능 개발`,
     description:
       '그룹웨어 신규 솔루션의 PC 클라이언트 프론트엔드 개발과 운영을 담당. 쪽지 기능을 전담 개발하고, 설계 및 기술 스택 선정 단계부터 참여함. 고객사 요구에 따른 옵션 기능 구현과 SaaS 대응을 위해 SSR SPA 구조로 개발함.',
     metrics: [],
     technologies: [
-      'JavaScript',
       'Vue.js',
-      'HTML5',
-      'CSS',
-      'i18n',
       'Nuxt',
       'Vuetify',
+      'i18n',
       'C#',
       'WPF',
       'Webview2',
-      'Webpack',
-      'Pascal',
-      'Inno Setup',
-      'MariaDB',
     ],
     image: [
       '/images/bizmekatalk (1).jpg',
@@ -614,23 +719,16 @@ const projects: Project[] = [
     period: '2023.06 ~ 2023.09',
     role: '다국어 처리, 리소스 파일 설계 및 적용, UI/UX 커스터마이징, QA 및 유지보수',
     description:
-      '그룹웨어 솔루션의 글로벌 출시를 위한 다국어 지원 및 커스터마이징 프로젝트. PC와 모바일 리소스를 통합하고, 반응형 UI로 개편. 사용자 기본 언어 기반 설치 파일 제작 등 전반적인 다국어 대응 체계를 구축함.',
+      '그룹웨어 솔루션의 글로벌 출시를 위한 다국어 지원 및 커스터마이징 프로젝트. PC와 모바일 리소스를 통합하고, 반응형 UI로 개편. 사용자 기본 언어 기반 설치 파일 제작 등 6개 국어 리소스를 통합함.',
     metrics: [],
     technologies: [
-      'JavaScript',
       'Vue.js',
-      'HTML5',
-      'CSS',
-      'i18n',
-      'webpack',
       'Nuxt',
+      'i18n',
       'Vuetify',
       'C#',
       'WPF',
       'Webview2',
-      'Pascal',
-      'Inno Setup',
-      'MariaDB',
     ],
     image: ['/images/pratama.jpg'],
     troubleshooting: [
@@ -666,18 +764,12 @@ const projects: Project[] = [
       { label: '기여도', value: '25%' },
     ],
     technologies: [
-      'JavaScript',
       'Vue.js',
-      'HTML5',
-      'CSS',
       'Nuxt',
-      'webpack',
       'Vuetify',
       'C#',
       'WPF',
       'Webview2',
-      'Pascal',
-      'Inno Setup',
     ],
     image: ['/images/kumtalk.jpg', '/images/kumtalk2.jpg'],
     troubleshooting: [
@@ -701,6 +793,44 @@ const projects: Project[] = [
       },
     ],
     team: '㈜가온아이 MI개발부',
+  },
+  {
+    title: '찍Go',
+    period: '2021.07 ~ 2021.08',
+    role: '기획 / 서버·개발 환경 구성 / DB 설계 / 프로필·업적·레벨 로직 구현 / UI 개발 / 안드로이드 개발',
+    description:
+      '게이미피케이션을 접목한 여행 정보 공유 서비스 (한국소프트웨어인재개발원 Java 개발자 과정 팀 프로젝트)',
+    metrics: [
+      { label: 'Spring', value: 'REST API 개발' },
+      { label: 'WebSocket', value: '채팅' },
+    ],
+    technologies: ['Java', 'Spring', 'Oracle', 'WebSocket', 'Android SDK', 'Bootstrap'],
+    image: ['/images/StampGO.png'],
+    troubleshooting: [
+      {
+        title: '구현 내용',
+        content: [
+          {
+            text: `- Spring 기반 REST API 개발
+- WebSocket으로 채팅 기능 개발
+- 수행한 미션에 따라 뱃지·스탬프·업적을 자동으로 얻는 로직 구현
+- Oracle DB 설계, Bootstrap으로 화면 구현`,
+            className: 'text-sm',
+          },
+        ],
+      },
+      {
+        title: '팀 협업',
+        content: [
+          {
+            text: `- 팀원의 요청과 이해도를 파악해 맞춤형 스터디 진행
+- 코로나 시기에 매주 1~3회 화상·대면 회의로 진행 상황 공유`,
+            className: 'text-sm',
+          },
+        ],
+      },
+    ],
+    team: '6명(기여도 25%)',
   },
 ]
 

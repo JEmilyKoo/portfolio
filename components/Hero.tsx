@@ -1,8 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { FaExternalLinkAlt } from 'react-icons/fa'
+import { TrackConfig } from './tracks'
 
-export default function Hero() {
+export default function Hero({
+  config,
+  pdf = false,
+  webUrl,
+}: {
+  config: TrackConfig
+  pdf?: boolean
+  webUrl: string
+}) {
   return (
     <section className="flex flex-col items-center justify-center min-h-[80vh] pt-24 px-4 pb-16 bg-background text-text transition-colors w-full">
       <motion.div
@@ -24,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}>
-          사용자 경험에 진심인 실전형 프론트엔드 개발자
+          {config.tagline}
         </motion.p>
 
         <motion.p
@@ -32,14 +42,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}>
+          {config.intro.before}
           <span className="font-semibold text-primary ">
-            React/TypeScript, 성능 최적화, 디자인 시스템, UI/UX 개선
+            {config.intro.highlight}
           </span>
-          에 강하고
-          <br className="hidden md:inline" />
-          글로벌 협업과 최신 트렌드(AI, PWA, SSR, DevOps)까지 경험한 <br />
-          <span className="font-semibold text-accent ">레디메이드 개발자</span>
-          입니다.
+          {config.intro.after}
         </motion.p>
 
         <motion.div
@@ -47,61 +54,47 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}>
-          <div className="flex flex-wrap justify-center gap-2">
-            <div className="mb-3">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-                React
+          <div className="flex flex-wrap justify-center gap-2 mb-3">
+            {config.primaryPills.map((pill) => (
+              <span
+                key={pill}
+                className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
+                {pill}
               </span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-                Next.js
-              </span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-                TypeScript
-              </span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-                JavaScript
-              </span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary   text-sm font-semibold hover:bg-primary/20  transition-colors">
-                Vue.js
-              </span>
-            </div>
-            <div className="mb-1">
-              <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
-                AI : Prompt Engineering
-              </span>
-              <span className="px-4 py-2 rounded-full bg-accent/10 text-accent   text-sm font-semibold hover:bg-accent/20  transition-colors">
-                AI : Agent Design
-              </span>
-            </div>
+            ))}
           </div>
-          <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              PWA
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              Nuxt.js
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              React Native
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              Vercel
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              Figma
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              DB
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              Java
-            </span>
-            <span className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-              DevOps
-            </span>
+          <div className="flex flex-wrap justify-center gap-2">
+            {config.secondaryPills.map((pill) => (
+              <span
+                key={pill}
+                className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
+                {pill}
+              </span>
+            ))}
           </div>
         </motion.div>
 
+        {pdf ? (
+          <>
+            <motion.div
+              className="flex flex-wrap gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}>
+              <a
+                href={webUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-8 py-3 rounded-lg bg-primary text-white  font-semibold text-base ">
+                웹페이지에서 보기
+                <FaExternalLinkAlt className="ml-1" />
+              </a>
+            </motion.div>
+            <div className="font-semibold text-2xl text-accent mt-4">
+              해당 PDF는 웹페이지에서 더 편하게 감상하실 수 있습니다.
+            </div>
+          </>
+        ) : (
         <motion.div
           className="flex flex-wrap gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
@@ -127,6 +120,7 @@ export default function Hero() {
             프로젝트 바로가기
           </a>
         </motion.div>
+        )}
       </motion.div>
     </section>
   )
