@@ -199,7 +199,7 @@ export const tracks: Record<Track, TrackConfig> = {
       },
       {
         title: '복잡한 상호작용 디버깅',
-        evidence: '메뉴 드래그 버그에 겹친 원인 3가지(정렬 로직·PC 기본 드래그·포인터 이벤트)를 분리해 수정',
+        evidence: 'PC에서 메뉴 드래그 정렬이 끊기는 문제를 원인 3가지(정렬 로직·브라우저 기본 드래그·포인터 이벤트 추적)로 나눠 수정',
       },
       {
         title: 'AI 에이전트 협업 개발',
@@ -259,7 +259,7 @@ export const tracks: Record<Track, TrackConfig> = {
         desc: [
           '트매: Spring Boot·MySQL로 네이버 로그인·회원가입 DB 구축, WebSocket 음성·JSON 처리',
           '찍Go: Spring REST API, WebSocket 채팅, 미션별 업적 자동 획득 로직',
-          'SSAFY SW 역량테스트 모의 A형 통과(Java 알고리즘)',
+          '삼성 SW 역량테스트 (A형), Java 알고리즘',
         ],
       },
       {

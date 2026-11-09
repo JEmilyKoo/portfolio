@@ -16,7 +16,7 @@ const timelineItems = [
     title: '프론트엔드 개발자',
     company: '㈜보배네트워크',
     description:
-      '보배드림 전면 리뉴얼에 참여해 론칭까지 개발. 커뮤니티 피드 무한 스크롤, 통합 검색, 마이페이지 화면 개발과 QA 수정',
+      '보배드림 전면 리뉴얼에서 가상 스크롤 피드와 뒤로가기 위치 복원, 통합 검색, 마이페이지를 개발하고 론칭까지 QA 대응',
     important: true,
     icon: <FaCode className="text-primary " />,
   },
@@ -25,7 +25,7 @@ const timelineItems = [
     title: 'SSAFY 전공자 Java 트랙 수료',
     company: '삼성 청년 SW·AI 아카데미',
     description:
-      '프로젝트 우수상 2회 수상, SW 역량테스트 모의 A형 통과, 2월 이달의 동료상',
+      '프로젝트 우수상 2회 수상, 삼성 SW 역량테스트 (A형), 2월 이달의 동료상',
     important: false,
     icon: <FaRocket className="text-accent " />,
   },
