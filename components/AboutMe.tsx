@@ -13,10 +13,10 @@ import { motion } from 'framer-motion'
 const timelineItems = [
   {
     year: '2026.09 ~ 재직 중',
-    title: '프론트엔드 개발자(계약직)',
+    title: '프론트엔드 개발자',
     company: '㈜보배네트워크',
     description:
-      '보배드림 전면 리뉴얼에 론칭 직전 합류해 론칭까지 참여. 커뮤니티 피드 무한 스크롤, 통합 검색, 마이페이지 화면 개발과 QA 수정',
+      '보배드림 전면 리뉴얼에 참여해 론칭까지 개발. 커뮤니티 피드 무한 스크롤, 통합 검색, 마이페이지 화면 개발과 QA 수정',
     important: true,
     icon: <FaCode className="text-primary " />,
   },
@@ -25,8 +25,8 @@ const timelineItems = [
     title: 'SSAFY 전공자 Java 트랙 수료',
     company: '삼성 청년 SW·AI 아카데미',
     description:
-      '프로젝트 우수상 2회 수상, AI 기반 프로젝트 개발 SW 역량테스트 모의 A형 통과, 2월 이달의 동료상',
-    important: true,
+      '프로젝트 우수상 2회 수상, SW 역량테스트 모의 A형 통과, 2월 이달의 동료상',
+    important: false,
     icon: <FaRocket className="text-accent " />,
   },
   {
@@ -67,7 +67,13 @@ const timelineItems = [
 ]
 
 // pdf: ?mode=pdf일 때 PDF 브랜치(origin/pdf, f61d2c1)의 여백 값 사용
-export default function AboutMe({ pdf = false }: { pdf?: boolean }) {
+export default function AboutMe({
+  pdf = false,
+  subtitle,
+}: {
+  pdf?: boolean
+  subtitle: string
+}) {
   return (
     <section
       id="about"
@@ -89,7 +95,7 @@ export default function AboutMe({ pdf = false }: { pdf?: boolean }) {
           구정은 <span className="text-primary ">Emily Koo</span>
         </h2>
         <div className="text-lg text-subText  font-semibold">
-          실무형 프론트엔드 개발자
+          {subtitle}
         </div>
       </motion.div>
 

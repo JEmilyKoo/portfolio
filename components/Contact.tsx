@@ -6,7 +6,11 @@ import {
   FaPortrait,
 } from 'react-icons/fa'
 
-export default function Contact() {
+const SITE_URL = 'https://portfolio-beta-seven-87.vercel.app'
+
+// path: 지금 보고 있는 버전 경로(기본 "", /v1, /v2, /v3, /v4). Portfolio 링크가 그 버전 주소를 가리킨다.
+export default function Contact({ path = '' }: { path?: string }) {
+  const portfolioUrl = `${SITE_URL}${path || '/'}`
   return (
     <section
       id="contact"
@@ -31,8 +35,8 @@ export default function Contact() {
           <ContactItem
             icon={<FaPortrait />}
             label="Portfolio"
-            value="https://portfolio-beta-seven-87.vercel.app/"
-            href="https://portfolio-beta-seven-87.vercel.app/"
+            value={portfolioUrl}
+            href={portfolioUrl}
           />
           <ContactItem
             icon={<FaBlogger />}

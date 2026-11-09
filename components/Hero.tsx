@@ -63,13 +63,15 @@ export default function Hero({
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-2">
-            {config.secondaryPills.map((pill) => (
-              <span
-                key={pill}
-                className="px-4 py-2 rounded-full bg-subText/10 text-subText   text-sm font-semibold hover:bg-subText/20  transition-colors">
-                {pill}
-              </span>
+          {/* 2줄: 직무별 핵심 역량 3개와 근거 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl w-full">
+            {config.competencies.map((c) => (
+              <div
+                key={c.title}
+                className="rounded-xl border border-border bg-surface px-4 py-3 text-left">
+                <div className="text-sm font-bold text-text">{c.title}</div>
+                <div className="text-xs text-subText mt-1">{c.evidence}</div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -101,7 +103,7 @@ export default function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}>
           <a
-            href="https://github.com/JEmilyKoo/portfolio/blob/f91cb868af35910a1438933985615134ff4975d2/20260428%20%EA%B5%AC%EC%A0%95%EC%9D%80%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf"
+            href={config.pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-lg bg-primary text-white  font-semibold text-base shadow-custom transition-all duration-200 hover:bg-accent hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary hover:scale-105">

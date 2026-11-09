@@ -10,7 +10,7 @@ const projects: Project[] = [
       'MAU 1,400만 자동차 커뮤니티·중고차 서비스의 전면 리뉴얼. 초기 구조와 기본 기능은 기존 팀원이 개발했고, 합류 후 신규 화면 개발과 QA 수정을 맡음.',
     metrics: [
       { label: '1,000번째 글 복원', value: '오차 0px' },
-      { label: '통합 검색 API 호출', value: '91회 → 2회' },
+      { label: '1,002건 로드 시 렌더링 카드', value: '3~5개' },
       { label: '한글 카테고리 URL', value: '6종' },
     ],
     technologies: [
@@ -111,11 +111,7 @@ const projects: Project[] = [
     role: '프론트엔드 개발 / VS Code 확장 프로그램 개발',
     description:
       'VS Code에서 코드/디렉토리/로그 스냅샷을 찍고, AI 도움으로 기술 블로그 초안을 Notion에 게시하는 확장 프로그램',
-    metrics: [
-      { label: 'VS Code', value: '스냅샷 기능' },
-      { label: 'Notion', value: '자동 게시' },
-      { label: '템플릿 기반 프롬프트', value: 'AI 포스트 생성' },
-    ],
+    metrics: [],
     technologies: [
       'React',
       'Next.js',
@@ -402,7 +398,7 @@ const projects: Project[] = [
       '친한 사람들과 돈 문제로 어색하지 않도록, 가볍지만 신뢰할 수 있게 정리해주는 코리빙 서비스',
     metrics: [
       { label: '메인 로딩', value: '7초 → 0.37초' },
-      { label: 'Lighthouse', value: '100점' },
+      { label: 'Lighthouse 접근성·SEO 등 4개 항목', value: '100점' },
       { label: '실시간 반영', value: 'FCM 연동' },
     ],
     technologies: [
@@ -444,9 +440,6 @@ const projects: Project[] = [
           {
             text: 'DOMContentLoaded 기준 7초 → 0.37초로 개선 (Chrome DevTools)\n',
             className: 'trouble-important',
-          },
-          {
-            text: 'DOM 콘텐츠 로딩 시간도 148ms → 19ms로 감소해 반응성 크게 향상\n',
           },
           { icon: 'learned' },
           {
@@ -609,11 +602,7 @@ const projects: Project[] = [
     period: '2024.10 ~ 2024.11 (2주)',
     role: '기획 / UI 개발 / 음성 대화 기능 개발',
     description: 'AI LLM을 활용한 음성 대화 트립 매니징 서비스',
-    metrics: [
-      { label: 'STT', value: '실시간화' },
-      { label: 'WebSocket', value: '동기화' },
-      { label: 'OpenAI', value: '토큰 최적화' },
-    ],
+    metrics: [],
     technologies: [
       'Vue3',
       'Spring Boot',
@@ -647,7 +636,7 @@ const projects: Project[] = [
         content: [
           {
             text: `- STT : FE단에서 처리하고 TextMessage만 BE로 전송
-- TTS :  BianaryMessage를 AudioBlob 형식으로 전송함과 동시에 해당 Json을 TextMessage로 전송한 뒤 싱크 맞추기 작업 추가`,
+- TTS :  BinaryMessage를 AudioBlob 형식으로 전송함과 동시에 해당 Json을 TextMessage로 전송한 뒤 싱크 맞추기 작업 추가`,
             className: 'text-sm',
           },
         ],
@@ -669,7 +658,7 @@ const projects: Project[] = [
     title: 'bizmekaTalk 3.0',
     period: '2021.11 ~ 2024.01',
     role: `    개발: 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담 개발
-    유지 보수: 오류 수정, QA, 배포(Paskal로 설치 파일 제작)
+    유지 보수: 오류 수정, QA, 배포(Pascal로 설치 파일 제작)
     R&D : UI/UX의 편의성 증가, 접기 기능 개발`,
     description:
       '그룹웨어 신규 솔루션의 PC 클라이언트 프론트엔드 개발과 운영을 담당. 쪽지 기능을 전담 개발하고, 설계 및 기술 스택 선정 단계부터 참여함. 고객사 요구에 따른 옵션 기능 구현과 SaaS 대응을 위해 SSR SPA 구조로 개발함.',
@@ -800,10 +789,7 @@ const projects: Project[] = [
     role: '기획 / 서버·개발 환경 구성 / DB 설계 / 프로필·업적·레벨 로직 구현 / UI 개발 / 안드로이드 개발',
     description:
       '게이미피케이션을 접목한 여행 정보 공유 서비스 (한국소프트웨어인재개발원 Java 개발자 과정 팀 프로젝트)',
-    metrics: [
-      { label: 'Spring', value: 'REST API 개발' },
-      { label: 'WebSocket', value: '채팅' },
-    ],
+    metrics: [],
     technologies: ['Java', 'Spring', 'Oracle', 'WebSocket', 'Android SDK', 'Bootstrap'],
     image: ['/images/StampGO.png'],
     troubleshooting: [

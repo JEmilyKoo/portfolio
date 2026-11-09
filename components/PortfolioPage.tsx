@@ -45,14 +45,14 @@ export default function PortfolioPage({
   return (
     <>
       <Hero config={config} pdf={pdf} webUrl={`${SITE_URL}${path}`} />
-      <AboutMe pdf={pdf} />
+      <AboutMe pdf={pdf} subtitle={config.aboutSubtitle} />
       <Skills config={config} pdf={pdf} />
       <ProjectList
         projects={ordered}
         intro={config.projectsIntro}
         pdf={pdf}
       />
-      <Contact />
+      <Contact path={path} />
     </>
   )
 }
