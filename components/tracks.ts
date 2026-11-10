@@ -72,7 +72,7 @@ const vueSkill: SkillItem = {
   level: '실무 약 2년 8개월',
   desc: [
     '보배드림 리뉴얼(Nuxt 4, Vue 3): 피드 무한 스크롤, 통합 검색, 마이페이지',
-    '가온아이(Vue, Nuxt): 그룹웨어 PC 메신저 기능 개발',
+    '가온아이(Vue, Nuxt, JavaScript): 그룹웨어 PC 메신저 기능 개발',
     '포인터·드래그 이벤트 버그 수정 경험',
   ],
 }
@@ -122,7 +122,7 @@ const REACT_TRACK: TrackConfig = {
     highlight: '가상 스크롤 피드와 뒤로가기 위치 복원',
     after: '을 맡아 구현했습니다.',
   },
-  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
+  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
   primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex)'],
   competencies: [
     {
@@ -190,7 +190,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: 'Vue·Nuxt 화면의 렌더링 성능과 UI 상태 복원',
       after: '을 다뤄 왔습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
     primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -233,7 +233,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
       after: ' 경험을 더했습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
     primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -297,14 +297,14 @@ export const tracks: Record<Track, TrackConfig> = {
     aboutSubtitle: '웹 개발자',
     metaTitle: '구정은 Emily Koo | 웹 개발 포트폴리오',
     metaDescription:
-      '가상 스크롤 렌더링 최적화, URL·라우팅 설계, 6개 국어 다국어 대응 경험이 있는 웹 개발자 구정은(Emily Koo)의 포트폴리오.',
+      '가상 스크롤 렌더링 최적화, 한글 URL 라우팅, 6개 국어 다국어 대응 경험이 있는 웹 개발자 구정은(Emily Koo)의 포트폴리오.',
     tagline: '렌더링 성능·URL 구조·다국어를 다뤄 온 웹 개발자',
     intro: {
       before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 ',
-      highlight: '가상 스크롤 피드와 한글 URL 라우팅을 설계·구현',
-      after: '했고, 그룹웨어 6개 국어 대응을 맡았습니다.',
+      highlight: '가상 스크롤 피드를 혼자 설계·개발',
+      after: '했고, 한글 URL 라우팅과 그룹웨어 6개 국어 대응도 해 왔습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/aec84fee591f84505db6174206b5e3cd2290b7e2/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI Agent(Codex)'],
     competencies: [
       {
@@ -312,8 +312,8 @@ export const tracks: Record<Track, TrackConfig> = {
         evidence: '보배드림 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
       },
       {
-        title: 'SEO·URL 설계',
-        evidence: '보배드림 차량 목록의 한글 카테고리 URL 구조(6종)를 설계하고 기존 영문 주소와 호환, 검색어를 URL에 담아 새로고침·공유해도 결과 유지',
+        title: 'SEO·URL 라우팅',
+        evidence: '보배드림 차량 목록 한글 카테고리 URL(6종)을 백엔드와 함께 구현해 기존 영문 주소와 호환, 검색어를 URL에 담아 새로고침·공유해도 결과 유지',
       },
       {
         title: '다국어',
@@ -333,7 +333,7 @@ export const tracks: Record<Track, TrackConfig> = {
         name: 'SEO·웹 성능',
         level: '실무·프로젝트',
         desc: [
-          '보배드림: 차량 목록 한글 카테고리 URL 구조 설계(6종), 검색어 URL 반영',
+          '보배드림: 차량 목록 한글 카테고리 URL 라우팅(6종, 백엔드와 협업), 검색어 URL 반영',
           '보배드림: 1,000건 피드 가상 스크롤(렌더링 카드 3~5개)',
           'Chain G: Lighthouse 접근성·SEO·권장사항·PWA 100점, 메인 로딩 7초 → 0.37초',
         ],
