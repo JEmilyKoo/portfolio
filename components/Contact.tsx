@@ -2,7 +2,6 @@
 import {
   FaGithub,
   FaEnvelope,
-  FaBlogger,
   FaPortrait,
 } from 'react-icons/fa'
 
@@ -38,12 +37,6 @@ export default function Contact({ path = '' }: { path?: string }) {
             value={portfolioUrl}
             href={portfolioUrl}
           />
-          <ContactItem
-            icon={<FaBlogger />}
-            label="Blog"
-            value="velog.io/@jemilykoo"
-            href="https://velog.io/@jemilykoo/posts"
-          />
         </div>
       </div>
     </section>
