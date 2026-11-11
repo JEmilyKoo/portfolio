@@ -25,7 +25,7 @@ const timelineItems = [
     title: 'SSAFY 전공자 Java 트랙 수료',
     company: '삼성 청년 SW·AI 아카데미',
     description:
-      '프로젝트 우수상 2회 수상, 삼성 SW 역량테스트 (A형), 2월 이달의 동료상',
+      '프로젝트 우수상 2회 수상, 삼성 SW 역량테스트 A형 통과, 2월 이달의 동료상',
     important: false,
     icon: <FaRocket className="text-accent " />,
   },

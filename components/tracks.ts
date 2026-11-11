@@ -47,7 +47,7 @@ const commonSoftSkills: SoftSkill[] = [
     details: [
       '비개발자 QA 리포트를 받아 처리 순서를 정하고 대응',
       '백엔드와 API 사용 방식을 확인한 뒤 구현',
-      '영어만 쓰는 동료와 용어집·네이밍 규칙을 만들어 협업',
+      '외국인 동료와 영어 용어집·네이밍 규칙을 만들어 협업',
     ],
   },
   {
@@ -61,7 +61,7 @@ const commonSoftSkills: SoftSkill[] = [
     category: '어학',
     details: [
       '일본어 JLPT N1',
-      '영어 업무 소통 가능',
+      '영어 비즈니스 회화 가능(외국인 개발자와 영어로 협업)',
       '6개 국어 다국어 리소스 통합 경험',
     ],
   },
@@ -105,25 +105,30 @@ const testSkill: SkillItem = {
 }
 
 const aiSkill: SkillItem = {
-  name: 'AI 도구',
+  name: 'AI 에이전트·LLM',
   level: '실무',
-  desc: ['AI 결과는 테스트와 브라우저 확인 후 반영(구현·리뷰 역할 분리)'],
+  desc: [
+    '보배드림: Codex·Claude로 구현·독립 리뷰·설계 대조 에이전트를 나눈 개인 개발 환경 설계·운영',
+    '작업 범위 검사 스크립트·샌드박스로 에이전트 수정 범위를 제한하고, 팀 공통 규칙을 바탕으로 만든 AI 작업 규칙으로 작업 기준 고정',
+    'Vibe Editor: LLM 채팅·글 생성 화면(코드 스냅샷을 맥락으로 첨부, OpenAI·Anthropic, LangChain 백엔드)',
+    'AI 결과는 테스트와 브라우저 확인 후 반영',
+  ],
 }
 
 const REACT_TRACK: TrackConfig = {
-  label: '프론트엔드 엔지니어(React)',
+  label: '프론트엔드 개발자(React)',
   aboutSubtitle: '프론트엔드 개발자',
   metaTitle: '구정은 Emily Koo | 프론트엔드 포트폴리오',
   metaDescription:
     'React·Vue로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 리뉴얼 참여.',
-  tagline: '웹 서비스를 만들어 온 프론트엔드 개발자 (React · Vue)',
+  tagline: '프론트엔드 개발자(React·Vue·AI 활용) | MAU 1,400만 피드 60fps 수준 렌더링',
   intro: {
-    before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 ',
-    highlight: '가상 스크롤 피드와 뒤로가기 위치 복원',
-    after: '을 맡아 구현했습니다.',
+    before: 'React·Vue·TypeScript 기반, 실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 사용자 30만 명 그룹웨어 메신저에서 ',
+    highlight: '대용량 피드 성능 최적화',
+    after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
   pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
-  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex)'],
+  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex·Claude)'],
   competencies: [
     {
       title: '렌더링 성능',
@@ -131,11 +136,11 @@ const REACT_TRACK: TrackConfig = {
     },
     {
       title: 'React 컴포넌트·상태 설계',
-      evidence: '디자인 시스템과 바텀시트·입력창 등 공통 컴포넌트 구축, Redux Toolkit으로 상태 설계',
+      evidence: 'React·Next.js로 디자인 시스템과 바텀시트·입력창 등 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
     },
     {
-      title: 'AI 에이전트 협업 개발',
-      evidence: '보배드림에서 구현·독립 리뷰·요구사항 대조 에이전트를 나눠 운영하고, 결과는 테스트·브라우저 측정으로 검증한 뒤 반영',
+      title: 'AI 활용 개발',
+      evidence: '보배드림에서 Codex·Claude로 구현·리뷰 에이전트를 분리한 AI 개발 환경을 설계·운영, 작업 범위 차단 스크립트(테스트 80개)와 직접 검증으로 AI 생성 코드 통제',
     },
   ],
   skills: [
@@ -144,7 +149,7 @@ const REACT_TRACK: TrackConfig = {
       level: '프로젝트',
       desc: [
         'Chain G(Next.js, PWA): 디자인 시스템·공통 컴포넌트, 메인 로딩 7초 → 0.37초',
-        'Vibe Editor(React): VS Code 확장 프로그램 화면, WebView 간 상태 동기화',
+        'Vibe Editor(React): VS Code 확장 프로그램 AI 채팅·글 생성 화면, WebView 간 상태 동기화',
         'Redux Toolkit으로 상태 관리',
       ],
     },
@@ -179,19 +184,19 @@ export const tracks: Record<Track, TrackConfig> = {
   frontend: REACT_TRACK,
 
   vue: {
-    label: '프론트엔드 엔지니어(Vue)',
+    label: '프론트엔드 개발자(Vue)',
     aboutSubtitle: '프론트엔드 개발자',
     metaTitle: '구정은 Emily Koo | 프론트엔드(Vue) 포트폴리오',
     metaDescription:
       'Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.',
-    tagline: 'Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자',
+    tagline: '프론트엔드 개발자 · Vue·Nuxt | MAU 1,400만 피드 60fps 수준 렌더링',
     intro: {
-      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 30만 명 규모 그룹웨어에서 ',
-      highlight: 'Vue·Nuxt 화면의 렌더링 성능과 UI 상태 복원',
-      after: '을 다뤄 왔습니다.',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 사용자 30만 명 그룹웨어 메신저에서 Vue·Nuxt로 ',
+      highlight: '대용량 피드 성능 최적화와 상태 복원',
+      after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
-    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex)'],
+    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex·Claude)'],
     competencies: [
       {
         title: 'UI 상태 복원',
@@ -199,11 +204,11 @@ export const tracks: Record<Track, TrackConfig> = {
       },
       {
         title: '복잡한 상호작용 디버깅',
-        evidence: 'PC에서 메뉴 드래그 정렬이 끊기는 문제를 원인 3가지(정렬 로직·브라우저 기본 드래그·포인터 이벤트 추적)로 나눠 수정',
+        evidence: '데스크톱 브라우저에서 메뉴 드래그 정렬이 끊기는 문제를 원인 3가지(정렬 로직·브라우저 기본 드래그·포인터 이벤트 추적)로 나눠 수정',
       },
       {
-        title: 'AI 에이전트 협업 개발',
-        evidence: '구현·독립 리뷰·요구사항 대조 에이전트를 나눠 운영하고, 설계 문서에 동작과 적용 범위를 명시해 의도대로 구현되게 함',
+        title: 'AI 활용 개발',
+        evidence: '보배드림에서 Codex·Claude로 구현·리뷰 에이전트를 분리한 AI 개발 환경을 설계·운영. 작업 범위 차단 스크립트(테스트 80개)·샌드박스로 수정 범위를 제한하고 최종 검증은 직접 수행',
       },
     ],
     skills: [vueSkill, tsSkill, testSkill, reactSkill, aiSkill],
@@ -222,19 +227,19 @@ export const tracks: Record<Track, TrackConfig> = {
   },
 
   fullstack: {
-    label: '풀스택 엔지니어',
+    label: '풀스택 개발자',
     aboutSubtitle: '웹 개발자 (프론트엔드 · Java/Spring)',
     metaTitle: '구정은 Emily Koo | 풀스택 포트폴리오',
     metaDescription:
       '프론트엔드 실무를 중심으로, 팀 프로젝트에서 Spring Boot API와 DB 설계, Jenkins CI/CD 수정 경험이 있는 개발자 구정은(Emily Koo)의 포트폴리오.',
-    tagline: '프론트엔드부터 Java·Spring 백엔드까지 다루는 개발자',
+    tagline: '프론트엔드 개발자(React·Vue) · Java·Spring 경험 | MAU 1,400만 서비스 API 협업',
     intro: {
-      before: '실무 경력 약 2년 8개월. 백엔드와 API 구조를 맞춰 온 프론트엔드 실무에 ',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림 등에서 백엔드와 API 구조를 맞춰 온 프론트엔드 실무에 ',
       highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
       after: ' 경험을 더했습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
-    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex)'],
+    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex·Claude)'],
     competencies: [
       {
         title: 'API 연동·백엔드 협업',
@@ -246,7 +251,7 @@ export const tracks: Record<Track, TrackConfig> = {
       },
       {
         title: 'AI API 연동·에이전트 협업',
-        evidence: 'OpenAI API로 음성 대화 기능을 개발하고 프롬프트·토큰을 줄여 타임아웃을 해결, 실무에서는 AI 에이전트 결과를 테스트로 검증',
+        evidence: 'OpenAI·Anthropic·LangChain 백엔드와 연동한 LLM 채팅·글 생성 화면 개발, OpenAI API 음성 대화에서 프롬프트·토큰을 줄여 타임아웃 해결. 보배드림에서는 Codex·Claude AI 개발 환경을 설계·운영(독립 리뷰·작업 범위 차단)',
       },
     ],
     skills: [
@@ -259,7 +264,7 @@ export const tracks: Record<Track, TrackConfig> = {
         desc: [
           '트매: Spring Boot·MySQL로 네이버 로그인·회원가입 DB 구축, WebSocket 음성·JSON 처리',
           '찍Go: Spring REST API, WebSocket 채팅, 미션별 업적 자동 획득 로직',
-          '삼성 SW 역량테스트 (A형), Java 알고리즘',
+          '삼성 SW 역량테스트 A형 통과, Java 알고리즘',
         ],
       },
       {
@@ -298,11 +303,11 @@ export const tracks: Record<Track, TrackConfig> = {
     metaTitle: '구정은 Emily Koo | 웹 개발 포트폴리오',
     metaDescription:
       '가상 스크롤 렌더링 최적화, 한글 URL 라우팅, 6개 국어 다국어 대응 경험이 있는 웹 개발자 구정은(Emily Koo)의 포트폴리오.',
-    tagline: '렌더링 성능·URL 구조·다국어를 다뤄 온 웹 개발자',
+    tagline: '프론트엔드 개발자(React·Vue) · 웹 성능·SEO·다국어 | MAU 1,400만 피드 렌더링 최적화',
     intro: {
-      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 ',
-      highlight: '가상 스크롤 피드를 혼자 설계·개발',
-      after: '했고, 한글 URL 라우팅과 그룹웨어 6개 국어 대응도 해 왔습니다.',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 사용자 30만 명 그룹웨어 메신저에서 ',
+      highlight: '가상 스크롤 피드 단독 설계·개발',
+      after: ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/bfd145c3f700efa9144a3be7626c49e237891ac9/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI Agent(Codex)'],
@@ -317,7 +322,7 @@ export const tracks: Record<Track, TrackConfig> = {
       },
       {
         title: '다국어',
-        evidence: '해외 고객사 그룹웨어의 PC·모바일 6개 국어 리소스 통합, 번역 길이에 따라 깨지는 UI를 반응형으로 재구성',
+        evidence: '해외 고객사 그룹웨어의 데스크톱·모바일 6개 국어 리소스 통합, 번역 길이에 따라 깨지는 레이아웃을 반응형으로 수정',
       },
     ],
     skills: [
