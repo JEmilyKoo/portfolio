@@ -1,23 +1,40 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
+function subscribe(callback: () => void) {
+  window.addEventListener('storage', callback);
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', callback);
+
+  return () => {
+    window.removeEventListener('storage', callback);
+    mediaQuery.removeEventListener('change', callback);
+  };
+}
+
+function getSnapshot() {
+  return (
+    localStorage.getItem('theme') === 'dark' ||
+    (!localStorage.getItem('theme') &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  );
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
+  const isDark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem('theme') === 'dark' ||
-      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setIsDark(isDarkMode);
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
-    setIsDark(newTheme);
     if (newTheme) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -25,6 +42,7 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+    window.dispatchEvent(new Event('storage'));
   };
 
   return (
@@ -36,4 +54,4 @@ export default function ThemeToggle() {
       {isDark ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
     </button>
   );
-} 
+}
