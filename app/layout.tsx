@@ -1,12 +1,20 @@
-import "../styles/globals.css";
+import localFont from 'next/font/local';
+import { Roboto } from 'next/font/google';
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import "../styles/globals.css";
 
-const notoSansKR = Noto_Sans_KR({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-kr",
-  display: "swap",
+const pretendard = localFont({
+  src: '../public/fonts/PretendardVariable.woff2', // 1단계에서 저장한 실제 파일 경로
+  display: 'swap',
+  weight: '45 920',
+  variable: '--font-pretendard',
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-roboto',
 });
 
 export const viewport: Viewport = {
@@ -59,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`min-h-screen bg-white text-text font-sans ${notoSansKR.variable} transition-colors duration-300 selection:bg-primary/20 selection:text-primary`}
+        className={`min-h-screen bg-white text-text font-sans ${pretendard.variable} ${roboto.variable} transition-colors duration-300 selection:bg-primary/20 selection:text-primary`}
       >
         <main className="flex flex-col items-center w-full min-h-screen bg-white text-text">
           {children}

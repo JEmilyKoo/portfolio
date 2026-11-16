@@ -1,15 +1,37 @@
 @import "tailwindcss";
 
+/* ThemeToggle.tsx의 document.documentElement.classList.add('dark')가 작동하도록 설정 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 기존 tailwind.config.js의 theme.extend 내용을 Tailwind v4 방식으로 등록 */
+@theme inline {
+  --font-sans: var(--font-pretendard), var(--font-roboto), sans-serif;
+  --font-mono: var(--font-roboto-mono), Menlo, Monaco, monospace;
+
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text: #222222;
+  --color-subText: #6B7280;
+  --color-border: #E5E7EB;
+  --color-primary: #339CFF;
+  --color-accent: #00C2B2;
+  --color-error: #FF4D4F;
+  --color-success: #4F93CE;
+  --color-warning: #FACC15;
+
+  --radius-lg: 10px;
+  --shadow-custom: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
 }
 
 html,
@@ -21,30 +43,14 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-::selection {
-  background: #339CFF22;
 }
 
 ::-webkit-scrollbar {
