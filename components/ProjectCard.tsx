@@ -85,35 +85,35 @@ export default function ProjectCard({
       case 'result':
         return (
           <>
-            <FaBolt className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <FaBolt className="text-accent inline-block p-px mr-px mb-0.75" />
             <span className="trouble-label">성과</span>
           </>
         )
       case 'learned':
         return (
           <>
-            <FaBookOpen className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <FaBookOpen className="text-accent inline-block p-px mr-px mb-0.75" />
             <span className="trouble-label">회고</span>
           </>
         )
       case 'solution':
         return (
           <>
-            <FaScrewdriverWrench className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <FaScrewdriverWrench className="text-accent inline-block p-px mr-px-[3px]" />
             <span className="trouble-label">해결</span>
           </>
         )
       case 'cause':
         return (
           <>
-            <FaMagnifyingGlass className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <FaMagnifyingGlass className="text-accent inline-block p-px mr-px mb-0.75" />
             <span className="trouble-label">원인</span>
           </>
         )
       case 'issue':
         return (
           <>
-            <FaTriangleExclamation className="text-accent inline-block p-[1px] mr-[1px] mb-[3px]" />
+            <FaTriangleExclamation className="text-accent inline-block p-px mr-px mb-0.75" />
             <span className="trouble-label">현상</span>
           </>
         )
@@ -184,7 +184,7 @@ export default function ProjectCard({
 
           {/* PDF 모드: 글 아래에 두고, 카드 전체 폭으로 커지지 않게 최대 폭 제한 */}
           <div
-            className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-background cursor-pointer ${pdf ? 'w-full max-w-[340px] mx-auto' : ''}`}
+            className={`relative aspect-4/3 rounded-xl overflow-hidden bg-background cursor-pointer ${pdf ? 'w-full max-w-85 mx-auto' : ''}`}
             onClick={handleImageClick}>
             {image && image.length > 0 ? (
               <>

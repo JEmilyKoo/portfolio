@@ -13,7 +13,7 @@ export default function Contact({ path = '' }: { path?: string }) {
   return (
     <section
       id="contact"
-      className="max-w-[600px] mx-auto mb-24 pt-12 px-4 flex flex-col items-center break-before-page">
+      className="max-w-150 mx-auto mb-24 pt-12 px-4 flex flex-col items-center break-before-page">
       <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">
         <span className="text-primary">Contact</span>
       </h2>

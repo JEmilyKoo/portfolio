@@ -77,7 +77,7 @@ export default function AboutMe({
   return (
     <section
       id="about"
-      className="max-w-[900px] mx-auto mb-24 pt-8 px-4 flex flex-col items-center">
+      className="max-w-225 mx-auto mb-24 pt-8 px-4 flex flex-col items-center">
       <motion.div
         initial={pdf ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function AboutMe({
           alt="구정은 프로필"
           width={128}
           height={128}
-          className="w-[128px] h-[128px] rounded-full object-cover mb-6 shadow-lg border-4 border-surface  mx-auto"
+          className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg border-4 border-surface  mx-auto"
         />
         <h2 className="text-3xl md:text-4xl font-extrabold mb-1">
           구정은 <span className="text-primary ">Emily Koo</span>
