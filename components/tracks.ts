@@ -153,7 +153,6 @@ const REACT_TRACK: TrackConfig = {
     'React 팀 프로젝트와 프론트엔드 실무에서 직접 개발한 화면과 문제 해결 과정입니다.',
   projectOrder: [
     '보배드림 전면 리뉴얼',
-    'agents-on-cloud',
     'Chain G',
     'Vibe Editor',
     '다와따',
@@ -161,6 +160,7 @@ const REACT_TRACK: TrackConfig = {
     'Pratama',
     'KumTalk',
     '트매',
+    'agents-on-cloud',
   ],
 }
 
@@ -380,7 +380,6 @@ export const tracks: Record<Track, TrackConfig> = {
       '웹 화면 개발과 반응형·다국어·SEO 대응 경험을 중심으로 정리했습니다.',
     projectOrder: [
       '보배드림 전면 리뉴얼',
-      'agents-on-cloud',
       'Pratama',
       'Chain G',
       'bizmekaTalk 3.0',
@@ -388,6 +387,7 @@ export const tracks: Record<Track, TrackConfig> = {
       'Vibe Editor',
       '다와따',
       '트매',
+      'agents-on-cloud',
     ],
   },
 }
