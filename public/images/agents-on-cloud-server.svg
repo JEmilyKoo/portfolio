@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 620" width="340" height="620" role="img" aria-label="공인 IP로 들어오는 접속은 막혀 있고, AWS에 로그인한 사용자만 EICE를 거쳐 SSH로 접속한다. 작업 지시는 EC2가 먼저 연 연결을 통해 Remote Control 중계로 전달된다." font-family="Inter, Pretendard, 'Noto Sans KR', Roboto, sans-serif">
+  <defs>
+    <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#339cff"/></marker>
+    <marker id="aA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#00c2b2"/></marker>
+    <marker id="aT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker>
+  </defs>
+  <rect width="340" height="620" fill="#f8fafc"/>
+  <text x="170" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#6b7280">서버 아키텍처</text>
+
+  <g transform="translate(0,22)">
+  <!-- 상단: 사용자 / 중계 -->
+  <rect x="12" y="14" width="132" height="58" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="78" y="39" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">사용자</text>
+  <text x="78" y="59" text-anchor="middle" font-size="13" fill="#6b7280">PC · 모바일</text>
+
+  <rect x="196" y="14" width="132" height="58" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="262" y="39" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">Remote Control</text>
+  <text x="262" y="59" text-anchor="middle" font-size="13" fill="#6b7280">Anthropic 중계</text>
+
+  <line x1="146" y1="43" x2="192" y2="43" stroke="#222222" stroke-width="1.5" marker-end="url(#aT)"/>
+  <text x="169" y="35" text-anchor="middle" font-size="13" fill="#222222">지시</text>
+
+  <!-- 공인 IP 직접 접속: 차단 -->
+  <line x1="30" y1="74" x2="30" y2="166" stroke="#ff4d4f" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M21 167 L39 185 M39 167 L21 185" stroke="#ff4d4f" stroke-width="2.5"/>
+  <text x="42" y="162" font-size="13" font-weight="600" fill="#ff4d4f">공인 IP 차단</text>
+
+  <!-- AWS 로그인 SSH: EICE -->
+  <line x1="120" y1="72" x2="120" y2="98" stroke="#00c2b2" stroke-width="2" marker-end="url(#aA)"/>
+  <rect x="100" y="100" width="120" height="44" rx="8" fill="#ffffff" stroke="#00c2b2" stroke-width="1.5"/>
+  <text x="160" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">EICE</text>
+  <text x="160" y="136" text-anchor="middle" font-size="12" fill="#6b7280">AWS 로그인 필요</text>
+  <line x1="200" y1="144" x2="200" y2="210" stroke="#00c2b2" stroke-width="2" marker-end="url(#aA)"/>
+  <text x="192" y="174" text-anchor="end" font-size="13" font-weight="600" fill="#00c2b2">SSH</text>
+
+  <!-- 보안 그룹 -->
+  <rect x="6" y="176" width="328" height="316" rx="12" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="20" y="485" font-size="13" font-weight="600" fill="#222222">보안 그룹 · 22번은 EICE만</text>
+
+  <!-- EC2 -->
+  <rect x="18" y="212" width="304" height="256" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="32" y="237" font-size="15" font-weight="700" fill="#222222">EC2 t4g.small</text>
+  <text x="32" y="256" font-size="13" fill="#6b7280">Ubuntu 24.04 · RAM 2GB</text>
+
+  <rect x="32" y="268" width="244" height="34" rx="8" fill="#f8fafc" stroke="#e5e7eb"/>
+  <text x="46" y="290" font-size="13" fill="#222222"><tspan font-weight="600">systemd</tspan> · 자동 재시작</text>
+  <line x1="154" y1="302" x2="154" y2="316" stroke="#222222" stroke-width="1.5" marker-end="url(#aT)"/>
+
+  <rect x="32" y="318" width="244" height="112" rx="8" fill="#f8fafc" stroke="#e5e7eb"/>
+  <text x="46" y="338" font-size="13" font-weight="600" fill="#222222">tmux</text>
+  <rect x="44" y="346" width="220" height="34" rx="8" fill="#ffffff" stroke="#339cff" stroke-width="1.5"/>
+  <text x="154" y="368" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">Claude Code 상시 세션</text>
+  <rect x="44" y="388" width="104" height="30" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="96" y="408" text-anchor="middle" font-size="13" fill="#222222">작업 세션</text>
+  <rect x="160" y="388" width="104" height="30" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="212" y="408" text-anchor="middle" font-size="13" fill="#222222">작업 세션</text>
+
+  <text x="32" y="454" font-size="12" fill="#6b7280">스왑 2GB · 보안 패치 자동</text>
+
+  <!-- 서버 → 중계 (먼저 연결) -->
+  <polyline points="264,363 300,363 300,76" fill="none" stroke="#339cff" stroke-width="2" marker-end="url(#aP)"/>
+  <text x="290" y="106" text-anchor="end" font-size="13" font-weight="600" fill="#339cff">먼저 연결</text>
+
+  <!-- 서버 → 외부 API -->
+  <line x1="250" y1="468" x2="250" y2="524" stroke="#339cff" stroke-width="2" marker-end="url(#aP)"/>
+  <text x="260" y="512" font-size="13" font-weight="600" fill="#339cff">HTTPS</text>
+  <rect x="12" y="528" width="316" height="50" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="170" y="558" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">외부 API <tspan font-size="13" font-weight="400" fill="#6b7280">Anthropic · GitHub</tspan></text>
+  </g>
+</svg>

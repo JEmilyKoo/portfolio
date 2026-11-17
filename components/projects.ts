@@ -189,7 +189,7 @@ const projects: Project[] = [
       'Claude Code',
       'AI Agent',
     ],
-    image: ['/images/agents-on-cloud.svg'],
+    image: ['/images/agents-on-cloud-server.svg', '/images/agents-on-cloud-flow.svg'],
     troubleshooting: [
       {
         title: '서버 구성: 인바운드 포트 없이 원격 지시, SSH는 EICE로만',
