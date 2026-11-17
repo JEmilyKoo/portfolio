@@ -172,6 +172,57 @@ const projects: Project[] = [
     team: '6명(개발자 4, 디자이너 1, 팀장 1)',
   },
   {
+    title: 'agents-on-cloud',
+    period: '2026.11 ~ 운영 중',
+    role: `개인 프로젝트 · 헤드리스 Claude Code 원격 작업 서버 설계·구축·운영
+    AWS EC2(서울 리전) 서버 구성, GitHub Actions self-hosted runner 등록, 역할별 서브에이전트 구성`,
+    description:
+      'AWS EC2에 헤드리스 Claude Code 원격 작업 서버를 구축하고, GitHub Issue 코멘트·PR 병합 이벤트마다 Claude Code가 실행되도록 연결한 개인 작업 자동화 환경. 조율자가 역할별 서브에이전트에 일을 나눠 맡기고, 사람과는 Issue로 소통함.',
+    metrics: [],
+    technologies: [
+      'AWS EC2',
+      '보안 그룹',
+      'EC2 Instance Connect Endpoint',
+      'systemd',
+      'tmux',
+      'GitHub Actions',
+      'Claude Code',
+      'AI Agent',
+    ],
+    image: ['/images/agents-on-cloud.svg'],
+    troubleshooting: [
+      {
+        title: '서버 구성: 인바운드 포트 없이 원격 지시, SSH는 EICE로만',
+        content: [
+          { icon: 'issue' },
+          {
+            text: `인바운드를 전면 차단하자 개인 SSH까지 막힘\n`,
+          },
+          { icon: 'solution' },
+          {
+            text: `- 서버가 먼저 바깥으로 연결을 여는 Remote Control 구조로, 인바운드 포트 없이 PC·모바일에서 작업 지시
+- AWS 인증을 거치는 EC2 Instance Connect Endpoint로만 SSH를 허용하도록 보안 그룹 재설계
+- systemd·tmux 재시작 루프로 세션이 종료되면 자동 복구
+- RAM 2GB 인스턴스에서 스왑 2GB와 동시 세션 2개 제한으로 상시 운영 메모리 확보\n`,
+          },
+        ],
+      },
+      {
+        title: 'GitHub Actions self-hosted runner와 서브에이전트 6종',
+        content: [
+          {
+            text: `- EC2에 self-hosted runner를 등록해 기존 구조(인바운드 미개방)를 유지한 채 자동 실행 환경 구성
+- Issue 코멘트·PR 병합 이벤트마다 헤드리스 Claude Code 세션을 새로 실행, runner 1대로 한 번에 하나씩 처리해 RAM 2GB 서버에서 운영
+- 조율자가 조사·맞춤·작성·기계 작업·스크립트·검증 6개 역할의 서브에이전트에 작업을 맡기고, 서브에이전트마다 쓸 수 있는 도구를 제한
+- 사람과는 Issue(질문·승인 요청)와 PR로 소통하고, 로그인·제출은 사람이 직접 수행`,
+            className: 'text-sm',
+          },
+        ],
+      },
+    ],
+    team: '1명(개인 프로젝트)',
+  },
+  {
     title: 'Vibe Editor',
     period: '2025.04 ~ 2025.05 (6주)',
     role: '프론트엔드 개발 / VS Code 확장 프로그램 개발(AI 채팅, AI 글 생성, 스냅샷 TreeView, 설정)',

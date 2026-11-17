@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 590" width="340" height="590" role="img" aria-label="공인 IP로 들어오는 접속은 막혀 있고, AWS에 로그인한 사용자만 EICE를 거쳐 SSH로 접속한다. 작업 지시는 EC2가 먼저 연 연결을 통해 Remote Control 중계로 전달된다." font-family="Inter, Pretendard, 'Noto Sans KR', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 1030" width="340" height="1030" role="img" aria-label="공인 IP로 들어오는 접속은 막혀 있고, AWS에 로그인한 사용자만 EICE를 거쳐 SSH로 접속한다. 작업 지시는 EC2가 먼저 연 연결을 통해 Remote Control 중계로 전달된다. GitHub의 Issue와 PR 이벤트는 self-hosted runner를 거쳐 조율자(헤드리스 Claude Code)에게 가고, 조율자는 서브에이전트 6종에게 일을 맡겨 결과를 PR과 Issue 코멘트로 남긴다." font-family="Inter, Pretendard, 'Noto Sans KR', Roboto, sans-serif">
   <defs>
     <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#339cff"/></marker>
     <marker id="aA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#00c2b2"/></marker>
     <marker id="aT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker>
   </defs>
-  <rect width="340" height="590" fill="#f8fafc"/>
+  <rect width="340" height="1030" fill="#f8fafc"/>
 
   <!-- 상단: 사용자 / 중계 -->
   <rect x="12" y="14" width="132" height="58" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
@@ -64,4 +64,51 @@
   <text x="260" y="512" font-size="13" font-weight="600" fill="#339cff">HTTPS</text>
   <rect x="12" y="528" width="316" height="50" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
   <text x="170" y="558" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">외부 API <tspan font-size="13" font-weight="400" fill="#6b7280">Anthropic · GitHub</tspan></text>
+
+  <!-- 에이전트 계층 -->
+  <line x1="12" y1="598" x2="328" y2="598" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="170" y="618" text-anchor="middle" font-size="13" font-weight="600" fill="#6b7280">에이전트 실행 흐름</text>
+
+  <rect x="12" y="630" width="316" height="44" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="170" y="650" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">GitHub</text>
+  <text x="170" y="666" text-anchor="middle" font-size="12" fill="#6b7280">Issue 코멘트 · PR 병합 이벤트</text>
+  <line x1="170" y1="674" x2="170" y2="698" stroke="#222222" stroke-width="1.5" marker-end="url(#aT)"/>
+
+  <rect x="12" y="700" width="316" height="44" rx="10" fill="#ffffff" stroke="#00c2b2" stroke-width="1.5"/>
+  <text x="170" y="720" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">self-hosted runner</text>
+  <text x="170" y="736" text-anchor="middle" font-size="12" fill="#6b7280">EC2 · 한 번에 하나씩 처리</text>
+  <line x1="170" y1="744" x2="170" y2="768" stroke="#222222" stroke-width="1.5" marker-end="url(#aT)"/>
+
+  <rect x="12" y="770" width="316" height="44" rx="10" fill="#ffffff" stroke="#339cff" stroke-width="1.5"/>
+  <text x="170" y="790" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">조율자</text>
+  <text x="170" y="806" text-anchor="middle" font-size="12" fill="#6b7280">헤드리스 Claude Code</text>
+  <line x1="170" y1="814" x2="170" y2="838" stroke="#339cff" stroke-width="2" marker-end="url(#aP)"/>
+
+  <rect x="6" y="840" width="328" height="136" rx="12" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="20" y="862" font-size="13" font-weight="600" fill="#222222">서브에이전트 6종 · 도구 제한</text>
+
+  <rect x="18" y="872" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="66" y="890" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">researcher</text>
+  <text x="66" y="906" text-anchor="middle" font-size="12" fill="#6b7280">조사</text>
+  <rect x="122" y="872" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="170" y="890" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">editor</text>
+  <text x="170" y="906" text-anchor="middle" font-size="12" fill="#6b7280">맞춤</text>
+  <rect x="226" y="872" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="274" y="890" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">writer</text>
+  <text x="274" y="906" text-anchor="middle" font-size="12" fill="#6b7280">작성</text>
+
+  <rect x="18" y="924" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="66" y="942" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">mech</text>
+  <text x="66" y="958" text-anchor="middle" font-size="12" fill="#6b7280">기계 작업</text>
+  <rect x="122" y="924" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="170" y="942" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">coder</text>
+  <text x="170" y="958" text-anchor="middle" font-size="12" fill="#6b7280">스크립트</text>
+  <rect x="226" y="924" width="96" height="42" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="274" y="942" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">verifier</text>
+  <text x="274" y="958" text-anchor="middle" font-size="12" fill="#6b7280">검증</text>
+
+  <line x1="170" y1="976" x2="170" y2="988" stroke="#00c2b2" stroke-width="2"/>
+  <line x1="170" y1="988" x2="170" y2="996" stroke="#00c2b2" stroke-width="2" marker-end="url(#aA)"/>
+  <rect x="12" y="998" width="316" height="24" rx="8" fill="#ffffff" stroke="#00c2b2" stroke-width="1.5"/>
+  <text x="170" y="1015" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">결과 <tspan font-size="12" font-weight="400" fill="#6b7280">PR · Issue 코멘트로 사람에게 전달</tspan></text>
 </svg>
