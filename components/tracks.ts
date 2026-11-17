@@ -134,7 +134,7 @@ const REACT_TRACK: TrackConfig = {
     },
     {
       title: 'React 컴포넌트·상태 설계',
-      evidence: '팀 프로젝트(React·Next.js)에서 디자인 시스템과 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
+      evidence: 'React·Next.js로 디자인 시스템과 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
     },
     {
       title: 'AI 활용 개발',
@@ -207,7 +207,7 @@ export const tracks: Record<Track, TrackConfig> = {
       },
       {
         title: 'AI 활용 개발',
-        evidence: '보배드림에서 Codex·Claude로 구현·리뷰 에이전트를 분리한 AI 개발 환경을 설계·운영. 작업 범위 차단 스크립트(테스트 80개)·샌드박스로 수정 범위를 제한하고 최종 검증은 직접 수행',
+        evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
       },
     ],
     skills: [vueSkill, tsSkill, testSkill, reactSkill, aiSkill],
@@ -239,7 +239,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험을 더했습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
-    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI Agent(Codex·Claude)'],
+    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
         title: 'API 연동·백엔드 협업',
@@ -250,8 +250,8 @@ export const tracks: Record<Track, TrackConfig> = {
         evidence: 'SQLD 보유, Spring REST API 개발과 MySQL·Oracle로 회원·서비스 DB 설계',
       },
       {
-        title: 'AI API 연동·에이전트 협업',
-        evidence: 'OpenAI·Anthropic·LangChain 백엔드와 연동한 LLM 채팅·글 생성 화면 개발, OpenAI API 음성 대화에서 프롬프트·토큰을 줄여 타임아웃 해결. 보배드림에서는 Codex·Claude AI 개발 환경을 설계·운영(독립 리뷰·작업 범위 차단)',
+        title: 'AI API 연동·AI 도구 활용',
+        evidence: 'OpenAI·Anthropic 백엔드와 연동한 LLM 채팅·글 생성 화면 개발, OpenAI API 음성 대화에서 프롬프트·토큰을 줄여 타임아웃 해결. 보배드림에서는 AI 코딩 도구(Codex·Claude)로 개발하고 테스트와 직접 검증을 거쳐 반영',
       },
     ],
     skills: [
