@@ -174,21 +174,11 @@ const projects: Project[] = [
   {
     title: 'agents-on-cloud',
     period: '2026.11 ~ 운영 중',
-    role: `개인 프로젝트 · 헤드리스 Claude Code 원격 작업 서버 설계·구축·운영
-    AWS EC2(서울 리전) 서버 구성, GitHub Actions self-hosted runner 등록, 역할별 서브에이전트 구성`,
+    role: `개인 프로젝트 · 인바운드 무개방 원격 작업 환경 단독 설계·구축 및 24시간 무중단 운영`,
     description:
       'AWS EC2에 헤드리스 Claude Code 원격 작업 서버를 구축하고, GitHub Issue 코멘트·PR 병합 이벤트마다 Claude Code가 실행되도록 연결한 개인 작업 자동화 환경. 조율자가 역할별 서브에이전트에 일을 나눠 맡기고, 사람과는 Issue로 소통함.',
     metrics: [],
-    technologies: [
-      'AWS EC2',
-      '보안 그룹',
-      'EC2 Instance Connect Endpoint',
-      'systemd',
-      'tmux',
-      'GitHub Actions',
-      'Claude Code',
-      'AI Agent',
-    ],
+    technologies: ['AWS EC2', 'GitHub Actions', 'Claude Code'],
     image: ['/images/agents-on-cloud-server.svg', '/images/agents-on-cloud-flow.svg'],
     troubleshooting: [
       {
