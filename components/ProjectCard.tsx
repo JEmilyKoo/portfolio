@@ -129,11 +129,11 @@ export default function ProjectCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`bg-surface rounded-2xl overflow-hidden shadow-custom border border-border  hover:shadow-xl transition-all duration-300 ${pageBreak ? 'break-before-page' : ''}`}>
+        className={`bg-surface rounded-2xl border border-border ${pdf ? '' : 'overflow-hidden shadow-custom hover:shadow-xl transition-all duration-300'} ${pageBreak ? 'break-before-page' : ''}`}>
         {/* PDF 모드: 이미지는 아래로 빼고(1열), 글만 좌우 2칸 */}
-        <div className={`grid ${pdf ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-6 p-6`}>
+        <div className={`grid ${pdf ? 'grid-cols-1 gap-4 p-5' : 'grid-cols-1 md:grid-cols-2 gap-6 p-6'}`}>
           {/* PDF 모드: 왼쪽 제목·기간·역할(3) | 오른쪽 설명(2), 수치는 아래 전체 폭 */}
-          <div className={pdf ? 'grid grid-cols-5 gap-6 items-start' : 'space-y-4'}>
+          <div className={pdf ? 'grid grid-cols-5 gap-x-6 gap-y-3 items-start' : 'space-y-4'}>
             <div className={pdf ? 'col-span-3' : ''}>
               <div className="flex justify-between mb-2">
                 <h3 className="text-2xl font-bold text-text">{title}</h3>
@@ -164,7 +164,7 @@ export default function ProjectCard({
               </div>
             </div>
 
-            <p className={`text-text ${pdf ? 'col-span-2' : ''}`}>{description}</p>
+            <p className={`text-text ${pdf ? 'col-span-2 text-sm' : ''}`}>{description}</p>
 
             {metrics && metrics.length > 0 && (
               <div className={`grid ${pdf ? 'grid-cols-3 col-span-5 gap-2' : 'grid-cols-2 gap-4'}`}>
@@ -184,7 +184,7 @@ export default function ProjectCard({
 
           {/* PDF 모드: 글 아래에 두고, 카드 전체 폭으로 커지지 않게 최대 폭 제한 */}
           <div
-            className={`relative aspect-4/3 rounded-xl overflow-hidden bg-background cursor-pointer ${pdf ? 'w-full max-w-85 mx-auto' : ''}`}
+            className={`relative aspect-4/3 rounded-xl overflow-hidden bg-background cursor-pointer ${pdf ? 'w-full max-w-72 mx-auto' : ''}`}
             onClick={handleImageClick}>
             {image && image.length > 0 ? (
               <>
@@ -258,28 +258,28 @@ export default function ProjectCard({
             )}
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 justify-center items-center">
-          <div className="w-3/4 flex flex-wrap gap-2 justify-center items-center">
+        <div className={`flex flex-wrap gap-2 justify-center items-center ${pdf ? '-mt-2' : ''}`}>
+          <div className={`w-3/4 flex flex-wrap justify-center items-center ${pdf ? 'gap-1.5' : 'gap-2'}`}>
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm font-medium bg-primary/10  text-primary  rounded-full border border-primary/20 ">
+                className={`${pdf ? 'px-2.5 py-0.5 text-xs' : 'px-3 py-1 text-sm'} font-medium bg-primary/10 text-primary rounded-full border border-primary/20`}>
                 {tech}
               </span>
             ))}
           </div>
         </div>
         {troubleshooting && troubleshooting.length > 0 && (
-          <div className="p-6 mt-4 space-y-4">
-            <h4 className="text-lg font-semibold text-text">트러블 슈팅</h4>
+          <div className={pdf ? 'px-5 pb-5 pt-3 space-y-2' : 'p-6 mt-4 space-y-4'}>
+            <h4 className={`${pdf ? 'text-base' : 'text-lg'} font-semibold text-text`}>트러블 슈팅</h4>
             {troubleshooting.map((item) => (
               <div
                 key={item.title}
-                className="bg-background rounded-xl p-2">
-                <h5 className="text-success mb-2 font-bold leading-snug">
+                className={`bg-background rounded-xl p-2 ${pdf ? 'break-inside-avoid' : ''}`}>
+                <h5 className={`text-success ${pdf ? 'mb-1' : 'mb-2'} font-bold leading-snug`}>
                   {item.title}
                 </h5>
-                <div className="p-1 text-sm font-normal leading-relaxed tracking-tight text-subText whitespace-pre-wrap inline-block">
+                <div className={`p-1 text-sm font-normal ${pdf ? 'leading-normal' : 'leading-relaxed'} tracking-tight text-subText whitespace-pre-wrap inline-block`}>
                   {item.content.map((content, index) => (
                     <span key={content.text ?? `${content.icon}-${index}`}>
                       {content.icon && renderIcon(content.icon)}

@@ -71,8 +71,8 @@ const vueSkill: SkillItem = {
   name: 'Vue.js / Nuxt',
   level: '실무 약 2년 8개월',
   desc: [
-    '보배드림 리뉴얼(Nuxt 4, Vue 3): 피드 무한 스크롤, 통합 검색, 마이페이지',
-    '가온아이(Vue, Nuxt, JavaScript): 그룹웨어 PC 메신저 기능 개발',
+    '피드 무한 스크롤·통합 검색·마이페이지 개발 (보배드림 리뉴얼, Nuxt 4·Vue 3)',
+    '사용자 30만 명 그룹웨어 PC 메신저 기능 개발 (실무, Vue·Nuxt)',
     '포인터·드래그 이벤트 버그 수정 경험',
   ],
 }
@@ -90,8 +90,8 @@ const reactSkill: SkillItem = {
   name: 'React / Next.js',
   level: '팀 프로젝트(6~7주씩)',
   desc: [
-    'Chain G(Next.js, PWA): 디자인 시스템·공통 컴포넌트, 메인 로딩 개선',
-    'Vibe Editor(React): VS Code 확장 프로그램 화면',
+    '디자인 시스템·공통 컴포넌트 구축, 메인 페이지 로딩 7초 → 0.37초 (Next.js PWA 팀 프로젝트)',
+    'VS Code 확장 프로그램의 AI 채팅·글 생성 화면 개발 (React 팀 프로젝트)',
   ],
 }
 
@@ -108,9 +108,9 @@ const aiSkill: SkillItem = {
   name: 'AI 에이전트·LLM',
   level: '실무',
   desc: [
-    '보배드림: Codex·Claude로 구현·독립 리뷰·설계 대조 에이전트를 나눈 개인 개발 환경 설계·운영',
+    'Codex·Claude로 구현·독립 리뷰·설계 대조 에이전트를 나눈 개인 개발 환경 설계·운영 (보배드림 실무)',
     '작업 범위 검사 스크립트·샌드박스로 에이전트 수정 범위를 제한하고, 팀 공통 규칙을 바탕으로 만든 AI 작업 규칙으로 작업 기준 고정',
-    'Vibe Editor: LLM 채팅·글 생성 화면(코드 스냅샷을 맥락으로 첨부, OpenAI·Anthropic, LangChain 백엔드)',
+    'LLM 채팅·글 생성 화면 개발: 코드 스냅샷을 맥락으로 첨부, OpenAI·Anthropic·LangChain 백엔드 연동 (팀 프로젝트)',
     'AI 결과는 테스트와 브라우저 확인 후 반영',
   ],
 }
@@ -148,8 +148,8 @@ const REACT_TRACK: TrackConfig = {
       name: 'React / Next.js',
       level: '프로젝트',
       desc: [
-        'Chain G(Next.js, PWA): 디자인 시스템·공통 컴포넌트, 메인 로딩 7초 → 0.37초',
-        'Vibe Editor(React): VS Code 확장 프로그램 AI 채팅·글 생성 화면, WebView 간 상태 동기화',
+        '디자인 시스템·공통 컴포넌트 구축, 메인 페이지 로딩 7초 → 0.37초 (Next.js PWA)',
+        'VS Code 확장 프로그램의 AI 채팅·글 생성 화면 개발, WebView 간 상태 동기화',
         'Redux Toolkit으로 상태 관리',
       ],
     },
@@ -158,7 +158,7 @@ const REACT_TRACK: TrackConfig = {
       name: 'React Native',
       level: '팀 프로젝트(7주)',
       desc: [
-        '다와따: 실시간 위치 공유 앱 주요 화면',
+        '실시간 위치 공유 앱 주요 화면 개발',
         '지도·캘린더를 WebView 공용 화면으로 전환',
       ],
     },
@@ -264,21 +264,21 @@ export const tracks: Record<Track, TrackConfig> = {
         name: 'Java / Spring',
         level: '교육 과정(SSAFY Java 트랙, Java 개발자 과정)',
         desc: [
-          '트매: Spring Boot·MySQL로 네이버 로그인·회원가입 DB 구축, WebSocket 음성·JSON 처리',
-          '찍Go: Spring REST API, WebSocket 채팅, 미션별 업적 자동 획득 로직',
+          'Spring Boot·MySQL로 네이버 로그인·회원가입 DB 구축, WebSocket 음성·JSON 처리',
+          'Spring REST API, WebSocket 채팅, 미션별 업적 자동 획득 로직 구현',
           '삼성 SW 역량테스트 A형 통과, Java 알고리즘',
         ],
       },
       {
         name: 'DB',
         level: '자격·프로젝트',
-        desc: ['SQLD(2024.12)', '트매(MySQL)·찍Go(Oracle) DB 설계', '가온아이 그룹웨어(MariaDB) 운영 환경 경험'],
+        desc: ['SQLD(2024.12)', '팀 프로젝트 회원·서비스 DB 설계 (MySQL·Oracle)', '그룹웨어 운영 환경 경험 (MariaDB)'],
       },
       {
         name: 'CI/CD·자동화',
         level: '팀 프로젝트',
         desc: [
-          'Vibe Editor: Jenkins 프론트엔드 파이프라인 수정(캐시 정리 빌드 분리, 빌드 실패 시 배포 차단)',
+          'Jenkins 프론트엔드 파이프라인 수정: 캐시 정리 빌드 분리, 빌드 실패 시 배포 차단',
           'GitHub Actions와 Notion 연동으로 스키마 변경 내역 자동 문서화',
         ],
       },
@@ -333,23 +333,23 @@ export const tracks: Record<Track, TrackConfig> = {
         name: 'HTML / CSS',
         level: '실무',
         desc: [
-          '보배드림: 모바일·태블릿·PC 반응형, 다크 모드 QA 수정',
-          'Pratama: 번역 길이에 맞춘 반응형 UI 수정',
+          '모바일·태블릿·PC 반응형, 다크 모드 QA 수정 (보배드림)',
+          '번역 길이에 따라 깨지는 레이아웃을 반응형 UI로 수정',
         ],
       },
       {
         name: 'SEO·웹 성능',
         level: '실무·프로젝트',
         desc: [
-          '보배드림: 차량 목록 한글 카테고리 URL 라우팅(6종, 백엔드와 협업), 검색어 URL 반영',
-          '보배드림: 1,000건 피드 가상 스크롤(렌더링 카드 3~5개)',
-          'Chain G: Lighthouse 접근성·SEO·권장사항·PWA 100점, 메인 로딩 7초 → 0.37초',
+          '차량 목록 한글 카테고리 URL 라우팅(6종, 백엔드와 협업), 검색어 URL 반영 (보배드림)',
+          '1,000건 피드 가상 스크롤로 렌더링 카드 3~5개 유지 (보배드림)',
+          'Lighthouse 접근성·SEO·권장사항·PWA 100점, 메인 페이지 로딩 7초 → 0.37초 (팀 프로젝트)',
         ],
       },
       {
         name: '다국어',
         level: '실무',
-        desc: ['Pratama: PC·모바일 6개 국어 리소스 통합, 인도네시아어 날짜 표기 조정'],
+        desc: ['해외 고객사 그룹웨어의 PC·모바일 6개 국어 리소스 통합, 인도네시아어 날짜 표기 조정'],
       },
       vueSkill,
       tsSkill,

@@ -44,6 +44,9 @@ export default function PortfolioPage({
   const ordered = orderProjects(getSafeProjects(projects), config.projectOrder)
   return (
     <>
+      {/* PDF 모드: 용지를 A4로 고정해 인쇄 대화상자 기본값(Letter 등)에 따라 쪽 나눔이 달라지지 않게 한다.
+          테두리는 흑백 인쇄에서도 보이도록 웹(#e5e7eb)보다 진한 회색을 쓴다. */}
+      {pdf && <style>{'@page{size:A4;margin:10mm}.border-border{border-color:#9ca3af}'}</style>}
       <Hero config={config} pdf={pdf} webUrl={`${SITE_URL}${path}`} />
       <AboutMe pdf={pdf} subtitle={config.aboutSubtitle} />
       <Skills config={config} pdf={pdf} />
@@ -52,7 +55,7 @@ export default function PortfolioPage({
         intro={config.projectsIntro}
         pdf={pdf}
       />
-      <Contact path={path} />
+      <Contact path={path} pdf={pdf} />
     </>
   )
 }

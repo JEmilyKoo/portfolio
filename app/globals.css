@@ -62,3 +62,12 @@ a {
   background: #B6C6D7;
   border-radius: 4px;
 }
+
+/* 트러블 슈팅 라벨·강조 (ProjectCard.tsx, projects.ts에서 사용, styles/globals.css에서 옮김) */
+.trouble-label {
+  @apply font-semibold text-accent text-[15px] pr-1;
+}
+
+.trouble-important {
+  @apply text-primary font-semibold bg-primary/10;
+}

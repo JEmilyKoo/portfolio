@@ -14,14 +14,14 @@ export default function Hero({
   webUrl: string
 }) {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[80vh] pt-24 px-4 pb-16 bg-background text-text transition-colors w-full">
+    <section className={`flex flex-col items-center justify-center ${pdf ? 'min-h-[250mm] py-6' : 'min-h-[80vh] pt-24 pb-16'} px-4 bg-background text-text transition-colors w-full`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-center">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+          className={`${pdf ? 'text-5xl mb-4' : 'text-5xl md:text-7xl mb-6'} font-bold tracking-tight`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}>
@@ -30,7 +30,7 @@ export default function Hero({
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-subText  mb-8 font-medium"
+          className={`${pdf ? 'text-lg mb-4' : 'text-xl md:text-2xl mb-8'} text-subText font-medium`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}>
@@ -38,7 +38,7 @@ export default function Hero({
         </motion.p>
 
         <motion.p
-          className="text-lg md:text-xl text-subText  mb-12 max-w-2xl mx-auto"
+          className={`${pdf ? 'text-base mb-6' : 'text-lg md:text-xl mb-12'} text-subText max-w-2xl mx-auto`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}>
@@ -50,7 +50,7 @@ export default function Hero({
         </motion.p>
 
         <motion.div
-          className="flex flex-col flex-wrap gap-2 mb-12 justify-center items-center"
+          className={`flex flex-col flex-wrap gap-2 ${pdf ? 'mb-6' : 'mb-12'} justify-center items-center`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}>
@@ -64,7 +64,7 @@ export default function Hero({
             ))}
           </div>
           {/* 2줄: 직무별 핵심 역량 3개와 근거 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl w-full">
+          <div className={`grid ${pdf ? 'grid-cols-3' : 'grid-cols-1 md:grid-cols-3'} gap-3 max-w-3xl w-full`}>
             {config.competencies.map((c) => (
               <div
                 key={c.title}
@@ -92,7 +92,7 @@ export default function Hero({
                 <FaExternalLinkAlt className="ml-1" />
               </a>
             </motion.div>
-            <div className="font-semibold text-2xl text-accent mt-4">
+            <div className="font-semibold text-base text-accent mt-3">
               해당 PDF는 웹페이지에서 더 편하게 감상하실 수 있습니다.
             </div>
           </>

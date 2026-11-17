@@ -1,7 +1,7 @@
 import localFont from 'next/font/local';
 import { Roboto } from 'next/font/google';
 import type { Metadata, Viewport } from "next";
-import "../styles/globals.css";
+import "./globals.css";
 
 const pretendard = localFont({
   src: '../public/fonts/PretendardVariable.woff2', // 1단계에서 저장한 실제 파일 경로

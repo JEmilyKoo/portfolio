@@ -77,19 +77,19 @@ export default function AboutMe({
   return (
     <section
       id="about"
-      className="max-w-225 mx-auto mb-24 pt-8 px-4 flex flex-col items-center">
+      className={`max-w-225 mx-auto px-4 flex flex-col items-center ${pdf ? 'break-before-page' : 'mb-24 pt-8'}`}>
       <motion.div
         initial={pdf ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className={`text-center mb-12 ${pdf ? 'pt-4' : ''}`}>
+        className={`text-center ${pdf ? 'mb-4' : 'mb-12'}`}>
         <Image
           src="/images/picture.jpg"
           alt="구정은 프로필"
           width={128}
           height={128}
-          className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg border-4 border-surface  mx-auto"
+          className={`${pdf ? 'w-24 h-24 mb-3' : 'w-32 h-32 mb-6'} rounded-full object-cover shadow-lg border-4 border-surface mx-auto`}
         />
         <h2 className="text-3xl md:text-4xl font-extrabold mb-1">
           구정은 <span className="text-primary ">Emily Koo</span>
@@ -100,7 +100,7 @@ export default function AboutMe({
       </motion.div>
 
       <div className="w-full max-w-3xl">
-        <div className="relative m-4">
+        <div className={`relative ${pdf ? 'mx-4' : 'm-4'}`}>
           <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border m-4" />
           {timelineItems.map((item, index) => (
             <motion.div
@@ -109,7 +109,7 @@ export default function AboutMe({
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative pl-12 pb-4 last:pb-0">
+              className={`relative pl-12 ${pdf ? 'pb-2 break-inside-avoid' : 'pb-4'} last:pb-0`}>
               <div className="absolute left-0 w-8 h-8 rounded-full bg-surface  border-2 border-primary  flex items-center justify-center">
                 {item.icon}
               </div>
@@ -117,10 +117,10 @@ export default function AboutMe({
               <div
                 className={`${
                   item.important
-                    ? 'bg-surface  rounded-2xl p-6 shadow-custom border border-border  hover:shadow-lg'
-                    : 'bg-transparent p-4'
+                    ? `bg-surface rounded-2xl ${pdf ? 'px-5 py-3' : 'p-6'} shadow-custom border border-border hover:shadow-lg`
+                    : pdf ? 'bg-transparent px-4 py-2' : 'bg-transparent p-4'
                 } transition-shadow`}>
-                <div className="flex items-center gap-4 mb-2">
+                <div className={`flex items-center gap-4 ${pdf ? 'mb-1' : 'mb-2'}`}>
                   <span
                     className={`${
                       pdf ? (item.important ? 'text-lg' : 'text-base') : item.important ? 'text-2xl' : 'text-lg'
@@ -139,7 +139,7 @@ export default function AboutMe({
                     item.important
                       ? 'text-subText  font-semibold'
                       : 'text-subText/80  font-medium'
-                  } ${pdf ? 'text-sm' : ''} mb-2`}>
+                  } ${pdf ? 'text-sm mb-1' : 'mb-2'}`}>
                   {item.company}
                 </div>
                 <p

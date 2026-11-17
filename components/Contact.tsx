@@ -8,16 +8,16 @@ import {
 const SITE_URL = 'https://portfolio-beta-seven-87.vercel.app'
 
 // path: 지금 보고 있는 버전 경로(기본 "", /v1, /v2, /v3, /v4). Portfolio 링크가 그 버전 주소를 가리킨다.
-export default function Contact({ path = '' }: { path?: string }) {
+export default function Contact({ path = '', pdf = false }: { path?: string; pdf?: boolean }) {
   const portfolioUrl = `${SITE_URL}${path || '/'}`
   return (
     <section
       id="contact"
-      className="max-w-150 mx-auto mb-24 pt-12 px-4 flex flex-col items-center break-before-page">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">
+      className={`max-w-150 mx-auto px-4 flex flex-col items-center ${pdf ? 'pt-10 break-inside-avoid' : 'break-before-page mb-24 pt-12'}`}>
+      <h2 className={`${pdf ? 'text-3xl mb-6' : 'text-3xl md:text-4xl mb-8'} font-extrabold text-center`}>
         <span className="text-primary">Contact</span>
       </h2>
-      <div className="bg-surface border border-border rounded-2xl shadow-custom p-8 flex flex-col gap-6 w-full items-center">
+      <div className={`bg-surface border border-border rounded-2xl shadow-custom ${pdf ? 'p-6' : 'p-8'} flex flex-col gap-6 w-full items-center`}>
         <div className="flex flex-col gap-4 w-full">
           <ContactItem
             icon={<FaEnvelope />}
