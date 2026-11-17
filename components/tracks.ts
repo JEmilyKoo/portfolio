@@ -73,7 +73,7 @@ const vueSkill: SkillItem = {
   desc: [
     '피드 무한 스크롤·통합 검색·마이페이지 개발 (보배드림 리뉴얼, Nuxt 4·Vue 3)',
     '사용자 30만 명 그룹웨어 PC 메신저 기능 개발 (실무, Vue·Nuxt)',
-    '포인터·드래그 이벤트 버그 수정 경험',
+    '메뉴 드래그 정렬 버그 수정',
   ],
 }
 
@@ -99,19 +99,17 @@ const testSkill: SkillItem = {
   name: '테스트·검증',
   level: '실무',
   desc: [
-    'Node.js test runner로 상태 로직 테스트 작성',
-    'Playwright로 브라우저 동작·API 호출 수 측정',
+    'Node.js test runner (상태 로직 테스트)',
+    'Playwright (브라우저 동작 검증)',
   ],
 }
 
 const aiSkill: SkillItem = {
-  name: 'AI 에이전트·LLM',
+  name: 'AI 코딩 도구·LLM API',
   level: '실무',
   desc: [
-    'Codex·Claude로 구현·독립 리뷰·설계 대조 에이전트를 나눈 개인 개발 환경 설계·운영 (보배드림 실무)',
-    '작업 범위 검사 스크립트·샌드박스로 에이전트 수정 범위를 제한하고, 팀 공통 규칙을 바탕으로 만든 AI 작업 규칙으로 작업 기준 고정',
-    'LLM 채팅·글 생성 화면 개발: 코드 스냅샷을 맥락으로 첨부, OpenAI·Anthropic·LangChain 백엔드 연동 (팀 프로젝트)',
-    'AI 결과는 테스트와 브라우저 확인 후 반영',
+    'AI 코딩 도구(Codex·Claude) 실무 활용, 테스트·브라우저 확인 후 반영 (보배드림)',
+    'LLM API(OpenAI·Anthropic) 연동 AI 채팅·글 생성 화면 개발 (팀 프로젝트)',
   ],
 }
 
@@ -128,7 +126,7 @@ const REACT_TRACK: TrackConfig = {
     after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
   pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
-  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI Agent(Codex·Claude)'],
+  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
   competencies: [
     {
       title: '렌더링 성능',
@@ -136,11 +134,11 @@ const REACT_TRACK: TrackConfig = {
     },
     {
       title: 'React 컴포넌트·상태 설계',
-      evidence: 'React·Next.js로 디자인 시스템과 바텀시트·입력창 등 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
+      evidence: '팀 프로젝트(React·Next.js)에서 디자인 시스템과 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
     },
     {
       title: 'AI 활용 개발',
-      evidence: '보배드림에서 Codex·Claude로 구현·리뷰 에이전트를 분리한 AI 개발 환경을 설계·운영, 작업 범위 차단 스크립트(테스트 80개)와 직접 검증으로 AI 생성 코드 통제',
+      evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
     },
   ],
   skills: [
@@ -149,7 +147,7 @@ const REACT_TRACK: TrackConfig = {
       level: '프로젝트',
       desc: [
         '디자인 시스템·공통 컴포넌트 구축, 메인 페이지 로딩 7초 → 0.37초 (Next.js PWA)',
-        'VS Code 확장 프로그램의 AI 채팅·글 생성 화면 개발, WebView 간 상태 동기화',
+        'VS Code 확장 프로그램의 AI 채팅·글 생성 화면 개발, 앱 내 웹 화면(WebView) 상태 동기화',
         'Redux Toolkit으로 상태 관리',
       ],
     },
@@ -197,7 +195,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
-    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI Agent(Codex·Claude)'],
+    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
         title: 'UI 상태 복원',
@@ -262,24 +260,24 @@ export const tracks: Record<Track, TrackConfig> = {
       reactSkill,
       {
         name: 'Java / Spring',
-        level: '교육 과정(SSAFY Java 트랙, Java 개발자 과정)',
+        level: 'SSAFY 교육 과정',
         desc: [
-          'Spring Boot·MySQL로 네이버 로그인·회원가입 DB 구축, WebSocket 음성·JSON 처리',
-          'Spring REST API, WebSocket 채팅, 미션별 업적 자동 획득 로직 구현',
-          '삼성 SW 역량테스트 A형 통과, Java 알고리즘',
+          'Spring Boot·MySQL 네이버 로그인·회원가입 DB 구축',
+          'Spring REST API, WebSocket 채팅 구현',
+          'Java 알고리즘 (삼성 SW 역량테스트 A형 통과)',
         ],
       },
       {
         name: 'DB',
         level: '자격·프로젝트',
-        desc: ['SQLD(2024.12)', '팀 프로젝트 회원·서비스 DB 설계 (MySQL·Oracle)', '그룹웨어 운영 환경 경험 (MariaDB)'],
+        desc: ['SQLD(2024.12)', '팀 프로젝트 회원·서비스 DB 설계 (MySQL·Oracle)'],
       },
       {
         name: 'CI/CD·자동화',
         level: '팀 프로젝트',
         desc: [
-          'Jenkins 프론트엔드 파이프라인 수정: 캐시 정리 빌드 분리, 빌드 실패 시 배포 차단',
-          'GitHub Actions와 Notion 연동으로 스키마 변경 내역 자동 문서화',
+          'Jenkins 프론트엔드 배포 파이프라인 수정, 빌드 실패 시 배포 차단',
+          'GitHub Actions·Notion 연동 문서 자동화',
         ],
       },
     ],
@@ -313,7 +311,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
-    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI Agent(Codex)'],
+    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
         title: '렌더링 성능',
@@ -334,22 +332,22 @@ export const tracks: Record<Track, TrackConfig> = {
         level: '실무',
         desc: [
           '모바일·태블릿·PC 반응형, 다크 모드 QA 수정 (보배드림)',
-          '번역 길이에 따라 깨지는 레이아웃을 반응형 UI로 수정',
+          '다국어 번역 길이에 따른 레이아웃 깨짐 수정',
         ],
       },
       {
         name: 'SEO·웹 성능',
         level: '실무·프로젝트',
         desc: [
-          '차량 목록 한글 카테고리 URL 라우팅(6종, 백엔드와 협업), 검색어 URL 반영 (보배드림)',
-          '1,000건 피드 가상 스크롤로 렌더링 카드 3~5개 유지 (보배드림)',
-          'Lighthouse 접근성·SEO·권장사항·PWA 100점, 메인 페이지 로딩 7초 → 0.37초 (팀 프로젝트)',
+          '한글 카테고리 URL 라우팅 6종 (보배드림, 백엔드 협업)',
+          '1,000건 피드 가상 스크롤, 렌더링 카드 3~5개 유지 (보배드림)',
+          'Lighthouse 4개 항목 100점, 로딩 7초 → 0.37초 (팀 프로젝트)',
         ],
       },
       {
         name: '다국어',
         level: '실무',
-        desc: ['해외 고객사 그룹웨어의 PC·모바일 6개 국어 리소스 통합, 인도네시아어 날짜 표기 조정'],
+        desc: ['해외 고객사 그룹웨어의 PC·모바일 6개 국어 i18n'],
       },
       vueSkill,
       tsSkill,
