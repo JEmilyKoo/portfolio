@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'
 
 const timelineItems = [
   {
-    year: '2026.09 ~ 재직 중',
+    year: '2026.09 ~ 2026.11',
     title: '프론트엔드 개발자',
     company: '㈜보배네트워크',
     description:
