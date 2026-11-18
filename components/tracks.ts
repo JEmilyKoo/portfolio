@@ -170,7 +170,7 @@ const REACT_TRACK: TrackConfig = {
   ],
   softSkills: commonSoftSkills,
   projectsIntro:
-    '보배드림 실무 리뉴얼을 먼저 소개하고, 이어서 팀 프로젝트와 개인 프로젝트에서 직접 개발한 화면과 문제 해결 과정을 순서대로 담았습니다.',
+    '보배드림 실무 리뉴얼을 먼저 소개하고, 이어서 팀 프로젝트(Chain G·Vibe Editor·다와따), 가온아이 실무(bizmekaTalk 3.0·Pratama·KumTalk), 팀 프로젝트(트매), 개인 프로젝트(agents-on-cloud) 순서로 직접 개발한 화면과 문제 해결 과정을 담았습니다.',
   projectOrder: [
     '보배드림 전면 리뉴얼',
     'Chain G',
@@ -279,7 +279,7 @@ export const tracks: Record<Track, TrackConfig> = {
         level: '실무·개인 프로젝트',
         desc: [
           '구현·리뷰 에이전트를 분리한 AI 개발 환경 설계·운영, 작업 범위 밖 수정을 막는 사전 검사 스크립트(테스트 80개)·샌드박스 도입 (보배드림)',
-          'AWS EC2에 헤드리스 Claude Code 원격 작업 서버 구축, GitHub 이벤트마다 세션 실행, 모델·도구 권한을 나눈 서브에이전트 6종 구성 (agents-on-cloud)',
+          'AWS EC2에 헤드리스 Claude Code 원격 작업 서버 구축, GitHub 이벤트마다 세션 실행, 모델·도구 권한을 나눈 서브에이전트 6종(작성·맞춤·웹 조사·자소서·형식 처리·검증) 구성 (agents-on-cloud)',
           'LLM API(OpenAI·Anthropic) 연동 AI 채팅·글 생성 화면 개발 (팀 프로젝트)',
         ],
       },

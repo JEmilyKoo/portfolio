@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 620" width="340" height="620" role="img" aria-label="공인 IP로 들어오는 접속은 막혀 있고, AWS에 로그인한 사용자만 EICE를 거쳐 SSH로 접속한다. 작업 지시는 EC2가 먼저 연 연결을 통해 Remote Control 중계로 전달된다." font-family="Inter, Pretendard, 'Noto Sans KR', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 620" width="340" height="620" role="img" aria-label="공인 IP로 들어오는 접속은 막혀 있고, AWS에 로그인한 사용자만 EC2 Instance Connect Endpoint를 거쳐 SSH로 접속한다. 작업 지시는 EC2가 먼저 연 연결을 통해 원격 지시 중계로 전달된다." font-family="Inter, Pretendard, 'Noto Sans KR', Roboto, sans-serif">
   <defs>
     <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#339cff"/></marker>
     <marker id="aA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#00c2b2"/></marker>
@@ -14,7 +14,7 @@
   <text x="78" y="59" text-anchor="middle" font-size="13" fill="#6b7280">PC · 모바일</text>
 
   <rect x="196" y="14" width="132" height="58" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
-  <text x="262" y="39" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">Remote Control</text>
+  <text x="262" y="39" text-anchor="middle" font-size="15" font-weight="700" fill="#222222">원격 지시</text>
   <text x="262" y="59" text-anchor="middle" font-size="13" fill="#6b7280">Anthropic 중계</text>
 
   <line x1="146" y1="43" x2="192" y2="43" stroke="#222222" stroke-width="1.5" marker-end="url(#aT)"/>
@@ -28,14 +28,14 @@
   <!-- AWS 로그인 SSH: EICE -->
   <line x1="120" y1="72" x2="120" y2="98" stroke="#00c2b2" stroke-width="2" marker-end="url(#aA)"/>
   <rect x="100" y="100" width="120" height="44" rx="8" fill="#ffffff" stroke="#00c2b2" stroke-width="1.5"/>
-  <text x="160" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">EICE</text>
+  <text x="160" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#222222">EC2 접속 통로</text>
   <text x="160" y="136" text-anchor="middle" font-size="12" fill="#6b7280">AWS 로그인 필요</text>
   <line x1="200" y1="144" x2="200" y2="210" stroke="#00c2b2" stroke-width="2" marker-end="url(#aA)"/>
   <text x="192" y="174" text-anchor="end" font-size="13" font-weight="600" fill="#00c2b2">SSH</text>
 
   <!-- 보안 그룹 -->
   <rect x="6" y="176" width="328" height="316" rx="12" fill="none" stroke="#222222" stroke-width="2"/>
-  <text x="20" y="485" font-size="13" font-weight="600" fill="#222222">보안 그룹 · 22번은 EICE만</text>
+  <text x="20" y="485" font-size="13" font-weight="600" fill="#222222">보안 그룹 · 22번은 접속 통로만</text>
 
   <!-- EC2 -->
   <rect x="18" y="212" width="304" height="256" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
