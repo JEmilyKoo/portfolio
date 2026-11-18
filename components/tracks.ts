@@ -8,7 +8,7 @@
 // - 빠진 기술은 기술 카드와 프로젝트 태그에는 그대로 남는다.
 // AI 문구 원칙 (2026-11-17, Issue #105)
 // - v1·v3·v4: 프론트엔드가 첫 화면의 중심. AI는 핵심역량 한 항목에 "만든 것과 결과"로만 쓰고 agents-on-cloud는 첫 화면에 넣지 않는다.
-// - v2: 에이전트 개발 환경·agents-on-cloud를 첫 화면에 쓴다. "AI 코딩 도구" 같은 도구 이름만 있는 표현은 쓰지 않는다.
+// - v2: 에이전트 개발 환경·agents-on-cloud를 첫 화면에 쓴다. 도구 이름만 있는 표현은 쓰지 않고 만든 것과 결과로 쓴다.
 
 export type Track = 'frontend' | 'vue' | 'fullstack' | 'web'
 
@@ -169,7 +169,8 @@ const REACT_TRACK: TrackConfig = {
     aiSkill,
   ],
   softSkills: commonSoftSkills,
-  projectsIntro: 'React 팀 프로젝트와 프론트엔드 실무에서 직접 개발한 화면과 문제 해결 과정입니다.',
+  projectsIntro:
+    '보배드림 실무 리뉴얼을 먼저 소개하고, 이어서 팀 프로젝트와 개인 프로젝트에서 직접 개발한 화면과 문제 해결 과정을 순서대로 담았습니다.',
   projectOrder: [
     '보배드림 전면 리뉴얼',
     'Chain G',
