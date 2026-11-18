@@ -6,6 +6,9 @@
 // - 1줄 primaryPills: 그 직무의 주력 기술 3~4개만. 다른 직무용 기술·보조 도구(Playwright 등)는 넣지 않는다.
 // - 2줄 competencies: 그 직무 공고가 요구하는 역량 3개 + 면접에서 1분 안에 설명 가능한 근거.
 // - 빠진 기술은 기술 카드와 프로젝트 태그에는 그대로 남는다.
+// AI 문구 원칙 (2026-11-17, Issue #105)
+// - v1·v3·v4: 프론트엔드가 첫 화면의 중심. AI는 핵심역량 한 항목에 "만든 것과 결과"로만 쓰고 agents-on-cloud는 첫 화면에 넣지 않는다.
+// - v2: 에이전트 개발 환경·agents-on-cloud를 첫 화면에 쓴다. "AI 코딩 도구" 같은 도구 이름만 있는 표현은 쓰지 않는다.
 
 export type Track = 'frontend' | 'vue' | 'fullstack' | 'web'
 
@@ -105,10 +108,11 @@ const testSkill: SkillItem = {
 }
 
 const aiSkill: SkillItem = {
-  name: 'AI 코딩 도구·LLM API',
+  name: 'AI 에이전트 개발 환경·LLM API',
   level: '실무',
   desc: [
-    'AI 코딩 도구(Codex·Claude) 실무 활용, 테스트·브라우저 확인 후 반영 (보배드림)',
+    '구현·리뷰 에이전트를 분리한 AI 개발 환경 설계·운영, 작업 범위 밖 수정을 막는 사전 검사 스크립트(테스트 80개)·샌드박스 도입 (보배드림)',
+    '별도 리뷰 에이전트의 독립 리뷰와 직접 검증을 거친 코드만 반영',
     'LLM API(OpenAI·Anthropic) 연동 AI 채팅·글 생성 화면 개발 (팀 프로젝트)',
   ],
 }
@@ -119,14 +123,14 @@ const REACT_TRACK: TrackConfig = {
   metaTitle: '구정은 Emily Koo | 프론트엔드 포트폴리오',
   metaDescription:
     'React·Vue로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 리뉴얼 참여.',
-  tagline: '프론트엔드 개발자(React·Vue·AI 활용) | MAU 1,400만 피드 60fps 수준 렌더링',
+  tagline: '프론트엔드 개발자(React·Vue) | MAU 1,400만 피드 60fps 수준 렌더링',
   intro: {
     before: 'React·Vue·TypeScript 기반, 실무 경력 약 2년 8개월. MAU 1,400만 보배드림과 사용자 30만 명 그룹웨어 메신저에서 ',
     highlight: '대용량 피드 성능 최적화',
     after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
   pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
-  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
+  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI 에이전트 개발 환경'],
   competencies: [
     {
       title: '렌더링 성능',
@@ -137,8 +141,8 @@ const REACT_TRACK: TrackConfig = {
       evidence: 'React·Next.js로 디자인 시스템과 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
     },
     {
-      title: 'AI 활용 개발',
-      evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
+      title: 'AI 에이전트 개발 환경',
+      evidence: '구현·리뷰 에이전트를 분리한 AI 개발 환경을 직접 설계하고, 작업 범위 밖 수정을 막는 검사 스크립트(테스트 80개)와 독립 리뷰, 직접 검증을 거친 코드만 보배드림에 반영',
     },
   ],
   skills: [
@@ -195,7 +199,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
-    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI 에이전트 개발 환경'],
     competencies: [
       {
         title: 'UI 상태 복원',
@@ -206,8 +210,8 @@ export const tracks: Record<Track, TrackConfig> = {
         evidence: '데스크톱 브라우저에서 메뉴 드래그 정렬이 끊기는 문제를 원인 3가지(정렬 로직·브라우저 기본 드래그·포인터 이벤트 추적)로 나눠 수정',
       },
       {
-        title: 'AI 활용 개발',
-        evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
+        title: 'AI 에이전트 개발 환경',
+        evidence: '구현·리뷰 에이전트를 분리한 AI 개발 환경을 직접 설계하고, 작업 범위 밖 수정을 막는 검사 스크립트(테스트 80개)와 독립 리뷰, 직접 검증을 거친 코드만 보배드림에 반영',
       },
     ],
     skills: [vueSkill, tsSkill, testSkill, reactSkill, aiSkill],
@@ -215,7 +219,6 @@ export const tracks: Record<Track, TrackConfig> = {
     projectsIntro: '실무와 팀 프로젝트에서 직접 개발한 화면과 문제 해결 과정입니다.',
     projectOrder: [
       '보배드림 전면 리뉴얼',
-      'agents-on-cloud',
       'bizmekaTalk 3.0',
       'Pratama',
       'KumTalk',
@@ -223,6 +226,7 @@ export const tracks: Record<Track, TrackConfig> = {
       'Chain G',
       '다와따',
       '트매',
+      'agents-on-cloud',
     ],
   },
 
@@ -231,33 +235,30 @@ export const tracks: Record<Track, TrackConfig> = {
     aboutSubtitle: '웹 개발자 (프론트엔드 · Java/Spring)',
     metaTitle: '구정은 Emily Koo | 풀스택 포트폴리오',
     metaDescription:
-      '프론트엔드 실무를 중심으로, 팀 프로젝트에서 Spring Boot API와 DB 설계, Jenkins CI/CD 수정 경험이 있는 개발자 구정은(Emily Koo)의 포트폴리오.',
-    tagline: '프론트엔드 개발자(React·Vue) · Java·Spring 경험 | MAU 1,400만 서비스 API 협업',
+      '프론트엔드 실무를 중심으로, 팀 프로젝트에서 Spring Boot API와 DB 설계, Jenkins CI/CD 수정 경험이 있고 AI 에이전트 개발 환경을 직접 구축한 개발자 구정은(Emily Koo)의 포트폴리오.',
+    tagline: '프론트엔드 개발자(React·Vue) · Java·Spring Boot·REST API·DB · AI 에이전트 환경 구축',
     intro: {
-      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림 등에서 백엔드와 API 구조를 맞춰 온 프론트엔드 실무에 ',
-      highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
+      before: '실무 경력 약 2년 8개월. MAU 1,400만 보배드림에서 백엔드와 REST API 구조를 맞춘 프론트엔드 실무에 ',
+      highlight: 'Java·Spring Boot·DB 설계, LLM API 연동, AI 에이전트 개발 환경 구축',
       after: ' 경험을 더했습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
-    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['Java', 'Spring Boot', 'REST API', 'MySQL·Oracle', 'Vue·React', 'AI 에이전트·LLM API'],
     competencies: [
       {
-        title: 'API 연동·백엔드 협업',
+        title: 'REST API·백엔드 협업',
         evidence: '보배드림에서 백엔드와 검색 API 사용 방식을 협의해 정리, API 버전 전환 때 화면 수정 없이 연결만 교체',
       },
       {
-        title: 'Java·Spring·DB',
-        evidence: 'SQLD 보유, Spring REST API 개발과 MySQL·Oracle로 회원·서비스 DB 설계',
+        title: 'Java·Spring Boot·DB',
+        evidence: 'Spring REST API 개발, MySQL·Oracle로 회원·서비스 DB 설계, SQLD 보유',
       },
       {
-        title: 'AI API 연동·AI 도구 활용',
-        evidence: 'OpenAI·Anthropic 백엔드와 연동한 LLM 채팅·글 생성 화면 개발, OpenAI API 음성 대화에서 프롬프트·토큰을 줄여 타임아웃 해결. 보배드림에서는 AI 코딩 도구(Codex·Claude)로 개발하고 테스트와 직접 검증을 거쳐 반영',
+        title: 'LLM 연동·AI 에이전트 환경',
+        evidence: 'OpenAI·Anthropic API 연동 LLM 화면 개발. 구현·리뷰 에이전트를 분리한 AI 개발 환경과, AWS EC2 상시 에이전트 서버(서브에이전트 6종)를 직접 구축',
       },
     ],
     skills: [
-      vueSkill,
-      tsSkill,
-      reactSkill,
       {
         name: 'Java / Spring',
         level: 'SSAFY 교육 과정',
@@ -272,6 +273,18 @@ export const tracks: Record<Track, TrackConfig> = {
         level: '자격·프로젝트',
         desc: ['SQLD(2024.12)', '팀 프로젝트 회원·서비스 DB 설계 (MySQL·Oracle)'],
       },
+      {
+        name: 'AI 에이전트·LLM API',
+        level: '실무·개인 프로젝트',
+        desc: [
+          '구현·리뷰 에이전트를 분리한 AI 개발 환경 설계·운영, 작업 범위 밖 수정을 막는 사전 검사 스크립트(테스트 80개)·샌드박스 도입 (보배드림)',
+          'AWS EC2에 헤드리스 Claude Code 원격 작업 서버 구축, GitHub 이벤트마다 세션 실행, 모델·도구 권한을 나눈 서브에이전트 6종 구성 (agents-on-cloud)',
+          'LLM API(OpenAI·Anthropic) 연동 AI 채팅·글 생성 화면 개발 (팀 프로젝트)',
+        ],
+      },
+      vueSkill,
+      tsSkill,
+      reactSkill,
       {
         name: 'CI/CD·자동화',
         level: '팀 프로젝트',
@@ -311,7 +324,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/80384f830a8f6f570981a6db4429d8d86b8cfed4/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
-    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI 에이전트 개발 환경'],
     competencies: [
       {
         title: '렌더링 성능',
