@@ -3,7 +3,7 @@ import { Project } from '@/types/project'
 const projects: Project[] = [
   {
     title: '보배드림 전면 리뉴얼',
-    period: '2026.09 ~ 재직 중',
+    period: '2026.09 ~ 2026.11',
     role: `㈜보배네트워크 사원(계약직) · 프론트엔드 개발
     가상 스크롤 피드와 뒤로가기 위치 복원(단독 설계·개발, 기여도 100%), 통합 검색(/search) 신규 페이지, 한글 카테고리 URL 라우팅(백엔드와 협업), 마이페이지·회원 정보, 커뮤니티 상세·글쓰기·차단, 중고차 목록·필터·상세, 론칭까지 QA 대응
     Codex·Claude 개발 환경 설계·운영(구현·코드 리뷰 역할 분리)`,
@@ -94,7 +94,7 @@ const projects: Project[] = [
           {
             text: `             - 서버 상태를 바꾸는 동작(차단, 채팅 등)과 느린 네트워크 구간은 직접 브라우저에서 검증
             - 출시 전 후속 작업 49건을 작업 현황표 하나로 관리해 완료 처리
-            - AI의 'No findings'와 실제 해결은 다르므로, 리뷰 통과 후에도 브라우저에서 직접 확인한 뒤에만 완료 처리`,
+            - AI 리뷰가 "지적 사항 없음"이라 답해도 실제 해결은 다르므로, 리뷰 통과 후에도 브라우저에서 직접 확인한 뒤에만 완료 처리`,
           },
         ],
       },
@@ -278,7 +278,7 @@ const projects: Project[] = [
     image: ['/images/agents-on-cloud-server.svg', '/images/agents-on-cloud-flow.svg'],
     troubleshooting: [
       {
-        title: '서버 구성: 인바운드 포트 없이 원격 지시, SSH는 EICE로만',
+        title: '서버 구성: 인바운드 포트 없이 원격 지시, SSH는 AWS 인증 접속 통로로만',
         content: [
           { icon: 'issue' },
           {
@@ -295,17 +295,33 @@ const projects: Project[] = [
              - systemd·tmux 재시작 루프로 세션이 종료되면 자동 복구
              - RAM 2GB 인스턴스에서 스왑 2GB와 동시 세션 2개 제한으로 상시 운영 메모리 확보\n`,
           },
+          { icon: 'result' },
+          {
+            text: `인바운드 포트를 열지 않고도 PC·모바일에서 작업을 지시하고, 세션이 끊겨도 자동 복구되는 24시간 상시 운영 환경 구축`,
+          },
         ],
       },
       {
         title: 'GitHub Actions self-hosted runner와 서브에이전트 6종',
         content: [
+          { icon: 'issue' },
+          { text: `- 원격 서버 구축 후에도 작업마다 직접 접속해 지시를 내리고 결과물을 수동 확인해야 했음\n             - 단일 에이전트가 조사·작성·검증을 모두 처리해 컨텍스트가 커지고 오수정 위험 발생\n` },
+          { icon: 'cause' },
+          { text: `- 이벤트 기반 실행 트리거가 없어 작업 시작과 후속 단계 전환이 수동 지시에 의존\n             - RAM 2GB 서버의 메모리 한계를 고려한 직렬 실행과 역할별 도구·권한 분리가 필요\n` },
+          { icon: 'solution' },
           {
-            text: `- EC2에 self-hosted runner를 등록해 기존 구조(인바운드 미개방)를 유지한 채 자동 실행 환경 구성
-- Issue 코멘트·PR 병합 이벤트마다 헤드리스 Claude Code 세션을 새로 실행, runner 1대로 한 번에 하나씩 처리해 RAM 2GB 서버에서 운영
-- 조율자가 조사·맞춤·작성·기계 작업·스크립트·검증 6개 역할의 서브에이전트에 작업을 맡기고, 서브에이전트마다 쓸 수 있는 도구를 제한
-- 사람과는 Issue(질문·승인 요청)와 PR로 소통`,
-            className: 'text-sm',
+            text: `- EC2에 self-hosted runner를 등록해 인바운드 미개방 구조를 유지한 채 자동 실행 환경 구성
+             - Issue 코멘트·PR 병합 이벤트마다 헤드리스 Claude Code 세션을 새로 실행, runner 1대로 직렬 처리해 운영
+             - 조율자가 조사·맞춤·작성·기계 작업·스크립트·검증 6개 역할의 서브에이전트에 작업을 맡기고, 서브에이전트마다 도구 제한
+             - GitHub Issue 라벨·체크박스 및 <!-- agent --> 주석 필터로 소통을 구조화하고 재실행 루프 차단\n`,
+          },
+          { icon: 'result' },
+          {
+            text: `Issue 코멘트 한 줄로 역할별 서브에이전트가 협업하는 자동화 파이프라인 구축\n`,
+            className: 'trouble-important',
+          },
+          {
+            text: `            자동 검사 지적 사항 0건 및 사람 판단 불필요 조건 충족 시에만 PR이 병합되도록 통제해 작업 품질과 안전성 확보`,
           },
         ],
       },
