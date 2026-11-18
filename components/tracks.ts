@@ -6,6 +6,9 @@
 // - 1줄 primaryPills: 그 직무의 주력 기술 3~4개만. 다른 직무용 기술·보조 도구(Playwright 등)는 넣지 않는다.
 // - 2줄 competencies: 그 직무 공고가 요구하는 역량 3개 + 면접에서 1분 안에 설명 가능한 근거.
 // - 빠진 기술은 기술 카드와 프로젝트 태그에는 그대로 남는다.
+// AI 문구 원칙 (2026-11-17, Issue #105)
+// - v1·v3·v4: 프론트엔드가 첫 화면의 중심. AI는 핵심역량 한 항목에 "만든 것과 결과"로만 쓰고 agents-on-cloud는 첫 화면에 넣지 않는다.
+// - v2: 에이전트 개발 환경·agents-on-cloud를 첫 화면에 쓴다. "AI 코딩 도구" 같은 도구 이름만 있는 표현은 쓰지 않는다.
 
 export type Track = 'frontend' | 'vue' | 'fullstack' | 'web'
 
@@ -84,7 +87,8 @@ const aiSkill: SkillItem = {
   name: 'AI / 에이전트 / LLM API',
   desc: [
     '에이전트 역할 분리, 작업 범위 통제 장치 설계 및 직접 검증 기반 개발 자동화',
-    'LLM API 연동 기능 구현 및 클라우드·CI 이벤트 기반 원격 실행 파이프라인 구성',
+    '클라우드·CI 이벤트 기반 원격 실행 파이프라인 구성',
+    'LLM API(OpenAI·Anthropic) 연동 AI 채팅·글 생성 화면 개발'
   ],
 }
 
@@ -222,7 +226,6 @@ export const tracks: Record<Track, TrackConfig> = {
       '실무와 팀 프로젝트에서 직접 개발한 화면과 문제 해결 과정입니다.',
     projectOrder: [
       '보배드림 전면 리뉴얼',
-      'agents-on-cloud',
       'bizmekaTalk 3.0',
       'Pratama',
       'KumTalk',
@@ -230,6 +233,7 @@ export const tracks: Record<Track, TrackConfig> = {
       'Chain G',
       '다와따',
       '트매',
+      'agents-on-cloud',
     ],
   },
 
