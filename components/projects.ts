@@ -858,12 +858,15 @@ const projects: Project[] = [
   {
     title: '트매',
     period: '2024.10 ~ 2024.11 (2주)',
-    role: '기획 / UI 개발 / 음성 대화 기능 개발',
+    role: '기획 / UI 개발 / 네이버 로그인·회원가입 DB(Spring Boot·JPA·MySQL) / 음성 대화 기능 개발',
     description: 'AI LLM을 활용한 음성 대화 트립 매니징 서비스',
     metrics: [],
     technologies: [
       'Vue3',
+      'Pinia',
       'Spring Boot',
+      'JPA',
+      'MySQL',
       'OpenAI API',
       'Prompt Engineering',
       'WebSocket',
@@ -877,6 +880,15 @@ const projects: Project[] = [
       '/images/tm4.png',
     ],
     troubleshooting: [
+      {
+        title: '구현 내용',
+        content: [
+          {
+            text: `- Spring Boot·JPA·MySQL로 네이버 로그인·회원가입 기능과 회원 DB 구축`,
+            className: 'text-sm',
+          },
+        ],
+      },
       {
         title: 'AI 리포트를 마크다운 렌더링으로 전환해 필요한 컴포넌트 약 100개 → 15개 안팎',
         content: [
