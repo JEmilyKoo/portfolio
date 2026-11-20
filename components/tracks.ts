@@ -125,7 +125,7 @@ const REACT_TRACK: TrackConfig = {
     highlight: '대용량 피드 성능 최적화',
     after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
-  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/228d51edd4931ef82df30d3dad64d26b401c2bec/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
+  pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
   primaryPills: ['React', 'Next.js', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
   competencies: [
     {
@@ -194,7 +194,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: '대용량 피드 성능 최적화와 상태 복원',
       after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/228d51edd4931ef82df30d3dad64d26b401c2bec/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
     primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
@@ -238,7 +238,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: 'Java·Spring 백엔드와 DB 설계, Jenkins CI/CD',
       after: ' 경험을 더했습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/228d51edd4931ef82df30d3dad64d26b401c2bec/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
     primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
@@ -310,7 +310,7 @@ export const tracks: Record<Track, TrackConfig> = {
       highlight: '가상 스크롤 피드 단독 설계·개발',
       after: ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
-    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/228d51edd4931ef82df30d3dad64d26b401c2bec/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
+    pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI 코딩 도구(Codex·Claude)'],
     competencies: [
       {
