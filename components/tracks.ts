@@ -264,7 +264,7 @@ export const tracks: Record<Track, TrackConfig> = {
         name: 'Java / Spring',
         level: 'SSAFY 교육 과정',
         desc: [
-          'Spring Boot·MySQL 네이버 로그인·회원가입 DB 구축',
+          'Spring Boot·JPA·MySQL 네이버 로그인·회원가입 DB 구축',
           'Spring REST API, WebSocket 채팅 구현',
           'Java 알고리즘 (삼성 SW 역량테스트 A형 통과)',
         ],
