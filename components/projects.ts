@@ -175,9 +175,9 @@ const projects: Project[] = [
     title: 'agents-on-cloud',
     period: '2026.11 ~ 운영 중',
     role: `개인 프로젝트 · 헤드리스 Claude Code 원격 작업 서버 설계·구축·운영
-    AWS EC2(서울 리전) 서버 구성, GitHub Actions self-hosted runner 등록, 역할별 서브에이전트 구성`,
+    AWS EC2(Ubuntu, 서울 리전) 서버 구성, GitHub Actions self-hosted runner 등록, 역할별 서브에이전트 구성`,
     description:
-      'AWS EC2에 헤드리스 Claude Code 원격 작업 서버를 구축하고, GitHub Issue 코멘트·PR 병합 이벤트마다 Claude Code가 실행되도록 연결한 개인 작업 자동화 환경. 조율자가 역할별 서브에이전트에 일을 나눠 맡기고, 사람과는 Issue로 소통함.',
+      'AWS EC2(Ubuntu)에 헤드리스 Claude Code 원격 작업 서버를 구축하고, GitHub Issue 코멘트·PR 병합 이벤트마다 Claude Code가 실행되도록 연결한 개인 작업 자동화 환경. 조율자가 역할별 서브에이전트에 일을 나눠 맡기고, 사람과는 Issue로 소통함.',
     metrics: [],
     technologies: [
       'AWS EC2',
@@ -821,7 +821,8 @@ const projects: Project[] = [
     title: 'bizmekaTalk 3.0',
     period: '2021.11 ~ 2024.01',
     role: `    개발: 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담 개발
-    유지 보수: 운영 중 하루 6~12건 오류 수정, QA, 배포(Pascal로 설치 파일 제작)
+    유지 보수: 운영 중 하루 6~12건 오류 수정, QA
+    배포: Windows 설치 파일(exe) 제작, 고객사별 빌드 스크립트 제작(JavaScript, 고객사 3곳), 고객사 Linux 서버 배포 112회 이상
     협업: 영어로 소통하는 외국인 동료 합류 후 팀원들과 한·영 개발 용어집과 네이밍 규칙을 함께 정리하고, 업무별 담당자를 정하자고 제안해 리뷰·조율 혼선을 줄임`,
     description:
       '사용자 30만 명 규모 그룹웨어(비즈메카)의 신규 PC 메신저 클라이언트 프론트엔드 개발과 운영을 담당. 쪽지 기능을 전담 개발하고, 설계 및 기술 스택 선정 단계부터 참여함. 고객사 요구에 따른 옵션 기능 구현과 SaaS 대응을 위해 SSR SPA 구조로 개발함.',
@@ -882,7 +883,7 @@ const projects: Project[] = [
     period: '2023.06 ~ 2023.09',
     role: '다국어 처리, 리소스 파일 설계 및 적용, UI/UX 커스터마이징, QA 및 유지보수',
     description:
-      '그룹웨어 솔루션의 글로벌 출시를 위한 다국어 지원 및 커스터마이징 프로젝트. PC와 모바일 리소스를 통합하고, 반응형 UI로 개편. 사용자 기본 언어 기반 설치 파일 제작 등 6개 국어 리소스를 통합함.',
+      '그룹웨어 솔루션의 글로벌 출시를 위한 다국어 지원 및 커스터마이징 프로젝트. PC와 모바일 리소스를 통합하고, 반응형 UI로 개편. 사용자 기본 언어 기반 Windows 설치 파일(exe) 제작 등 6개 국어 리소스를 통합함.',
     metrics: [],
     technologies: [
       'Vue.js',
@@ -922,7 +923,7 @@ const projects: Project[] = [
     period: '2021.11 ~ 2022.09',
     role: '창 접기·펼치기, 조직도·대화방·설정 새 창, 그룹 관리 기능 개발, 출시 후 유지보수 및 배포',
     description:
-      '고려대학교의료원의 그룹웨어 클라이언트 커스터마이징 프로젝트. 조직도와 그룹, 설정 기능 개발을 비롯하여, 환자 대화방 기능을 Vue 컴포넌트로 모듈화. 자사 그룹웨어 연동 기능과 설치 파일 제작, 원격 지원 및 운영까지 담당.',
+      '고려대학교의료원의 그룹웨어 클라이언트 커스터마이징 프로젝트. 조직도와 그룹, 설정 기능 개발을 비롯하여, 환자 대화방 기능을 Vue 컴포넌트로 모듈화. 자사 그룹웨어 연동 기능과 Windows 설치 파일(exe) 제작, 원격 지원 및 운영까지 담당.',
     metrics: [
       { label: '팀 규모', value: '6명 (메인 2명, 서브 4명)' },
       { label: '기여도', value: '25%' },

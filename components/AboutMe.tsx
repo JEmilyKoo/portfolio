@@ -42,7 +42,7 @@ const timelineItems = [
     title: '프론트엔드 개발자',
     company: '㈜가온아이',
     description:
-      'Vue.js 기반 그룹웨어 PC 메신저 개발. 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담, 다국어 리소스 통합, 배포와 유지보수',
+      'Vue.js 기반 그룹웨어 PC 메신저 개발. 조직도/그룹/메신저 기능 개발, 쪽지 기능 전담, 다국어 리소스 통합, 유지보수. Windows 설치 파일(exe)과 고객사별 빌드 스크립트 제작. 고객사 Linux 서버 배포 112회 이상.',
     important: true,
     icon: <FaCode className="text-primary " />,
   },
