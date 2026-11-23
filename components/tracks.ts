@@ -69,7 +69,7 @@ const commonSoftSkills: SoftSkill[] = [
 
 const vueSkill: SkillItem = {
   name: 'Vue.js / Nuxt',
-  level: '실무 약 2년 8개월',
+  level: '실무 약 2년 9개월',
   desc: [
     '피드 무한 스크롤·통합 검색·마이페이지 개발 (보배드림 리뉴얼, Nuxt 4·Vue 3)',
     '사용자 30만 명 그룹웨어 PC 메신저 기능 개발 (실무, Vue·Nuxt)',

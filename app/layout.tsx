@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://jemilykoo.github.io"),
   title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-  description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
+  description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 9개월, 보배드림 전면 리뉴얼 참여.",
   keywords: ["프론트엔드 개발자", "Vue.js", "Nuxt", "TypeScript", "React", "포트폴리오"],
   authors: [{ name: "구정은", url: "https://github.com/JEmilyKoo" }],
   creator: "구정은",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://jemilykoo.github.io",
     title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
+    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 9개월, 보배드림 전면 리뉴얼 참여.",
     siteName: "구정은 포트폴리오",
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "구정은 Emily Koo | 프론트엔드 포트폴리오",
-    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 8개월, 보배드림 전면 리뉴얼 참여.",
+    description: "Vue·Nuxt로 웹 서비스를 만들어 온 프론트엔드 개발자 구정은(Emily Koo)의 포트폴리오. 실무 약 2년 9개월, 보배드림 전면 리뉴얼 참여.",
     images: ["/images/picture.jpg"],
   },
   icons: {
