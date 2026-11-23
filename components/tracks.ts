@@ -127,7 +127,7 @@ const REACT_TRACK: TrackConfig = {
     after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
   pdfUrl:
-    'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
+    'https://github.com/JEmilyKoo/portfolio/blob/9381904c0f536982a5760b1f251d7192fbee5205/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
   primaryPills: ['React', 'Next.js', 'TypeScript', 'LLM API', 'AI Agent'],
   competencies: [
     {
@@ -183,7 +183,7 @@ export const tracks: Record<Track, TrackConfig> = {
         ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
     pdfUrl:
-      'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
+      'https://github.com/JEmilyKoo/portfolio/blob/9381904c0f536982a5760b1f251d7192fbee5205/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
     primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'LLM API', 'AI Agent'],
     competencies: [
       {
@@ -248,7 +248,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험을 더했습니다.',
     },
     pdfUrl:
-      'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
+      'https://github.com/JEmilyKoo/portfolio/blob/9381904c0f536982a5760b1f251d7192fbee5205/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
     primaryPills: [
       'Vue',
       'React',
@@ -340,7 +340,7 @@ export const tracks: Record<Track, TrackConfig> = {
         ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
     pdfUrl:
-      'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
+      'https://github.com/JEmilyKoo/portfolio/blob/9381904c0f536982a5760b1f251d7192fbee5205/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: [
       'Vue.js',
       'TypeScript',
