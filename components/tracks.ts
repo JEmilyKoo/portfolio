@@ -342,10 +342,9 @@ export const tracks: Record<Track, TrackConfig> = {
     pdfUrl:
       'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
     primaryPills: [
-      'HTML/CSS',
-      'JavaScript',
-      'TypeScript',
       'Vue.js',
+      'TypeScript',
+      'HTML/CSS',
       'LLM API',
       'AI Agent',
     ],
