@@ -40,9 +40,6 @@ export default function Skills({
                     <span className={`font-bold text-primary text-lg mr-2 ${pdf ? 'shrink-0' : ''}`}>
                       {s.name}
                     </span>
-                    <span className={`ml-auto text-xs text-subText ${pdf ? 'text-right' : ''}`}>
-                      {s.level}
-                    </span>
                   </div>
                   <ol className={`pl-2 text-subText ${pdf ? 'text-sm' : 'text-[0.98rem]'} list-decimal list-inside space-y-1 text-left`}>
                     {s.desc.map((item, index) => (
