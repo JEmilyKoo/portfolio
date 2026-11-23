@@ -126,19 +126,21 @@ const REACT_TRACK: TrackConfig = {
     after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
   },
   pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v1.pdf',
-  primaryPills: ['React', 'Next.js', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
+  primaryPills: ['React', 'Next.js', 'TypeScript', 'LLM API', 'AI Agent'],
   competencies: [
     {
       title: '렌더링 성능',
-      evidence: '보배드림 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
+      evidence: '커뮤니티 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
     },
     {
       title: 'React 컴포넌트·상태 설계',
-      evidence: 'React·Next.js로 디자인 시스템과 공통 컴포넌트를 구축하고 Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
+      evidence: '- React·Next.js로 디자인 시스템과 공통 컴포넌트를 구축\n- Redux Toolkit으로 상태 설계, 메인 페이지 로딩 7초 → 0.37초',
     },
     {
-      title: 'AI 활용 개발',
-      evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
+      title: 'AI API 연동·멀티 에이전트 자동화',
+      evidence: `- LLM 채팅·글 생성 UI 개발 및 토큰 경량화로 음성 대화 타임아웃 해결
+- 모델·도구 권한을 분리한 서브에이전트 6종으로 작성·검증을 분업화한 개발 파이프라인 구축
+- Issue·PR 검증 게이트 기반 HITL 워크플로 및 EC2 24시간 원격 자동화 환경 운영`,
     },
   ],
   skills: [
@@ -195,7 +197,7 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험과 6개 국어 i18n 적용, 백엔드·디자이너 협업 경험이 있습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v4.pdf',
-    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['Vue.js', 'Nuxt', 'TypeScript', 'LLM API', 'AI Agent'],
     competencies: [
       {
         title: 'UI 상태 복원',
@@ -206,8 +208,10 @@ export const tracks: Record<Track, TrackConfig> = {
         evidence: '데스크톱 브라우저에서 메뉴 드래그 정렬이 끊기는 문제를 원인 3가지(정렬 로직·브라우저 기본 드래그·포인터 이벤트 추적)로 나눠 수정',
       },
       {
-        title: 'AI 활용 개발',
-        evidence: '보배드림에서 AI 코딩 도구(Codex·Claude)로 개발하고, 테스트와 직접 검증을 거친 코드만 반영',
+        title: 'AI API 연동·멀티 에이전트 자동화',
+      evidence: `- LLM 채팅·글 생성 UI 개발 및 토큰 경량화로 음성 대화 타임아웃 해결
+- 모델·도구 권한을 분리한 서브에이전트 6종으로 작성·검증을 분업화한 개발 파이프라인 구축
+- Issue·PR 검증 게이트 기반 HITL 워크플로 및 EC2 24시간 원격 자동화 환경 운영`,
       },
     ],
     skills: [vueSkill, tsSkill, testSkill, reactSkill, aiSkill],
@@ -239,19 +243,21 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ' 경험을 더했습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v2.pdf',
-    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['Vue', 'React', 'Java', 'Spring Boot', 'LLM API', 'AI Agent'],
     competencies: [
       {
         title: 'API 연동·백엔드 협업',
-        evidence: '보배드림에서 백엔드와 검색 API 사용 방식을 협의해 정리, API 버전 전환 때 화면 수정 없이 연결만 교체',
+        evidence: '- 백엔드와 검색 API 사용 방식을 협의 및 정리 \n - API 버전 전환 때 화면 수정 없이 연결만 교체',
       },
       {
         title: 'Java·Spring·DB',
         evidence: 'SQLD 보유, Spring REST API 개발과 MySQL·Oracle로 회원·서비스 DB 설계',
       },
       {
-        title: 'AI API 연동·AI 도구 활용',
-        evidence: 'OpenAI·Anthropic 백엔드와 연동한 LLM 채팅·글 생성 화면 개발, OpenAI API 음성 대화에서 프롬프트·토큰을 줄여 타임아웃 해결. 보배드림에서는 AI 코딩 도구(Codex·Claude)로 개발하고 테스트와 직접 검증을 거쳐 반영',
+        title: 'AI 서비스 연동·클라우드 멀티 에이전트 시스템 설계',
+        evidence: `- 인바운드 미개방 AWS EC2와 GitHub Actions runner를 연동한 무중단 원격 에이전트 서버 구축
+- 최소 권한 원칙의 서브에이전트 6종과 Issue·PR 자동 검증 기반 HITL 체계 구현
+- LLM 채팅·글 생성 기능 개발 및 프롬프트·토큰 경량화로 타임아웃 해결`,
       },
     ],
     skills: [
@@ -311,20 +317,22 @@ export const tracks: Record<Track, TrackConfig> = {
       after: ', 한글 URL 라우팅(백엔드와 협업), 6개 국어 다국어 처리를 해 왔습니다.',
     },
     pdfUrl: 'https://github.com/JEmilyKoo/portfolio/blob/2fce6f989c4392dc50bf2f24bfaa2e829b8ba355/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
-    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'AI 코딩 도구(Codex·Claude)'],
+    primaryPills: ['HTML/CSS', 'JavaScript', 'TypeScript', 'Vue.js', 'LLM API', 'AI Agent'],
     competencies: [
       {
         title: '렌더링 성능',
-        evidence: '보배드림 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
+        evidence: '커뮤니티 피드에 가상 스크롤을 적용해 1,000건을 불러와도 카드 3~5개만 렌더링, 뒤로가기 위치 오차 0px',
       },
       {
         title: 'SEO·URL 라우팅',
-        evidence: '보배드림 차량 목록 한글 카테고리 URL(6종)을 백엔드와 함께 구현해 기존 영문 주소와 호환, 검색어를 URL에 담아 새로고침·공유해도 결과 유지',
+        evidence: '6종 한글 카테고리·검색어 URL 라우팅을 구현해 기존 주소 호환과 공유·새로고침 상태를 유지하고 SEO 최적화 달성',
       },
       {
-        title: '다국어',
-        evidence: '해외 고객사 그룹웨어의 데스크톱·모바일 6개 국어 리소스 통합, 번역 길이에 따라 깨지는 레이아웃을 반응형으로 수정',
-      },
+        title: 'AI API 연동·멀티 에이전트 자동화',
+      evidence: `- LLM 채팅·글 생성 UI 개발 및 토큰 경량화로 음성 대화 타임아웃 해결
+- 모델·도구 권한을 분리한 서브에이전트 6종으로 작성·검증을 분업화한 개발 파이프라인 구축
+- Issue·PR 검증 게이트 기반 HITL 워크플로 및 EC2 24시간 원격 자동화 환경 운영`,
+      }
     ],
     skills: [
       {

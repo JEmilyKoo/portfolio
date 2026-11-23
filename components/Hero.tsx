@@ -70,7 +70,7 @@ export default function Hero({
                 key={c.title}
                 className="rounded-xl border border-border bg-surface px-4 py-3 text-left">
                 <div className="text-sm font-bold text-text">{c.title}</div>
-                <div className="text-xs text-subText mt-1">{c.evidence}</div>
+                <div className="text-xs text-subText mt-1 whitespace-pre-line">{c.evidence}</div>
               </div>
             ))}
           </div>
