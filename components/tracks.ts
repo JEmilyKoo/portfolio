@@ -341,13 +341,7 @@ export const tracks: Record<Track, TrackConfig> = {
     },
     pdfUrl:
       'https://github.com/JEmilyKoo/portfolio/blob/9381904c0f536982a5760b1f251d7192fbee5205/20261110_%EA%B5%AC%EC%A0%95%EC%9D%80_v3.pdf',
-    primaryPills: [
-      'Vue.js',
-      'TypeScript',
-      'HTML/CSS',
-      'LLM API',
-      'AI Agent',
-    ],
+    primaryPills: ['Vue.js', 'TypeScript', 'HTML/CSS', 'LLM API', 'AI Agent'],
     competencies: [
       {
         title: '렌더링 성능',
